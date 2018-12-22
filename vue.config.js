@@ -1,4 +1,5 @@
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   baseUrl: './',
@@ -24,6 +25,9 @@ module.exports = {
         })
         // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
       )
+      if (!process.env.VUE_APP_TRAVIS) {
+        config.plugins.push(new BundleAnalyzerPlugin())
+      }
     } else {
       // doSomething
     }

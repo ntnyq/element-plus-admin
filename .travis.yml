@@ -1,21 +1,14 @@
 # Travis-CI config
 language: node_js
 node_js: stable
-sudo: true
 
 cache:
   yarn: true
   directories:
     - node_modules
 
-before_script:
-  - yarn global add @vue/cli
-
-install:
-  - yarn
-
 script:
-  - yarn build
+  - yarn build:travis
 
 # Deploy
 after_script:
