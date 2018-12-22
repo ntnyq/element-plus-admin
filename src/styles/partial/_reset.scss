@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+  cursor: pointer;
+
+  img {
+    vertical-align: top;
+  }
+}
+
+img {
+  border: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,57 @@
+.login {
+  position: relative;
+  min-height: 100%;
+  background-color: $accentColor;
+  overflow: hidden;
+
+  &-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 40px 60px;
+    background-color: #fff;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 30px;
+      color: $secondaryTextColor;
+    }
+
+    .form-item-icon {
+      float: left;
+      padding-left: 10px;
+      font-size: 28px;
+    }
+
+    .el-input {
+      float: right;
+      width: 86%;
+    }
+
+    .el-input--medium .el-input__inner,
+    .el-form-item__content {
+      height: 50px;
+      line-height: 50px;
+      font-size: 24px;
+    }
+
+    .show-pwd {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      font-size: 24px;
+      color: #999;
+      cursor: pointer;
+      transform: translateY(-50%);
+      user-select: none;
+      @include trs;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}

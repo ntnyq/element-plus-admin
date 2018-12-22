@@ -1,0 +1,139 @@
+html,
+body,
+#app {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2222;
+  width: 100%;
+  height: $navbarHeight;
+  line-height: $navbarHeight;
+  background-color: $accentColor;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+  color: $whiteTextColor;
+
+  .hamburger {
+    width: 55px;
+    margin-right: 20px;
+    background-color: $primaryColor;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .brand {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .operations {
+    position: relative;
+    height: $navbarHeight;
+    line-height: $navbarHeight;
+    padding: 0 30px 0 20px;
+    background-color: $primaryColor;
+    color: $whiteTextColor;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -38px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-width: $navbarHeight / 2 19px;
+      border-style: solid;
+      border-color: transparent $primaryColor $primaryColor transparent;
+    }
+
+    .drop-menu {
+      margin-right: 20px;
+    }
+
+    .icon-user {
+      font-size: 24px;
+      color: $whiteTextColor;
+      cursor: pointer;
+      @include trs;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .username {
+    padding-right: 50px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
+
+.main-wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding-top: $navbarHeight;
+}
+
+.app-sidebar {
+  position: relative;
+  width: $sidebarWidth;
+  background-color: $accentColor;
+  padding: 10px 0;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 3.1px 2.6px 5.6px 0.4px rgba(8, 16, 20, .08);
+  transform: translate3d(0, 0, 0);
+  @include trs;
+
+  .el-menu {
+    height: 100%;
+    min-height: 100%;
+    font-size: 18px;
+    overflow-y: auto;
+
+    .menu-item-icon {
+      width: 24px;
+      font-size: 18px;
+      color: inherit;
+    }
+
+    .menu-item-text {
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .el-submenu__icon-arrow {
+      font-size: 20px;
+      color: $whiteTextColor;
+    }
+  }
+
+  .is-collapse & {
+    width: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  background-color: $bgColor;
+}
