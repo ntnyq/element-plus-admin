@@ -13,7 +13,8 @@ import {
   Notification,
   Submenu,
   Form,
-  FormItem
+  FormItem,
+  Tooltip
 } from 'element-ui'
 
 Vue.prototype.$ELEMENT = { size: 'medium', zIndex: 9999 }
@@ -30,6 +31,7 @@ Vue.use(Submenu)
 Vue.use(MenuItemGroup)
 Vue.use(Form)
 Vue.use(FormItem)
+Vue.use(Tooltip)
 
 Vue.prototype.$message = Message
 Vue.prototype.$notify = Notification

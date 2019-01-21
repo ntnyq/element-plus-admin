@@ -17,7 +17,7 @@ const routes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/Dashboard'),
-        meta: { icon: 'dashboard', title: '仪表盘' }
+        meta: { icon: 'dashboard', title: 'Dashboard' }
       }
     ]
   },
@@ -31,8 +31,23 @@ const routes = [
       {
         path: 'index',
         name: 'GuideIndex',
-        component: () => import('@/views/guide'),
-        meta: { icon: 'guide', title: '导航' }
+        component: () => import('@/views/Guide'),
+        meta: { icon: 'guide', title: 'Guide' }
+      }
+    ]
+  },
+
+  {
+    path: '/icons',
+    name: 'Icons',
+    component: Layout,
+    redirect: 'index',
+    children: [
+      {
+        path: 'index',
+        name: 'IconsIndex',
+        component: () => import('@/views/Icons'),
+        meta: { icon: 'icon', title: 'Icons' }
       }
     ]
   },
@@ -42,19 +57,19 @@ const routes = [
     name: 'Home',
     component: Layout,
     redirect: 'index',
-    meta: { icon: 'example', title: '示例' },
+    meta: { icon: 'example', title: 'Example' },
     children: [
       {
         path: 'index',
         name: 'HomeIndex',
         component: () => import('@/views/Home'),
-        meta: { title: '主页' }
+        meta: { title: 'HomePage' }
       },
       {
         path: 'test',
         name: 'HomeTest',
         component: () => import('@/views/Home/test'),
-        meta: { title: '测试' }
+        meta: { title: 'Test' }
       }
     ]
   }

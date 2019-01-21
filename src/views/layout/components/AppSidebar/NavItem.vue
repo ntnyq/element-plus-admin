@@ -12,12 +12,13 @@ export default {
       default: ''
     }
   },
+
   render (h, context) {
     const { icon, title } = context.props
     const vnodes = []
 
     if (icon) {
-      vnodes.push(<dz-icon name={(icon)} class="menu-item-icon" />)
+      vnodes.push(<dz-icon icon-class={(icon)} class="menu-item-icon" />)
     }
 
     if (title) {

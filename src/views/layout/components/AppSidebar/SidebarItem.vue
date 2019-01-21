@@ -7,7 +7,7 @@
         :class="{'submenu-title-noDropdown':!isNest}">
         <nav-item v-if="onlyOneChild.meta"
           :icon="onlyOneChild.meta.icon||item.meta.icon"
-          :title="onlyOneChild.meta.title" />
+          :title="$t(`router.${onlyOneChild.meta.title}`)" />
       </el-menu-item>
     </template>
 
@@ -17,7 +17,7 @@
       <template slot="title">
         <nav-item v-if="item.meta"
           :icon="item.meta.icon"
-          :title="item.meta.title" />
+          :title="$t(`router.${item.meta.title}`)" />
       </template>
 
       <template v-for="child in visibleChildrenRoutes">
@@ -32,7 +32,7 @@
           :key="child.name">
           <nav-item v-if="child.meta"
             :icon="child.meta.icon"
-            :title="child.meta.title" />
+            :title="$t(`router.${child.meta.title}`)" />
         </el-menu-item>
       </template>
     </el-submenu>
@@ -41,6 +41,7 @@
 
 <script>
 import NavItem from './NavItem'
+
 export default {
   name: 'SidebarItem',
 

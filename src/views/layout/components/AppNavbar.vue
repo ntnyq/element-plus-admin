@@ -4,7 +4,7 @@
       class="hamburger fl"
       href="javascript:;"
       role="button">
-      <dz-icon :name="isCollapse ? 'right' : 'hamburger'"></dz-icon>
+      <dz-icon :icon-class="isCollapse ? 'right' : 'hamburger'"></dz-icon>
     </a>
     <a class="brand fl"
       href="/#/">Element Admin</a>
@@ -13,8 +13,9 @@
         placement="bottom"
         trigger="click"
         class="drop-menu">
-        <dz-icon class="icon-user"
-          name="user"></dz-icon>
+        <span class="icon-user">
+          <dz-icon icon-class="user"></dz-icon>
+        </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-for="command in commands"
             :command="command.name"
@@ -22,6 +23,7 @@
         </el-dropdown-menu>
       </el-dropdown>
     </div>
+    <lang-select class="lang-select fr" />
     <div class="username fr">
       <span>Hi,{{username}}</span>
     </div>
@@ -30,9 +32,12 @@
 
 <script>
 import { mapState } from 'vuex'
+import LangSelect from '@/components/LangSelect'
 
 export default {
   name: 'AppNavbar',
+
+  components: { LangSelect },
 
   computed: {
     ...mapState(['isCollapse'])

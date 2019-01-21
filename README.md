@@ -1,29 +1,53 @@
 # element-boilerplate
 
-## Project setup
-```
-yarn install
+> 基于 **Vue 2.x** 和 **ElementUI** 的后台管理系统模板。
+
+## Usage
+
+> `Nodejs` & `Yarn` is required.
+
+### Clone the repo
+
+``` bash
+$ git clone https://github.com/ntnyq/element-boilerplate.git
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
+### Install the dependencies
+
+``` bash
+$ cd element-boilerplate
+
+$ yarn
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
+### Run project via terminal
+
+``` bash
+$ yarn serve
 ```
 
-### Run your tests
-```
-yarn run test
+### Build for production
+
+``` bash
+$ yarn build
 ```
 
-### Lints and fixes files
-```
-yarn run lint
+## Dependencies
+
+``` json
+"axios": "^0.18.0",
+"element-ui": "^2.4.5",
+"js-cookie": "^2.2.0",
+"lodash": "^4.17.11",
+"qs": "^6.6.0",
+"vue": "^2.5.17",
+"vue-clipboard2": "^0.2.1",
+"vue-i18n": "^8.7.0",
+"vue-router": "^3.0.1",
+"vuex": "^3.0.1"
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Inspiration
+
+Deeply thank to [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin).
+

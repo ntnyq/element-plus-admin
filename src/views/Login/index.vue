@@ -9,18 +9,18 @@
         label-position="left">
         <el-form-item prop="username">
           <span class="form-item-icon">
-            <dz-icon name="user"></dz-icon>
+            <dz-icon icon-class="user"></dz-icon>
           </span>
           <el-input v-model.trim="loginForm.username"
             :placeholder="`请输入用户名`"
-            name="username"
+            icon-class="username"
             type="text"
             auto-complete="on"></el-input>
         </el-form-item>
 
         <el-form-item prop="password">
           <span class="form-item-icon">
-            <dz-icon name="password" />
+            <dz-icon icon-class="password" />
           </span>
           <el-input :type="passwordType"
             v-model.trim="loginForm.password"
@@ -30,7 +30,7 @@
             @keyup.enter.native="handleLogin" />
           <dz-icon class="show-pwd"
             @click.native="showPwd"
-            name="hide" />
+            icon-class="eye" />
         </el-form-item>
         <el-button :loading="loading"
           type="primary"
@@ -70,8 +70,8 @@ export default {
         password: '1111111'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
-        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+        username: { required: true, trigger: 'blur', validator: validateUsername },
+        password: { required: true, trigger: 'blur', validator: validatePassword }
       },
       passwordType: 'password',
       loading: false,
@@ -92,7 +92,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$message.error('登录成功！')
+          this.$message.success('登录成功！')
           setTimeout(() => {
             this.loading = false
             this.$router.push({ path: this.redirect || '/' })

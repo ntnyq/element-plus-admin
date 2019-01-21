@@ -31,6 +31,10 @@ body,
     background-color: $primaryColor;
     text-align: center;
     font-size: 32px;
+
+    .svg-icon {
+      fill: $whiteTextColor;
+    }
   }
 
   .brand {
@@ -76,9 +80,14 @@ body,
   }
 
   .username {
-    padding-right: 50px;
+    margin-right: 30px;
     font-weight: 400;
     font-size: 20px;
+  }
+
+  .lang-select {
+    padding-right: 50px;
+    color: $whiteTextColor;
   }
 }
 
