@@ -2,6 +2,8 @@
 
 > 基于 **Vue 2.x** 和 **ElementUI** 的后台管理系统模板。
 
+[![Build Status](https://travis-ci.org/ntnyq/element-boilerplate.svg?branch=master)](https://travis-ci.org/ntnyq/element-boilerplate)
+
 ## Usage
 
 > `Nodejs` & `Yarn` is required.
