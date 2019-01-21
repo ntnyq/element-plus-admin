@@ -2,7 +2,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-  baseUrl: './',
+  publicPath: './',
 
   css: {
     loaderOptions: {
