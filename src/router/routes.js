@@ -31,7 +31,7 @@ const routes = [
       {
         path: 'index',
         name: 'GuideIndex',
-        component: () => import('@/views/Guide'),
+        component: () => import('@/views/Common/Guide'),
         meta: { icon: 'guide', title: 'Guide' }
       }
     ]

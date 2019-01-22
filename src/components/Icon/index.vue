@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'DzIcon',
+  name: 'SvgIcon',
 
   props: {
     iconClass: {

@@ -6,5 +6,9 @@ export default {
     Example: '示例',
     HomePage: '主页',
     Test: '测试'
+  },
+  language: {
+    en: '英文',
+    zh: '中文'
   }
 }

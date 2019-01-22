@@ -6,5 +6,9 @@ export default {
     Example: 'Example',
     HomePage: 'HomePage',
     Test: 'Test'
+  },
+  language: {
+    en: 'English',
+    zh: 'Chinise'
   }
 }

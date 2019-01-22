@@ -3,20 +3,20 @@
     class="international"
     @command="handleSetLanguage">
     <div>
-      <dz-icon class-name="international-icon"
+      <svg-icon class-name="international-icon"
         icon-class="language" />
     </div>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item :disabled="language==='zh'"
-        command="zh">中文</el-dropdown-item>
-      <el-dropdown-item :disabled="language==='en'"
-        command="en">English</el-dropdown-item>
+      <el-dropdown-item v-for="locale in localeKeys"
+        :key="locale"
+        :disabled="language===locale"
+        :command="locale">{{$t(`language.${locale}`)}}</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
 
 <script>
-// import { localeKeys } from '@/i18n'
+import { localeKeys } from '@/i18n'
 
 export default {
   computed: {
@@ -24,6 +24,13 @@ export default {
       return this.$store.getters.language
     }
   },
+
+  data () {
+    return {
+      localeKeys
+    }
+  },
+
   methods: {
     handleSetLanguage (lang) {
       this.$i18n.locale = lang

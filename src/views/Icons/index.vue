@@ -10,7 +10,7 @@
           <div v-clipboard:copy="generateIconCode(icon)"
             v-clipboard:success="handleCopySuccess"
             class="icon-item">
-            <dz-icon :icon-class="icon"
+            <svg-icon :icon-class="icon"
               class-name="disabled" />
             <span>{{ icon }}</span>
           </div>

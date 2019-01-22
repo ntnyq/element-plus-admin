@@ -9,7 +9,7 @@
         label-position="left">
         <el-form-item prop="username">
           <span class="form-item-icon">
-            <dz-icon icon-class="user"></dz-icon>
+            <svg-icon icon-class="user" />
           </span>
           <el-input v-model.trim="loginForm.username"
             :placeholder="`请输入用户名`"
@@ -20,7 +20,7 @@
 
         <el-form-item prop="password">
           <span class="form-item-icon">
-            <dz-icon icon-class="password" />
+            <svg-icon icon-class="password" />
           </span>
           <el-input :type="passwordType"
             v-model.trim="loginForm.password"
@@ -28,7 +28,7 @@
             name="password"
             auto-complete="on"
             @keyup.enter.native="handleLogin" />
-          <dz-icon class="show-pwd"
+          <svg-icon class="show-pwd"
             @click.native="showPwd"
             icon-class="eye" />
         </el-form-item>

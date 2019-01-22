@@ -4,7 +4,7 @@
       class="hamburger fl"
       href="javascript:;"
       role="button">
-      <dz-icon :icon-class="isCollapse ? 'right' : 'hamburger'"></dz-icon>
+      <svg-icon :icon-class="isCollapse ? 'right' : 'hamburger'" />
     </a>
     <a class="brand fl"
       href="/#/">Element Admin</a>
@@ -14,7 +14,7 @@
         trigger="click"
         class="drop-menu">
         <span class="icon-user">
-          <dz-icon icon-class="user"></dz-icon>
+          <svg-icon icon-class="user" />
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-for="command in commands"
