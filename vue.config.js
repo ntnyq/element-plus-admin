@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
   publicPath: './',
@@ -38,7 +39,14 @@ module.exports = {
         config.plugins.push(new BundleAnalyzerPlugin())
       }
     } else {
-      // doSomething
+      config.plugins.push(
+        new StylelintWebpackPlugin({
+          files: [ '**/*.{vue,scss}' ],
+          // cache: true,
+          emitErrors: true,
+          failOnError: false
+        })
+      )
     }
   },
 

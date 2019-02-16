@@ -14,6 +14,7 @@ body {
 
 .clearfix {
   zoom: 1;
+
   &:after {
     content: "";
     display: block;

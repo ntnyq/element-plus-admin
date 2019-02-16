@@ -49,6 +49,7 @@
       transform: translateY(-50%);
       user-select: none;
       @include trs;
+
       &:hover {
         color: #ccc;
       }
