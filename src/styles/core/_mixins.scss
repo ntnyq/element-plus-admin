@@ -1,11 +1,9 @@
-//
 @mixin ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-//
 @mixin ellipsisY($num: 3) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -13,7 +11,6 @@
   overflow: hidden;
 }
 
-//
 @mixin trs ($t: .3s, $type: ease-out) {
   transition: all $t $type;
   @content;

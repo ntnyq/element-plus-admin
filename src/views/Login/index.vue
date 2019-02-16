@@ -34,7 +34,7 @@
         </el-form-item>
         <el-button :loading="loading"
           type="primary"
-          style="width:100%;margin: 30px 0;padding: 15px 20px;font-size: 28px;"
+          class="login-btn"
           @click.native.prevent="handleLogin">登录</el-button>
       </el-form>
     </div>
@@ -115,3 +115,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.login {
+  .login-btn {
+    width: 100%;
+    margin: 30px 0;
+    padding: 15px 20px;
+    font-size: 28px;
+  }
+}
+</style>
