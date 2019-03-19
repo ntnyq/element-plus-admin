@@ -1,7 +1,9 @@
 <template>
   <div class="app-main">
-    <transition name="el-zoom-in-center"
-      mode="out-in">
+    <transition
+      name="el-zoom-in-center"
+      mode="out-in"
+    >
       <router-view :key="key" />
     </transition>
   </div>

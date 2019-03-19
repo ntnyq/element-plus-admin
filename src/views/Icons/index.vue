@@ -1,17 +1,27 @@
 <template>
   <div class="icons-container">
-    <h1>项目图标快捷预览</h1>
+    <h1>{{ $t('iconTitle') }}</h1>
     <div class="icons-wrapper">
-      <div v-for="(icon, index) in icons"
-        :key="index">
-        <el-tooltip :open-delay="100"
-          placement="top">
-          <div slot="content">{{ generateIconCode(icon) }}</div>
-          <div v-clipboard:copy="generateIconCode(icon)"
+      <div
+        v-for="(icon, index) in icons"
+        :key="index"
+      >
+        <el-tooltip
+          :open-delay="100"
+          placement="top"
+        >
+          <div slot="content">
+            {{ generateIconCode(icon) }}
+          </div>
+          <div
+            v-clipboard:copy="generateIconCode(icon)"
             v-clipboard:success="handleCopySuccess"
-            class="icon-item">
-            <svg-icon :icon-class="icon"
-              class-name="disabled" />
+            class="icon-item"
+          >
+            <svg-icon
+              :icon-class="icon"
+              class-name="disabled"
+            />
             <span>{{ icon }}</span>
           </div>
         </el-tooltip>

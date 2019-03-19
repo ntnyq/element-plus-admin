@@ -1,38 +1,53 @@
 <template>
-  <div v-if="!item.hidden && item.children"
-    class="menu-wrapper">
-
+  <div
+    v-if="!item.hidden && item.children"
+    class="menu-wrapper"
+  >
     <template v-if="hasOneShowingChild(item.children, item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&! item.alwaysShow">
-      <el-menu-item :index="resolvePath(onlyOneChild.path)"
-        :class="{'submenu-title-noDropdown':!isNest}">
-        <nav-item v-if="onlyOneChild.meta"
+      <el-menu-item
+        :index="resolvePath(onlyOneChild.path)"
+        :class="{'submenu-title-noDropdown':!isNest}"
+      >
+        <nav-item
+          v-if="onlyOneChild.meta"
           :icon="onlyOneChild.meta.icon||item.meta.icon"
-          :title="$t(`router.${onlyOneChild.meta.title}`)" />
+          :title="$t(`router.${onlyOneChild.meta.title}`)"
+        />
       </el-menu-item>
     </template>
 
-    <el-submenu v-else
+    <el-submenu
+      v-else
       ref="submenu"
-      :index="resolvePath(item.path)">
+      :index="resolvePath(item.path)"
+    >
       <template slot="title">
-        <nav-item v-if="item.meta"
+        <nav-item
+          v-if="item.meta"
           :icon="item.meta.icon"
-          :title="$t(`router.${item.meta.title}`)" />
+          :title="$t(`router.${item.meta.title}`)"
+        />
       </template>
 
       <template v-for="child in visibleChildrenRoutes">
-        <sidebar-item v-if="child.children && child.children.length > 0"
+        <sidebar-item
+          v-if="child.children && child.children.length > 0"
           :is-nest="true"
           :item="child"
           :key="child.path"
           :base-path="resolvePath(child.path)"
-          class="nest-menu" />
-        <el-menu-item :index="resolvePath(child.path)"
+          class="nest-menu"
+        />
+        <el-menu-item
+          :index="resolvePath(child.path)"
           v-else
-          :key="child.name">
-          <nav-item v-if="child.meta"
+          :key="child.name"
+        >
+          <nav-item
+            v-if="child.meta"
             :icon="child.meta.icon"
-            :title="$t(`router.${child.meta.title}`)" />
+            :title="$t(`router.${child.meta.title}`)"
+          />
         </el-menu-item>
       </template>
     </el-submenu>

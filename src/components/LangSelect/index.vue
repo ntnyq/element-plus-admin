@@ -1,16 +1,24 @@
 <template>
-  <el-dropdown trigger="click"
+  <el-dropdown
+    trigger="click"
     class="international"
-    @command="handleSetLanguage">
+    @command="handleSetLanguage"
+  >
     <div>
-      <svg-icon class-name="international-icon"
-        icon-class="language" />
+      <svg-icon
+        class-name="international-icon"
+        icon-class="language"
+      />
     </div>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item v-for="locale in localeKeys"
+      <el-dropdown-item
+        v-for="locale in localeKeys"
         :key="locale"
         :disabled="language===locale"
-        :command="locale">{{$t(`language.${locale}`)}}</el-dropdown-item>
+        :command="locale"
+      >
+        {{ $t(`language.${locale}`) }}
+      </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>

@@ -10,5 +10,6 @@ export default {
   language: {
     en: '英文',
     zh: '中文'
-  }
+  },
+  iconTitle: '项目图标'
 }

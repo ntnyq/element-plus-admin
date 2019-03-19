@@ -2,40 +2,52 @@
   <div class="login">
     <div class="login-form">
       <h1>Element Admin</h1>
-      <el-form ref="loginForm"
+      <el-form
+        ref="loginForm"
         :model="loginForm"
         :rules="loginRules"
         auto-complete="on"
-        label-position="left">
+        label-position="left"
+      >
         <el-form-item prop="username">
           <span class="form-item-icon">
             <svg-icon icon-class="user" />
           </span>
-          <el-input v-model.trim="loginForm.username"
+          <el-input
+            v-model.trim="loginForm.username"
             :placeholder="`请输入用户名`"
             icon-class="username"
             type="text"
-            auto-complete="on"></el-input>
+            auto-complete="on"
+          />
         </el-form-item>
 
         <el-form-item prop="password">
           <span class="form-item-icon">
             <svg-icon icon-class="password" />
           </span>
-          <el-input :type="passwordType"
+          <el-input
+            :type="passwordType"
             v-model.trim="loginForm.password"
             :placeholder="`请输入密码`"
             name="password"
             auto-complete="on"
-            @keyup.enter.native="handleLogin" />
-          <svg-icon class="show-pwd"
+            @keyup.enter.native="handleLogin"
+          />
+          <svg-icon
+            class="show-pwd"
             @click.native="showPwd"
-            icon-class="eye" />
+            icon-class="eye"
+          />
         </el-form-item>
-        <el-button :loading="loading"
+        <el-button
+          :loading="loading"
           type="primary"
           class="login-btn"
-          @click.native.prevent="handleLogin">登录</el-button>
+          @click.native.prevent="handleLogin"
+        >
+          登录
+        </el-button>
       </el-form>
     </div>
   </div>

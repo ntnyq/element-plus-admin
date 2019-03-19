@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = '99CMS_HUIDU'
-const UsernameKey = 'USER_NAME'
+const TokenKey = process.env.VUE_APP_TOKEN_KEY || 'TOKEN_KEY'
+const UsernameKey = process.env.VUE_APP_USERNAME_KEY || 'USER_NAME_KEY'
 
 export function getToken () {
   return Cookies.get(TokenKey)

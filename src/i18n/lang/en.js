@@ -10,5 +10,6 @@ export default {
   language: {
     en: 'English',
     zh: 'Chinise'
-  }
+  },
+  iconTitle: 'Project Icons'
 }

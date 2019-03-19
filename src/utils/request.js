@@ -7,7 +7,7 @@ import { getToken } from '@/utils/auth'
 // 若有多个业务域名，则创建多个实例
 const instance = axios.create({
   baseURL: API_HOST || process.env.VUE_APP_API_HOST,
-  timeout: 10 * 1e3
+  timeout: process.env.VUE_APP_REQUEST_TIMEOUT || 1e4
 })
 
 /**

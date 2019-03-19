@@ -1,31 +1,41 @@
 <template>
   <div class="app-navbar clearfix">
-    <a @click="$store.dispatch('toggleCollapse')"
+    <a
+      @click="$store.dispatch('toggleCollapse')"
       class="hamburger fl"
       href="javascript:;"
-      role="button">
+      role="button"
+    >
       <svg-icon :icon-class="isCollapse ? 'right' : 'hamburger'" />
     </a>
-    <a class="brand fl"
-      href="/#/">Element Admin</a>
+    <a
+      class="brand fl"
+      href="./"
+    >Element Admin</a>
     <div class="operations fr">
-      <el-dropdown @command="handleCommand"
+      <el-dropdown
+        @command="handleCommand"
         placement="bottom"
         trigger="click"
-        class="drop-menu">
+        class="drop-menu"
+      >
         <span class="icon-user">
           <svg-icon icon-class="user" />
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item v-for="command in commands"
+          <el-dropdown-item
+            v-for="command in commands"
             :command="command.name"
-            :key="command.name">{{command.text}}</el-dropdown-item>
+            :key="command.name"
+          >
+            {{ command.text }}
+          </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
     <lang-select class="lang-select fr" />
     <div class="username fr">
-      <span>Hi,{{username}}</span>
+      <span>Hi,{{ username }}</span>
     </div>
   </div>
 </template>
