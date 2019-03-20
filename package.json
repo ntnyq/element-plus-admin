@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:travis": "vue-cli-service build --mode travis",
+    "build:analyzer": "vue-cli-service build --mode analyzer",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "vue-cli-service lint",
     "lint:style": "stylelint '**/*.{vue,scss}'",

@@ -4,6 +4,11 @@ const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 
+const {
+  NODE_ENV,
+  VUE_APP_ANALYZER
+} = process.env
+
 module.exports = {
   publicPath: './',
 
@@ -21,33 +26,33 @@ module.exports = {
   },
 
   configureWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      config.plugins.push(
-        new ImageminPlugin({
-          pngquant: { quality: '65-80' },
-          plugins: [
-            imageminMozjpeg({
-              quality: 70,
-              progressive: true
-            })
-          ]
-        }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // no i18n
-        // new webpack.ContextReplacementPugin(/moment[\/\\]locales$/, /zh-cn|en-use/) with i18n
-      )
-      if (!process.env.VUE_APP_TRAVIS) {
-        config.plugins.push(new BundleAnalyzerPlugin())
-      }
-    } else {
-      config.plugins.push(
-        new StylelintWebpackPlugin({
-          files: [ '**/*.{vue,scss}' ],
-          // cache: true,
-          emitErrors: true,
-          failOnError: false
-        })
-      )
-    }
+    config.plugins.push(
+      ...(NODE_ENV === 'production'
+        ? [
+          new ImageminPlugin({
+            pngquant: { quality: '65-80' },
+            plugins: [
+              imageminMozjpeg({
+                quality: 70,
+                progressive: true
+              })
+            ]
+          }),
+          new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // no i18n
+          // new webpack.ContextReplacementPugin(/moment[\/\\]locales$/, /zh-cn|en-use/) with i18n
+        ]
+        : [
+          new StylelintWebpackPlugin({
+            files: ['**/*.{vue,scss}'],
+            // cache: true,
+            emitErrors: true,
+            failOnError: false
+          })
+        ]),
+      ...(VUE_APP_ANALYZER ? [
+        new BundleAnalyzerPlugin()
+      ] : [])
+    )
   },
 
   chainWebpack: config => {
@@ -71,6 +76,8 @@ module.exports = {
     const imagesRule = config.module.rule('images')
 
     imagesRule.exclude.add(`${__dirname}/src/icons`)
-    config.module.rule('images').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    config.module
+      .rule('images')
+      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
   }
 }

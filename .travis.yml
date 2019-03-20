@@ -8,7 +8,7 @@ cache:
     - node_modules
 
 script:
-  - yarn build:travis
+  - yarn build
 
 # Deploy
 after_script:

@@ -11,7 +11,9 @@
     <a
       class="brand fl"
       href="./"
-    >Element Admin</a>
+    >
+      Element Admin
+    </a>
     <div class="operations fr">
       <el-dropdown
         @command="handleCommand"
