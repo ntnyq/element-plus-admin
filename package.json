@@ -9,6 +9,7 @@
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "vue-cli-service lint",
     "lint:style": "stylelint --fix \"src/**/*.{vue,scss}\"",
+    "new": "hygen new",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "gitHooks": {
