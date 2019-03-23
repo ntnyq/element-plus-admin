@@ -1,0 +1,21 @@
+body,
+input,
+button,
+textarea,
+select,
+option {
+  font: normal $font-size $font;
+}
+
+body {
+  position: relative;
+  min-width: $layout-min-width;
+  line-height: $line-height;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}

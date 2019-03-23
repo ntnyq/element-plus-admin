@@ -1,7 +1,7 @@
 .login {
   position: relative;
   min-height: 100%;
-  background-color: $accentColor;
+  background-color: $accent-color;
   overflow: hidden;
 
   &-form {
@@ -18,7 +18,7 @@
       margin-bottom: 40px;
       text-align: center;
       font-size: 30px;
-      color: $secondaryTextColor;
+      color: $secondary-text-color;
     }
 
     .form-item-icon {
@@ -48,7 +48,7 @@
       cursor: pointer;
       transform: translateY(-50%);
       user-select: none;
-      @include trs;
+      @include transition;
 
       &:hover {
         color: #ccc;

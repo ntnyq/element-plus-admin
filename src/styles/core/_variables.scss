@@ -1,25 +1,24 @@
 // Font
 $font: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-$fontSize: 16px;
-$lineHeight: 1.2;
-
-// Path
-$assetsPath: "../assets/";
+$font-size: 16px;
+$line-height: 1.2;
 
 // Theme
-$primaryColor: #095ce5;
-$accentColor: #2d333f;
-$primaryTextColor: #333;
-$secondaryTextColor: #666;
-$whiteTextColor: #fff;
-$lightTextColor: #dbdce0;
-$bgColor: #ededed;
+$primary-color: #095ce5;
+$accent-color: #2d333f;
+$primary-text-color: #333;
+$secondary-text-color: #666;
+$white-text-color: #fff;
+$light-text-color: #dbdce0;
+$bg-color: #ededed;
 
 // Layout
-$navbarHeight: 70px;
-$menuItemHeight: 60px;
-$sidebarWidth: 230px;
-$sideNavItemHeight: 60px;
-$subMenuHeight: 90px;
-$subMenuItemHeight: 60px;
-$subMenuItemWidth: 200px;
+$layout-min-width: 1200px;
+
+$navbar-height: 70px;
+$menu-item-height: 60px;
+$sidebar-width: 230px;
+$side-nav-item-height: 60px;
+$sub-menu-height: 90px;
+$sub-menu-item-width: 200px;
+$sub-menu-item-height: 60px;

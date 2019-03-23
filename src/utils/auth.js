@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = process.env.VUE_APP_TOKEN_KEY || 'TOKEN_KEY'
-const UsernameKey = process.env.VUE_APP_USERNAME_KEY || 'USER_NAME_KEY'
+const TokenKey = process.env.VUE_APP_TOKEN_KEY || 'AMDIN_TOKEN'
+const UsernameKey = process.env.VUE_APP_USERNAME_KEY || 'ADMIN_USERNAME'
 
 export function getToken () {
   return Cookies.get(TokenKey)

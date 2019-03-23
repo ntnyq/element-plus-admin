@@ -19,21 +19,21 @@ body,
   left: 0;
   z-index: 2222;
   width: 100%;
-  height: $navbarHeight;
-  line-height: $navbarHeight;
-  background-color: $accentColor;
+  height: $navbar-height;
+  line-height: $navbar-height;
+  background-color: $accent-color;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
-  color: $whiteTextColor;
+  color: $white-text-color;
 
   .hamburger {
     width: 55px;
     margin-right: 20px;
-    background-color: $primaryColor;
+    background-color: $primary-color;
     text-align: center;
     font-size: 32px;
 
     .svg-icon {
-      fill: $whiteTextColor;
+      fill: $white-text-color;
     }
   }
 
@@ -44,11 +44,11 @@ body,
 
   .operations {
     position: relative;
-    height: $navbarHeight;
-    line-height: $navbarHeight;
+    height: $navbar-height;
+    line-height: $navbar-height;
     padding: 0 30px 0 20px;
-    background-color: $primaryColor;
-    color: $whiteTextColor;
+    background-color: $primary-color;
+    color: $white-text-color;
 
     &:before {
       content: "";
@@ -58,9 +58,9 @@ body,
       display: block;
       width: 0;
       height: 0;
-      border-width: $navbarHeight / 2 19px;
+      border-width: $navbar-height / 2 19px;
       border-style: solid;
-      border-color: transparent $primaryColor $primaryColor transparent;
+      border-color: transparent $primary-color $primary-color transparent;
     }
 
     .drop-menu {
@@ -69,9 +69,9 @@ body,
 
     .icon-user {
       font-size: 24px;
-      color: $whiteTextColor;
+      color: $white-text-color;
       cursor: pointer;
-      @include trs;
+      @include transition;
 
       &:hover {
         opacity: 0.8;
@@ -87,7 +87,7 @@ body,
 
   .lang-select {
     padding-right: 50px;
-    color: $whiteTextColor;
+    color: $white-text-color;
   }
 }
 
@@ -95,20 +95,20 @@ body,
   position: relative;
   display: flex;
   height: 100%;
-  padding-top: $navbarHeight;
+  padding-top: $navbar-height;
 }
 
 .app-sidebar {
   position: relative;
-  width: $sidebarWidth;
-  background-color: $accentColor;
+  width: $sidebar-width;
+  background-color: $accent-color;
   padding: 10px 0;
   user-select: none;
   overflow-x: hidden;
   overflow-y: auto;
   box-shadow: 3.1px 2.6px 5.6px 0.4px rgba(8, 16, 20, .08);
   transform: translate3d(0, 0, 0);
-  @include trs;
+  @include transition;
 
   .el-menu {
     height: 100%;
@@ -129,7 +129,7 @@ body,
 
     .el-submenu__icon-arrow {
       font-size: 20px;
-      color: $whiteTextColor;
+      color: $white-text-color;
     }
   }
 
@@ -144,5 +144,5 @@ body,
   flex-direction: column;
   flex: 1;
   padding: 20px;
-  background-color: $bgColor;
+  background-color: $bg-color;
 }

@@ -1,0 +1,20 @@
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.ellipsis {
+  @include ellipsis;
+}
+
+.bg-contain {
+  @include bg-style;
+}

@@ -26,6 +26,7 @@ a {
 }
 
 ul,
+ol,
 li {
   list-style: none;
 }
@@ -43,4 +44,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+textarea {
+  padding: .8em;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

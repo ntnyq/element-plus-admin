@@ -1,15 +1,14 @@
 {
   "name": "element-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:analyzer": "vue-cli-service build --mode analyzer",
-    "lint": "npm run lint:js && npm run lint:style",
-    "lint:js": "vue-cli-service lint",
-    "lint:style": "stylelint '**/*.{vue,scss}'",
-    "fix:style": "stylelint '**/*.{vue,scss}' --fix && npm run lint:style",
+    "lint": "npm run lint:script && npm run lint:style",
+    "lint:script": "vue-cli-service lint",
+    "lint:style": "stylelint --fix \"src/**/*.{vue,scss}\"",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "gitHooks": {
@@ -21,7 +20,7 @@
       "git add"
     ],
     "src/**/*.{scss,vue}": [
-      "npm run fix:style",
+      "stylelint --fix",
       "git add"
     ]
   },
