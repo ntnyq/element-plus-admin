@@ -93,11 +93,7 @@ export default {
 
   methods: {
     showPwd () {
-      if (this.passwordType === 'password') {
-        this.passwordType = ''
-      } else {
-        this.passwordType = 'password'
-      }
+      this.passwordType = this.passwordType === 'password' ? '' : 'password'
     },
 
     handleLogin () {

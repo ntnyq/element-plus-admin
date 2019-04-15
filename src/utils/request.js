@@ -1,13 +1,17 @@
 import axios from 'axios'
 import Qs from 'qs'
 import { Notification } from 'element-ui'
-import { API_HOST } from '@/config'
 import { getToken } from '@/utils/auth'
+
+const {
+  VUE_APP_API_HOST,
+  VUE_APP_REQUEST_TIMEOUT = 1e4
+} = process.env
 
 // 若有多个业务域名，则创建多个实例
 const instance = axios.create({
-  baseURL: API_HOST || process.env.VUE_APP_API_HOST,
-  timeout: process.env.VUE_APP_REQUEST_TIMEOUT || 1e4
+  baseURL: VUE_APP_API_HOST,
+  timeout: VUE_APP_REQUEST_TIMEOUT
 })
 
 /**
@@ -77,6 +81,8 @@ instance.interceptors.response.use(
       return data
     } else if (data.code && data.code === '401') {
       window.location.href = '/path_to_your/login.html'
+      window.location.reload()
+
       return Promise.reject(data)
     } else {
       Notification.error(data.msg || '接口返回出错!')
@@ -102,19 +108,22 @@ instance.interceptors.response.use(
  * @param  {Object} opts   请求配置参数
  * @return {Promise}       异步Promise
  */
-export default function (method, path, params = {}, opts = {}) {
+export default function (path, {
+  method = 'post',
+  params = {},
+  options = {}
+} = {}) {
   method = method.toLowerCase()
-
   switch (method) {
     case 'get':
       return instance.get(path, { params })
     case 'post':
-      return instance.post(path, params, opts)
+      return instance.post(path, params, options)
     case 'delete':
       return instance.delete(path, { params })
     case 'put':
       return instance.put(path, params)
     default:
-      return Promise.reject(new Error(`未知的method---${method}`))
+      return Promise.reject(new Error(`未知的method--${method}`))
   }
 }
