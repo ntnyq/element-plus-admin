@@ -6,14 +6,15 @@
       href="javascript:;"
       role="button"
     >
-      <svg-icon :icon-class="isCollapse ? 'right' : 'hamburger'" />
+      <svg-icon :name="isCollapse ? 'right' : 'hamburger'" />
     </a>
-    <a
+    <router-link
+      to="/"
       class="brand fl"
-      href="./"
     >
       Element Admin
-    </a>
+    </router-link>
+
     <div class="operations fr">
       <el-dropdown
         @command="handleCommand"
@@ -22,7 +23,7 @@
         class="drop-menu"
       >
         <span class="icon-user">
-          <svg-icon icon-class="user" />
+          <svg-icon name="user" />
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item
@@ -75,7 +76,9 @@ export default {
           this.$message.success('退出系统成功')
           this.$router.push({ name: 'Login' })
           break
+
         default:
+          this.$message.info(command)
           break
       }
     }

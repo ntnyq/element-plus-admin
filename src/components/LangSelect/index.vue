@@ -6,8 +6,8 @@
   >
     <div>
       <svg-icon
-        class-name="international-icon"
-        icon-class="language"
+        class="international-icon"
+        name="language"
       />
     </div>
     <el-dropdown-menu slot="dropdown">
@@ -24,13 +24,14 @@
 </template>
 
 <script>
-import { localeKeys } from '@/i18n'
+import { mapGetters } from 'vuex'
+import { localeKeys } from '@i18n'
 
 export default {
   computed: {
-    language () {
-      return this.$store.getters.language
-    }
+    ...mapGetters([
+      'language'
+    ])
   },
 
   data () {
@@ -52,7 +53,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .international-icon {
   font-size: 20px;
   cursor: pointer;

@@ -3034,6 +3034,11 @@ cssesc@^2.0.0:
   resolved "http://registry.npm.taobao.org/cssesc/download/cssesc-2.0.0.tgz#3b13bd1bb1cb36e1bcb5a4dcd27f54c5dcb35703"
   integrity sha1-OxO9G7HLNuG8taTc0n9UxdyzVwM=
 
+cssesc@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
+  integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
+
 cssnano-preset-default@^4.0.0, cssnano-preset-default@^4.0.7:
   version "4.0.7"
   resolved "http://registry.npm.taobao.org/cssnano-preset-default/download/cssnano-preset-default-4.0.7.tgz#51ec662ccfca0f88b396dcd9679cdb931be17f76"
@@ -3631,10 +3636,10 @@ elegant-spinner@^1.0.1:
   resolved "http://registry.npm.taobao.org/elegant-spinner/download/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
   integrity sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=
 
-element-ui@^2.7.2:
-  version "2.7.2"
-  resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.7.2.tgz#8bc5bef5c3c53a2170422516b4324e70069c23d1"
-  integrity sha1-i8W+9cPFOiFwQiUWtDJOcAacI9E=
+element-ui@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.npm.taobao.org/element-ui/download/element-ui-2.8.2.tgz#21a7a4cb92616b0f8b75d4d4e637d3a1cd8c09de"
+  integrity sha1-Iaeky5Jhaw+LddTU5jfToc2MCd4=
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
@@ -4733,10 +4738,10 @@ get-stdin@^4.0.1:
   resolved "http://registry.npm.taobao.org/get-stdin/download/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
   integrity sha1-uWjGsKBDhDJJAui/Gl3zJXmkUP4=
 
-get-stdin@^6.0.0:
-  version "6.0.0"
-  resolved "http://registry.npm.taobao.org/get-stdin/download/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
-  integrity sha1-ngm/cSs2CrkiXoEgSPcf3pyJZXs=
+get-stdin@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npm.taobao.org/get-stdin/download/get-stdin-7.0.0.tgz#8d5de98f15171a125c5e516643c7a6d0ea8a96f6"
+  integrity sha1-jV3pjxUXGhJcXlFmQ8em0OqKlvY=
 
 get-stream@3.0.0, get-stream@^3.0.0:
   version "3.0.0"
@@ -6129,7 +6134,7 @@ js-yaml@^3.10.0, js-yaml@^3.12.0, js-yaml@^3.9.0, js-yaml@^3.9.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@^3.13.0:
+js-yaml@^3.13.0, js-yaml@^3.13.1:
   version "3.13.1"
   resolved "http://registry.npm.taobao.org/js-yaml/download/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha1-r/FRswv9+o5J4F2iLnQV6d+jeEc=
@@ -6470,16 +6475,6 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash.assign@^4.2.0:
-  version "4.2.0"
-  resolved "http://registry.npm.taobao.org/lodash.assign/download/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
-  integrity sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
-
-lodash.clonedeep@^4.3.2:
-  version "4.5.0"
-  resolved "http://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
-  integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
-
 lodash.defaultsdeep@^4.6.0:
   version "4.6.0"
   resolved "http://registry.npm.taobao.org/lodash.defaultsdeep/download/lodash.defaultsdeep-4.6.0.tgz#bec1024f85b1bd96cbea405b23c14ad6443a6f81"
@@ -6509,11 +6504,6 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "http://registry.npm.taobao.org/lodash.memoize/download/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-
-lodash.mergewith@^4.6.0:
-  version "4.6.1"
-  resolved "http://registry.npm.taobao.org/lodash.mergewith/download/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
-  integrity sha1-Y5BX5ybDr72z59QnQcqo1uQzWSc=
 
 lodash.tail@^4.1.1:
   version "4.1.1"
@@ -7077,10 +7067,10 @@ mute-stream@0.0.7:
   resolved "http://registry.npm.taobao.org/mute-stream/download/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.10.0:
-  version "2.12.1"
-  resolved "http://registry.npm.taobao.org/nan/download/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
-  integrity sha1-exqhk+mqhgV+PHu9CsRI53CSVVI=
+nan@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.npm.taobao.org/nan/download/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
+  integrity sha1-9R3Hrma6fV1V4ebU2AkugCya7+c=
 
 nan@^2.9.2:
   version "2.13.1"
@@ -7231,10 +7221,10 @@ node-releases@^1.1.13:
   dependencies:
     semver "^5.3.0"
 
-node-sass@^4.9.0:
-  version "4.11.0"
-  resolved "http://registry.npm.taobao.org/node-sass/download/node-sass-4.11.0.tgz#183faec398e9cbe93ba43362e2768ca988a6369a"
-  integrity sha1-GD+uw5jpy+k7pDNi4naMqYimNpo=
+node-sass@^4.12.0:
+  version "4.12.0"
+  resolved "https://registry.npm.taobao.org/node-sass/download/node-sass-4.12.0.tgz#0914f531932380114a30cc5fa4fa63233a25f017"
+  integrity sha1-CRT1MZMjgBFKMMxfpPpjIzol8Bc=
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -7243,12 +7233,10 @@ node-sass@^4.9.0:
     get-stdin "^4.0.1"
     glob "^7.0.3"
     in-publish "^2.0.0"
-    lodash.assign "^4.2.0"
-    lodash.clonedeep "^4.3.2"
-    lodash.mergewith "^4.6.0"
+    lodash "^4.17.11"
     meow "^3.7.0"
     mkdirp "^0.5.1"
-    nan "^2.10.0"
+    nan "^2.13.2"
     node-gyp "^3.8.0"
     npmlog "^4.0.0"
     request "^2.88.0"
@@ -8367,6 +8355,15 @@ postcss-selector-parser@^5.0.0, postcss-selector-parser@^5.0.0-rc.4:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
+postcss-selector-parser@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
+  integrity sha1-k0z3mdAWyDQRhZ4J3Oyt4BKG7Fw=
+  dependencies:
+    cssesc "^3.0.0"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
 postcss-svgo@^4.0.2:
   version "4.0.2"
   resolved "http://registry.npm.taobao.org/postcss-svgo/download/postcss-svgo-4.0.2.tgz#17b997bc711b333bab143aaed3b8d3d6e3d38258"
@@ -9103,6 +9100,11 @@ resolve-from@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/resolve-from/download/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
   integrity sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+
+resolve-from@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/resolve-from/download/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
+  integrity sha1-w1IlhD3493bfIcV1V7wIfp39/Gk=
 
 resolve-url@^0.2.1:
   version "0.2.1"
@@ -10015,15 +10017,15 @@ stylelint-config-standard@^18.3.0:
   dependencies:
     stylelint-config-recommended "^2.2.0"
 
-stylelint-scss@^3.5.3:
-  version "3.5.4"
-  resolved "http://registry.npm.taobao.org/stylelint-scss/download/stylelint-scss-3.5.4.tgz#ff3ee989ac48f5c4f57313523b5ace059ffd6cc2"
-  integrity sha1-/z7piaxI9cT1cxNSO1rOBZ/9bMI=
+stylelint-scss@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npm.taobao.org/stylelint-scss/download/stylelint-scss-3.6.0.tgz#5fafe815b68119965f7aa75f0cfc1b04ae4021bd"
+  integrity sha1-X6/oFbaBGZZfeqdfDPwbBK5AIb0=
   dependencies:
     lodash "^4.17.11"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
-    postcss-selector-parser "^5.0.0"
+    postcss-selector-parser "^6.0.2"
     postcss-value-parser "^3.3.1"
 
 stylelint-webpack-plugin@^0.10.5:
@@ -10036,10 +10038,10 @@ stylelint-webpack-plugin@^0.10.5:
     object-assign "^4.1.0"
     ramda "^0.25.0"
 
-stylelint@^10.0.0:
-  version "10.0.0"
-  resolved "http://registry.npm.taobao.org/stylelint/download/stylelint-10.0.0.tgz#5e7ad496d1a66671c068df327429133e2baf3264"
-  integrity sha1-XnrUltGmZnHAaN8ydCkTPiuvMmQ=
+stylelint@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.npm.taobao.org/stylelint/download/stylelint-10.0.1.tgz#f85cd9755e905d826023d67df62b32716fa6dfb4"
+  integrity sha1-+FzZdV6QXYJgI9Z99isycW+m37Q=
   dependencies:
     autoprefixer "^9.5.1"
     balanced-match "^1.0.0"
@@ -10048,7 +10050,7 @@ stylelint@^10.0.0:
     debug "^4.1.1"
     execall "^1.0.0"
     file-entry-cache "^5.0.1"
-    get-stdin "^6.0.0"
+    get-stdin "^7.0.0"
     global-modules "^2.0.0"
     globby "^9.2.0"
     globjoin "^0.1.4"
@@ -10079,7 +10081,7 @@ stylelint@^10.0.0:
     postcss-selector-parser "^3.1.0"
     postcss-syntax "^0.36.2"
     postcss-value-parser "^3.3.1"
-    resolve-from "^4.0.0"
+    resolve-from "^5.0.0"
     signal-exit "^3.0.2"
     slash "^2.0.0"
     specificity "^0.4.1"
@@ -10190,10 +10192,10 @@ svgo@^1.0.0, svgo@^1.0.5:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-svgo@^1.2.1:
-  version "1.2.1"
-  resolved "http://registry.npm.taobao.org/svgo/download/svgo-1.2.1.tgz#3fedde75a4016193e1c2608b5fdef6f3e4a9fd99"
-  integrity sha1-P+3edaQBYZPhwmCLX9728+Sp/Zk=
+svgo@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npm.taobao.org/svgo/download/svgo-1.2.2.tgz#0253d34eccf2aed4ad4f283e11ee75198f9d7316"
+  integrity sha1-AlPTTszyrtStTyg+Ee51GY+dcxY=
   dependencies:
     chalk "^2.4.1"
     coa "^2.0.2"
@@ -10202,7 +10204,7 @@ svgo@^1.2.1:
     css-tree "1.0.0-alpha.28"
     css-url-regex "^1.1.0"
     csso "^3.5.1"
-    js-yaml "^3.13.0"
+    js-yaml "^3.13.1"
     mkdirp "~0.5.1"
     object.values "^1.1.0"
     sax "~1.2.4"
@@ -10961,10 +10963,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha1-J1b0bLMlgFTF9HI96K5+hzAqHM8=
 
-vue-i18n@^8.10.0:
-  version "8.10.0"
-  resolved "http://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.10.0.tgz#e95f215b5548bedf5610c14506acb3438717b6bd"
-  integrity sha1-6V8hW1VIvt9WEMFFBqyzQ4cXtr0=
+vue-i18n@^8.11.1:
+  version "8.11.1"
+  resolved "https://registry.npm.taobao.org/vue-i18n/download/vue-i18n-8.11.1.tgz#1a17792d6d2d7abf41444c256f232507a91cbd30"
+  integrity sha1-Ghd5LW0ter9BREwlbyMlB6kcvTA=
 
 vue-loader@^15.7.0:
   version "15.7.0"
@@ -10977,10 +10979,10 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.4:
-  version "3.0.4"
-  resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-3.0.4.tgz#d6023e9db64d0b335771f0316c8bde8956f2d75d"
-  integrity sha1-1gI+nbZNCzNXcfAxbIveiVby110=
+vue-router@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.0.6.tgz#2e4f0f9cbb0b96d0205ab2690cfe588935136ac3"
+  integrity sha1-Lk8PnLsLltAgWrJpDP5YiTUTasM=
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

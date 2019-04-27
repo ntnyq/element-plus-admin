@@ -18,7 +18,7 @@ export default {
     const vnodes = []
 
     if (icon) {
-      vnodes.push(<svg-icon icon-class={(icon)} class="menu-item-icon" />)
+      vnodes.push(<svg-icon name={(icon)} class="menu-item-icon" />)
     }
 
     if (title) {

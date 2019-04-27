@@ -1,3 +1,5 @@
+const { aliases, plugins } = require('./project.config')
+
 module.exports = {
   publicPath: './',
 
@@ -15,37 +17,28 @@ module.exports = {
   },
 
   configureWebpack: config => {
-    config.plugins.push(
-      ...require('./plugins.config')
-    )
-
-    // custom aliases
-    config.resolve.alias = require('./aliases.config').webpack
+    config.plugins.push(...plugins)
+    config.resolve.alias = aliases
   },
 
   chainWebpack: config => {
     config.resolve.extensions.store.add('.scss')
 
-    // svg loader
-    const svgRule = config.module.rule('svg')
-
-    svgRule.uses.clear()
-    svgRule.exclude.add(/node_modules/)
-    svgRule.include.add(`${__dirname}/src/icons`)
-    svgRule
+    // set svg-sprite-loader
+    config.module
+      .rule('svg')
+      .exclude.add(`${__dirname}/src/icons`)
+      .end()
+    config.module
+      .rule('icons')
       .test(/\.svg$/)
+      .include.add(`${__dirname}/src/icons`)
+      .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
         symbolId: 'icon-[name]'
       })
-
-    // images
-    const imagesRule = config.module.rule('images')
-
-    imagesRule.exclude.add(`${__dirname}/src/icons`)
-    config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+      .end()
   }
 }

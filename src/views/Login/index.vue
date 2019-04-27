@@ -11,7 +11,7 @@
       >
         <el-form-item prop="username">
           <span class="form-item-icon">
-            <svg-icon icon-class="user" />
+            <svg-icon name="user" />
           </span>
           <el-input
             v-model.trim="loginForm.username"
@@ -24,27 +24,27 @@
 
         <el-form-item prop="password">
           <span class="form-item-icon">
-            <svg-icon icon-class="password" />
+            <svg-icon name="password" />
           </span>
           <el-input
-            :type="passwordType"
+            @keyup.enter.native="handleLogin"
             v-model.trim="loginForm.password"
+            :type="passwordType"
             :placeholder="`请输入密码`"
             name="password"
             auto-complete="on"
-            @keyup.enter.native="handleLogin"
           />
           <svg-icon
-            class="show-pwd"
             @click.native="showPwd"
-            icon-class="eye"
+            class="show-pwd"
+            name="eye"
           />
         </el-form-item>
         <el-button
+          @click.native.prevent="handleLogin"
           :loading="loading"
           type="primary"
           class="login-btn"
-          @click.native.prevent="handleLogin"
         >
           登录
         </el-button>
@@ -124,8 +124,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .login {
+  position: relative;
+
   .login-btn {
     width: 100%;
     margin: 30px 0;

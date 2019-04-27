@@ -18,10 +18,7 @@
             v-clipboard:success="handleCopySuccess"
             class="icon-item"
           >
-            <svg-icon
-              :icon-class="icon"
-              class-name="disabled"
-            />
+            <svg-icon :name="icon" />
             <span>{{ icon }}</span>
           </div>
         </el-tooltip>
@@ -44,7 +41,7 @@ export default {
 
   methods: {
     generateIconCode (symbol) {
-      return `<svg-icon icon-class="${symbol}" />`
+      return `<svg-icon name="${symbol}" />`
     },
 
     handleCopySuccess () {
@@ -54,7 +51,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .icons-container {
   position: relative;
   flex: 1 0;
