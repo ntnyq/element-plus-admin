@@ -1,20 +1,6 @@
-import Icon from './Icon'
+import Vue from 'vue'
+import * as GlobalComponents from './_global'
 
-const components = [ Icon ]
-
-const install = Vue => {
-  if (install.installed) {
-    return
-  }
-
-  components.map(component => {
-    Vue.component(component.name, component)
-  })
-}
-
-const component = {
-  install,
-  Icon
-}
-
-export default component
+Object.keys(GlobalComponents).map(componentName => {
+  Vue.component(componentName, GlobalComponents[componentName])
+})
