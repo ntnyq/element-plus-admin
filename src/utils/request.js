@@ -2,15 +2,9 @@ import axios from 'axios'
 import Qs from 'qs'
 import { Notification } from 'element-ui'
 import router from '@router'
-import {
-  getToken,
-  removeToken
-} from '@utils/auth'
+import { getToken, removeToken } from '@utils/auth'
 
-const {
-  VUE_APP_API_HOST,
-  VUE_APP_REQUEST_TIMEOUT = 1e4
-} = process.env
+const { VUE_APP_API_HOST, VUE_APP_REQUEST_TIMEOUT = 1e4 } = process.env
 
 const instance = axios.create({
   baseURL: VUE_APP_API_HOST,
@@ -60,7 +54,8 @@ instance.interceptors.request.use(
     }
 
     return req
-  }, err => {
+  },
+  err => {
     return Promise.reject(err)
   }
 )
@@ -86,7 +81,7 @@ instance.interceptors.response.use(
       // window.location.reload()
     } else {
       Notification.error(data.msg || '接口返回状态码异常!')
-      return Promise.reject(data)
+      return Promise.reject(new Error(data.msg || '接口返回状态码异常'))
     }
   },
   err => {
@@ -100,11 +95,7 @@ instance.interceptors.response.use(
   }
 )
 
-export default function (path, {
-  method = 'POST',
-  params = {},
-  options = {}
-} = {}) {
+export default function (path, { method = 'POST', params = {}, options = {} } = {}) {
   method = method.toLowerCase()
   switch (method) {
     case 'GET':
