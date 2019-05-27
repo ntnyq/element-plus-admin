@@ -35,12 +35,12 @@
     "vue-clipboard2": "^0.3.0",
     "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.6",
-    "vuex": "^3.0.1"
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-component": "^1.1.1",
@@ -49,7 +49,7 @@
     "hygen": "^4.0.2",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.3.0",
-    "lint-staged": "^8.1.6",
+    "lint-staged": "^8.1.7",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.0.1",
     "stylelint": "^10.0.1",
