@@ -1,12 +1,14 @@
+const path = require('path')
 const webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 
+const resolve = (...args) => path.resolve(__dirname, ...args)
 const {
-  NODE_ENV,
-  VUE_APP_ANALYZER
+  NODE_ENV = 'production',
+  VUE_APP_ANALYZER = false
 } = process.env
 
 const aliasesConfig = {
@@ -14,12 +16,14 @@ const aliasesConfig = {
   '@assets': 'src/assets',
   '@components': 'src/components',
   '@config': 'src/config',
+  '@constants': 'src/constants',
+  '@directives': 'src/directives',
   '@filters': 'src/filters',
+  '@fonts': 'src/assets/fonts',
   '@icons': 'src/icons',
   '@i18n': 'src/i18n',
-  '@plugins': 'src/plugins',
   '@images': 'src/assets/images',
-  '@fonts': 'src/assets/fonts',
+  '@plugins': 'src/plugins',
   '@router': 'src/router',
   '@services': 'src/services',
   '@styles': 'src/styles',
@@ -53,16 +57,17 @@ const plugins = [
         })
       ]),
   ...(
-    VUE_APP_ANALYZER ? [
-      new BundleAnalyzerPlugin()
-    ]
+    VUE_APP_ANALYZER
+      ? [
+        new BundleAnalyzerPlugin()
+      ]
       : [])
 ]
 
 exports.aliases = {}
 
 for (const alias in aliasesConfig) {
-  exports.aliases[alias] = `${__dirname}/${aliasesConfig[alias]}`
+  exports.aliases[alias] = resolve(aliasesConfig[alias])
 }
 
 exports.plugins = plugins

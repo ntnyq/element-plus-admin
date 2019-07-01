@@ -1,4 +1,6 @@
+const path = require('path')
 const { aliases, plugins } = require('./project.config')
+const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
   publicPath: './',
@@ -6,7 +8,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: '@import "@/styles/core/style";'
+        data: '@import "@styles/core/style";'
       }
     }
   },
@@ -27,12 +29,12 @@ module.exports = {
     // set svg-sprite-loader
     config.module
       .rule('svg')
-      .exclude.add(`${__dirname}/src/icons`)
+      .exclude.add(resolve('src/icons'))
       .end()
     config.module
       .rule('icons')
       .test(/\.svg$/)
-      .include.add(`${__dirname}/src/icons`)
+      .include.add(resolve('src/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
