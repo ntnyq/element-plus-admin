@@ -1,28 +1,29 @@
 import Cookies from 'js-cookie'
-
-const TokenKey = process.env.VUE_APP_TOKEN_KEY || 'AMDIN_TOKEN'
-const UsernameKey = process.env.VUE_APP_USERNAME_KEY || 'ADMIN_USERNAME'
+import {
+  APP_TOKEN_KEY,
+  APP_USERNAME_KEY
+} from '@constants/storage-key'
 
 export function getToken () {
-  return Cookies.get(TokenKey)
+  return Cookies.get(APP_TOKEN_KEY)
 }
 
 export function setToken (token) {
-  return Cookies.set(TokenKey, token)
+  return Cookies.set(APP_TOKEN_KEY, token)
 }
 
 export function removeToken () {
-  return Cookies.remove(TokenKey)
+  return Cookies.remove(APP_TOKEN_KEY)
 }
 
 export function getUsername () {
-  return Cookies.get(UsernameKey)
+  return Cookies.get(APP_USERNAME_KEY)
 }
 
 export function setUsername (username) {
-  return Cookies.set(UsernameKey, username)
+  return Cookies.set(APP_USERNAME_KEY, username)
 }
 
-export function removeUsername (username) {
-  return Cookies.remove(username)
+export function removeUsername () {
+  return Cookies.remove(APP_USERNAME_KEY)
 }

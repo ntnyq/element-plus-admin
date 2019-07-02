@@ -1,14 +1,29 @@
 import axios from 'axios'
 import Qs from 'qs'
-import { Notification } from 'element-ui'
-import router from '@router'
-import { getToken, removeToken } from '@utils/auth'
+import {
+  Message,
+  MessageBox
+} from 'element-ui'
+import store from '@store'
+import {
+  getToken
+} from '@utils/auth'
+import {
+  CODE_SUCCESS,
+  CODE_NO_AUTH,
+  CODE_NOT_LOGIN,
+  CODE_WRONG_PARAMS
+} from '@constants/http-status'
 
-const { VUE_APP_API_HOST, VUE_APP_REQUEST_TIMEOUT = 1e4 } = process.env
+const {
+  VUE_APP_API_HOST,
+  VUE_APP_REQUEST_TIMEOUT = 1e4
+} = process.env
 
 const instance = axios.create({
   baseURL: VUE_APP_API_HOST,
-  timeout: VUE_APP_REQUEST_TIMEOUT
+  timeout: VUE_APP_REQUEST_TIMEOUT,
+  withCredentials: true
 })
 
 instance.interceptors.request.use(
@@ -62,41 +77,65 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   res => {
-    const { data } = res
+    const { data = {} } = res
 
-    if (data.code && data.code === 200) {
-      return data
-    } else if (data.code && data.code === 401) {
-      Notification.error('用户登陆过期，请重新登陆')
-      removeToken()
-      setTimeout(() => {
-        router.replace({
-          path: '/login',
-          query: {
-            redirect: router.currentRoute.fullPath
-          }
-        })
-      }, 1e3)
-      // window.location.href = '/path_to_your/login.html'
-      // window.location.reload()
-    } else {
-      Notification.error(data.msg || '接口返回状态码异常!')
-      return Promise.reject(new Error(data.msg || '接口返回状态码异常'))
+    switch (data.code) {
+      case CODE_SUCCESS:
+        return data.data
+
+      case CODE_NO_AUTH:
+        Message.warning({ message: data.msg || '当前用户无操作权限' })
+
+        return Promise.reject(new Error(data.msg || '当前用户无操作权限'))
+
+      case CODE_NOT_LOGIN:
+        MessageBox
+          .confirm(
+            '您的登录状态已失效，您可以选择重新登录，或者停留在此页面',
+            '提示',
+            {
+              confirmButtonText: '重新登录',
+              cancelButtonText: '取消',
+              type: 'warning'
+            }
+          )
+          .then(() => {
+            store.dispatch('logoutFE')
+              .then(() => {
+                window.location.reload()
+              })
+          })
+
+        return Promise.reject(new Error(data.msg || '身份验证失败，需重新登录'))
+
+      case CODE_WRONG_PARAMS:
+        Message.error({ message: data.msg || '请求参数有误' })
+
+        return Promise.reject(new Error(data.msg || '请求参数有误'))
+
+      default:
+        Message.error({ message: data.msg || '未知的状态码' })
+
+        return Promise.reject(new Error(data.msg || '未知的状态码'))
     }
   },
   err => {
     if (err.code === 'ECONNABORTED' && err.message.includes('timeout')) {
-      Notification.error('接口请求超时，请刷新!')
+      Message.error({ message: '接口响应超时，请重试' })
     } else {
-      Notification.error(err.msg || '接口服务器异常!')
+      Message.error({ message: err.message || '接口响应出错' })
     }
-
     return Promise.reject(err)
   }
 )
 
-export default function (path, { method = 'POST', params = {}, options = {} } = {}) {
-  method = method.toLowerCase()
+export default function (path, {
+  method = 'POST',
+  params = {},
+  options = {}
+} = {}) {
+  method = method.toUpperCase()
+
   switch (method) {
     case 'GET':
       return instance.get(path, { params })
