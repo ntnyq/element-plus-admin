@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/ntnyq/element-boilerplate/compare/v0.1.3...v0.1.4) (2019-08-04)
+
+
+### Bug Fixes
+
+* fix i18n in vue-script ([4fdb743](https://github.com/ntnyq/element-boilerplate/commit/4fdb743))
+
+
+
 ### 0.1.3 (2019-07-01)
 
 
