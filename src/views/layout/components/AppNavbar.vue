@@ -45,7 +45,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import LangSelect from '@/components/LangSelect'
+import LangSelect from '@components/LangSelect'
 
 export default {
   name: 'AppNavbar',
@@ -73,7 +73,7 @@ export default {
 
       switch (command) {
         case 'logout':
-          this.$message.success('退出系统成功')
+          this.$message.success(this.$i18n.t('tip.logoutSuccess'))
           this.$router.push({ name: 'Login' })
           break
 

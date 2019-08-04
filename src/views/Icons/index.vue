@@ -28,7 +28,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import VueClipboard from 'vue-clipboard2'
 import icons from './helper'
+
+Vue.use(VueClipboard)
 
 export default {
   name: 'Icons',

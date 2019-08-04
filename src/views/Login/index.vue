@@ -100,7 +100,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$message.success('登录成功！')
+          this.$message.success(this.$i18n.t('tip.loginSuccess'))
           setTimeout(() => {
             this.loading = false
             this.$router.push({ path: this.redirect || '/' })

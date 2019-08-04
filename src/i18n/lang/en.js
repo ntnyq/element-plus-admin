@@ -11,5 +11,10 @@ export default {
     en: 'English',
     zh: 'Chinise'
   },
-  iconTitle: 'Project Icons'
+  iconTitle: 'Project Icons',
+  tip: {
+    languageSwitched: 'Language switches sucessfully',
+    logoutSuccess: 'Logout sucessfully',
+    loginSuccess: 'Login sucessfully'
+  }
 }

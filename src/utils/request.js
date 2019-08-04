@@ -99,11 +99,9 @@ instance.interceptors.response.use(
               type: 'warning'
             }
           )
-          .then(() => {
-            store.dispatch('logoutFE')
-              .then(() => {
-                window.location.reload()
-              })
+          .then(async () => {
+            await store.dispatch('logoutFE')
+            window.location.reload()
           })
 
         return Promise.reject(new Error(data.msg || '身份验证失败，需重新登录'))

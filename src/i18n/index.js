@@ -9,12 +9,14 @@ let localeKeys = []
 function loadLocaleMessages () {
   const locales = require.context('./lang', true, /[A-Za-z0-9-_,\s]+\.js$/i)
   const messages = {}
+
   locales.keys().forEach(key => {
     const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+
     if (matched && matched.length > 1) {
       const locale = matched[1]
-      messages[locale] = locales(key).default
 
+      messages[locale] = locales(key).default || locales(key)
       localeKeys.push(locale)
     }
   })
@@ -27,5 +29,7 @@ const i18n = new VueI18n({
   messages: loadLocaleMessages()
 })
 
-export default i18n
-export { localeKeys }
+export {
+  i18n as default,
+  localeKeys
+}
