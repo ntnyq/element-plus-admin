@@ -1,4 +1,3 @@
-# Travis-CI config
 language: node_js
 node_js: stable
 
@@ -10,7 +9,6 @@ cache:
 script:
   - yarn build
 
-# Deploy
 after_script:
   - cd ./dist
   - git init
@@ -19,10 +17,20 @@ after_script:
   - git add .
   - git commit -m ":rocket:update demo"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  - scp -r ./* ntnyq@47.52.31.173:/home/ntnyq/www/demo/admin
 
 branches:
   only:
     - master
+
 env:
- global:
-   - GH_REF: github.com/ntnyq/element-boilerplate.git
+  global:
+    - GH_REF: github.com/ntnyq/element-boilerplate.git
+
+addons:
+  ssh_known_hosts: 47.52.31.173
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_41cf0b037a45_key -iv $encrypted_41cf0b037a45_iv
+    -in id_rsa_deploy.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
