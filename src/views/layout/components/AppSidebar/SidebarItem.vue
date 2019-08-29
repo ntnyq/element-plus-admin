@@ -80,6 +80,7 @@ export default {
   computed: {
     visibleChildrenRoutes () {
       const { item } = this
+
       return item.children ? item.children.filter(item => !item.hidden) : []
     }
   },

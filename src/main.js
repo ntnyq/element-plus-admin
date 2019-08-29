@@ -3,6 +3,7 @@ import App from './App'
 import router from '@router'
 import store from '@store'
 import i18n from '@i18n'
+
 import '@plugins/element'
 import '@styles/style'
 import '@icons'

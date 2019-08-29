@@ -6,7 +6,7 @@
       href="javascript:;"
       role="button"
     >
-      <svg-icon :name="isCollapse ? 'right' : 'hamburger'" />
+      <svg-icon :name="isCollapse ? 'hamburger' : 'left'" />
     </a>
     <router-link
       to="/"
