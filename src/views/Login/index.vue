@@ -36,7 +36,6 @@
           />
           <svg-icon
             @click.native="showPwd"
-            class="show-pwd"
             name="eye"
           />
         </el-form-item>
@@ -123,16 +122,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.login {
-  position: relative;
-
-  .login-btn {
-    width: 100%;
-    margin: 30px 0;
-    padding: 15px 20px;
-    font-size: 28px;
-  }
-}
-</style>

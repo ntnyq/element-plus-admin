@@ -39,7 +39,7 @@
       font-size: 24px;
     }
 
-    .show-pwd {
+    .svg-icon-eye {
       position: absolute;
       right: 10px;
       top: 50%;
@@ -54,5 +54,12 @@
         color: #ccc;
       }
     }
+  }
+
+  &-btn {
+    width: 100%;
+    margin: 30px 0;
+    padding: 15px 20px;
+    font-size: 28px;
   }
 }

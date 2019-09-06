@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:analyzer": "vue-cli-service build --mode analyzer",
+    "build:analyzer": "vue-cli-service build --report && anywhere -d dist -f /report.html",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "vue-cli-service lint",
     "lint:style": "stylelint --fix \"src/**/*.{vue,scss}\"",
@@ -16,11 +16,11 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,vue}": [
+    "*.{js,vue}": [
       "vue-cli-service lint",
       "git add"
     ],
-    "src/**/*.{scss,vue}": [
+    "*.{scss,vue}": [
       "stylelint --fix",
       "git add"
     ]
@@ -42,6 +42,7 @@
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-standard": "^4.0.0",
+    "anywhere": "^1.5.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
     "eslint": "^6.2.2",
@@ -59,7 +60,9 @@
     "svg-sprite-loader": "^4.1.6",
     "svgo": "^1.3.0",
     "vue-cli-plugin-element": "^1.0.0",
-    "vue-template-compiler": "^2.6.9",
-    "webpack-bundle-analyzer": "^3.4.1"
-  }
+    "vue-template-compiler": "^2.6.9"
+  },
+  "repository": "https://github.com/ntnyq/element-boilerplate.git",
+  "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)",
+  "license": "MIT"
 }

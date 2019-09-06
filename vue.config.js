@@ -3,7 +3,7 @@ const { aliases, plugins } = require('./project.config')
 const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
-  publicPath: './',
+  publicPath: process.env.BASE_URL || './',
 
   css: {
     loaderOptions: {
