@@ -22,3 +22,9 @@ $side-nav-item-height: 60px;
 $sub-menu-height: 90px;
 $sub-menu-item-width: 200px;
 $sub-menu-item-height: 60px;
+
+/* stylelint-disable */
+:export {
+  primarycolor: $primary-color;
+}
+/* stylelint-enable */

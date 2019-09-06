@@ -5,10 +5,7 @@
     @command="handleSetLanguage"
   >
     <div>
-      <svg-icon
-        class="international-icon"
-        name="language"
-      />
+      <svg-icon name="language" />
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item
@@ -54,9 +51,11 @@ export default {
 </script>
 
 <style lang="scss">
-.international-icon {
-  font-size: 20px;
-  cursor: pointer;
-  vertical-align: -5px !important;
+.international {
+  .svg-icon-language {
+    font-size: 20px;
+    vertical-align: -5px;
+    cursor: pointer;
+  }
 }
 </style>
