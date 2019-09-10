@@ -20,7 +20,7 @@ module.exports = {
 
   configureWebpack: config => {
     config.plugins.push(...plugins)
-    config.resolve.alias = aliases
+    config.resolve.alias = { ...config.resolve.alias, ...aliases }
   },
 
   chainWebpack: config => {
@@ -31,6 +31,7 @@ module.exports = {
       .rule('svg')
       .exclude.add(resolve('src/icons'))
       .end()
+
     config.module
       .rule('icons')
       .test(/\.svg$/)

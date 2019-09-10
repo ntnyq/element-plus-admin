@@ -1,31 +1,7 @@
-const path = require('path')
 const webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
-
-const resolve = (...args) => path.resolve(__dirname, ...args)
-
-const aliasesConfig = {
-  '@': 'src',
-  '@assets': 'src/assets',
-  '@components': 'src/components',
-  '@config': 'src/config',
-  '@constants': 'src/constants',
-  '@directives': 'src/directives',
-  '@filters': 'src/filters',
-  '@fonts': 'src/assets/fonts',
-  '@icons': 'src/icons',
-  '@i18n': 'src/i18n',
-  '@images': 'src/assets/images',
-  '@plugins': 'src/plugins',
-  '@router': 'src/router',
-  '@services': 'src/services',
-  '@styles': 'src/styles',
-  '@store': 'src/store',
-  '@utils': 'src/utils',
-  '@views': 'src/views'
-}
 
 const plugins = [
   ...(process.env.NODE_ENV === 'production'
@@ -52,10 +28,23 @@ const plugins = [
     ])
 ]
 
-exports.aliases = {}
-
-for (const alias in aliasesConfig) {
-  exports.aliases[alias] = resolve(aliasesConfig[alias])
+exports.aliases = {
+  '@assets': '@/assets',
+  '@components': '@/components',
+  '@config': '@/config',
+  '@constants': '@/constants',
+  '@directives': '@/directives',
+  '@filters': '@/filters',
+  '@fonts': '@/assets/fonts',
+  '@icons': '@/icons',
+  '@i18n': '@/i18n',
+  '@images': '@/assets/images',
+  '@plugins': '@/plugins',
+  '@router': '@/router',
+  '@services': '@/services',
+  '@styles': '@/styles',
+  '@store': '@/store',
+  '@utils': '@/utils',
+  '@views': '@/views'
 }
-
 exports.plugins = plugins

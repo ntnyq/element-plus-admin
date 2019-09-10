@@ -6,10 +6,8 @@
       class="test-text"
     >
       I' in color
-      <code>
-        {{ primaryColor }}
-      </code>
-      and export from scss
+      <code>{{ primaryColor }}</code>
+      which is exported from scss
     </p>
   </div>
 </template>
