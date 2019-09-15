@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 import {
   APP_TOKEN_KEY,
-  APP_USERNAME_KEY
+  APP_USERNAME_KEY,
 } from '@constants/storage-key'
 
 export function getToken () {

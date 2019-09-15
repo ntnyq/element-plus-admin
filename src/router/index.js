@@ -4,11 +4,9 @@ import routes from './routes'
 
 Vue.use(VueRouter)
 
-let router = new VueRouter({
+const router = new VueRouter({
   routes,
-  scrollBehavior () {
-    return { y: 0 }
-  }
+  scrollBehavior: () => ({ y: 0 }),
 })
 
 export default router

@@ -28,7 +28,7 @@ export default {
   components: { SidebarItem },
 
   computed: {
-    ...mapState(['routers'])
-  }
+    ...mapState(['routers']),
+  },
 }
 </script>

@@ -5,16 +5,16 @@ export default {
     Icons: 'Icons',
     Example: 'Example',
     HomePage: 'HomePage',
-    Test: 'Test'
+    Test: 'Test',
   },
   language: {
     en: 'English',
-    zh: 'Chinise'
+    zh: 'Chinise',
   },
   iconTitle: 'Project Icons',
   tip: {
     languageSwitched: 'Language switches sucessfully',
     logoutSuccess: 'Logout sucessfully',
-    loginSuccess: 'Login sucessfully'
-  }
+    loginSuccess: 'Login sucessfully',
+  },
 }

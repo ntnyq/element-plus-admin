@@ -2,34 +2,34 @@ import axios from 'axios'
 import Qs from 'qs'
 import {
   Message,
-  MessageBox
+  MessageBox,
 } from 'element-ui'
 import store from '@store'
 import {
-  getToken
+  getToken,
 } from '@utils/auth'
 import {
   CODE_SUCCESS,
   CODE_NO_AUTH,
   CODE_NOT_LOGIN,
-  CODE_WRONG_PARAMS
+  CODE_WRONG_PARAMS,
 } from '@constants/http-status'
 
 const {
   VUE_APP_API_HOST,
-  VUE_APP_REQUEST_TIMEOUT = 1e4
+  VUE_APP_REQUEST_TIMEOUT = 1e4,
 } = process.env
 
 const instance = axios.create({
   baseURL: VUE_APP_API_HOST,
   timeout: VUE_APP_REQUEST_TIMEOUT,
-  withCredentials: true
+  withCredentials: true,
 })
 
 instance.interceptors.request.use(
   req => {
     // Set token here
-    req.headers['TICKET'] = getToken()
+    req.headers.TICKET = getToken()
 
     // transform post data to queryString
     if (req.method === 'post' && req.headers['Content-Type'] !== 'multipart/form-data') {
@@ -51,10 +51,10 @@ instance.interceptors.request.use(
     // 若为多图上传，则需将File类型的数据数组保存在`file[]`形式的字段内。
     if (req.headers['Content-Type'] === 'multipart/form-data') {
       const { data } = req
-      let fd = new FormData()
+      const fd = new FormData()
 
       for (const key in data) {
-        if (data.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
           if (key.endsWith('[]')) {
             data[key].forEach(item => {
               fd.append(key, item)
@@ -96,7 +96,7 @@ instance.interceptors.response.use(
             {
               confirmButtonText: '重新登录',
               cancelButtonText: '取消',
-              type: 'warning'
+              type: 'warning',
             }
           )
           .then(async () => {
@@ -130,7 +130,7 @@ instance.interceptors.response.use(
 export default function (path, {
   method = 'POST',
   params = {},
-  options = {}
+  options = {},
 } = {}) {
   method = method.toUpperCase()
 

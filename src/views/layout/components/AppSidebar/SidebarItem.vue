@@ -65,16 +65,16 @@ export default {
   props: {
     item: {
       type: Object,
-      required: true
+      required: true,
     },
     isNest: {
       type: Boolean,
-      default: false
+      default: false,
     },
     basePath: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   computed: {
@@ -82,12 +82,12 @@ export default {
       const { item } = this
 
       return item.children ? item.children.filter(item => !item.hidden) : []
-    }
+    },
   },
 
   data () {
     return {
-      onlyOneChild: null
+      onlyOneChild: null,
     }
   },
 
@@ -121,7 +121,7 @@ export default {
       const { basePath } = this
 
       return `${basePath}/${routePath}`
-    }
-  }
+    },
+  },
 }
 </script>

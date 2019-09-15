@@ -53,7 +53,7 @@ export default {
   components: { LangSelect },
 
   computed: {
-    ...mapState(['isCollapse'])
+    ...mapState(['isCollapse']),
   },
 
   data () {
@@ -62,8 +62,8 @@ export default {
       commands: [
         { name: 'profile', text: '个人信息' },
         { name: 'password', text: '修改密码' },
-        { name: 'logout', text: '退出系统' }
-      ]
+        { name: 'logout', text: '退出系统' },
+      ],
     }
   },
 
@@ -81,7 +81,7 @@ export default {
           this.$message.info(command)
           break
       }
-    }
-  }
+    },
+  },
 }
 </script>

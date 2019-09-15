@@ -39,7 +39,7 @@ export default {
 
   data () {
     return {
-      icons
+      icons,
     }
   },
 
@@ -50,8 +50,8 @@ export default {
 
     handleCopySuccess () {
       this.$message.success('图标复制成功，快去使用吧！')
-    }
-  }
+    },
+  },
 }
 </script>
 

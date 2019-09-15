@@ -17,7 +17,7 @@ import { mapState } from 'vuex'
 import {
   AppMain,
   AppNavbar,
-  AppSidebar
+  AppSidebar,
 } from './components'
 
 export default {
@@ -26,7 +26,7 @@ export default {
   components: {
     AppSidebar,
     AppNavbar,
-    AppMain
+    AppMain,
   },
 
   computed: {
@@ -34,10 +34,10 @@ export default {
       const { isCollapse } = this
 
       return {
-        'is-collapse': isCollapse
+        'is-collapse': isCollapse,
       }
     },
-    ...mapState(['isCollapse'])
-  }
+    ...mapState(['isCollapse']),
+  },
 }
 </script>

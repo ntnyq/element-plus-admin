@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 
 Vue.use(VueI18n)
 
-let localeKeys = []
+const localeKeys = []
 
 function loadLocaleMessages () {
   const locales = require.context('./lang', true, /[A-Za-z0-9-_,\s]+\.js$/i)
@@ -26,10 +26,10 @@ function loadLocaleMessages () {
 const i18n = new VueI18n({
   locale: Cookies.get('language') || process.env.VUE_APP_I18N_LOCALE || 'zh',
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'zh',
-  messages: loadLocaleMessages()
+  messages: loadLocaleMessages(),
 })
 
 export {
   i18n as default,
-  localeKeys
+  localeKeys,
 }

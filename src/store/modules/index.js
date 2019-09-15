@@ -3,7 +3,7 @@ import app from './app'
 
 const modules = {
   app,
-  user
+  user,
 }
 
 export default modules

@@ -78,15 +78,15 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '1111111'
+        password: '1111111',
       },
       loginRules: {
         username: { required: true, trigger: 'blur', validator: validateUsername },
-        password: { required: true, trigger: 'blur', validator: validatePassword }
+        password: { required: true, trigger: 'blur', validator: validatePassword },
       },
       passwordType: 'password',
       loading: false,
-      redirect: undefined
+      redirect: undefined,
     }
   },
 
@@ -109,7 +109,7 @@ export default {
           return false
         }
       })
-    }
+    },
   },
 
   watch: {
@@ -117,8 +117,8 @@ export default {
       handler (route) {
         this.redirect = route.query && route.query.redirect
       },
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 }
 </script>

@@ -1,3 +1,3 @@
 export default {
-  language: state => state.app.language
+  language: state => state.app.language,
 }

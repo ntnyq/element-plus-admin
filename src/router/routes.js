@@ -7,7 +7,7 @@ const routes = [
     path: '/login',
     name: 'Login',
     hidden: true,
-    component: loadView('Login')
+    component: loadView('Login'),
   },
 
   {
@@ -19,9 +19,9 @@ const routes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: loadView('Dashboard'),
-        meta: { icon: 'dashboard', title: 'Dashboard' }
-      }
-    ]
+        meta: { icon: 'dashboard', title: 'Dashboard' },
+      },
+    ],
   },
 
   {
@@ -34,9 +34,9 @@ const routes = [
         path: 'index',
         name: 'GuideIndex',
         component: loadView('Common/Guide'),
-        meta: { icon: 'guide', title: 'Guide' }
-      }
-    ]
+        meta: { icon: 'guide', title: 'Guide' },
+      },
+    ],
   },
 
   {
@@ -49,9 +49,9 @@ const routes = [
         path: 'index',
         name: 'IconsIndex',
         component: loadView('Icons'),
-        meta: { icon: 'icon', title: 'Icons' }
-      }
-    ]
+        meta: { icon: 'icon', title: 'Icons' },
+      },
+    ],
   },
 
   {
@@ -65,16 +65,16 @@ const routes = [
         path: 'index',
         name: 'HomeIndex',
         component: loadView('Home'),
-        meta: { title: 'HomePage' }
+        meta: { title: 'HomePage' },
       },
       {
         path: 'test',
         name: 'HomeTest',
         component: loadView('Home/test'),
-        meta: { title: 'Test' }
-      }
-    ]
-  }
+        meta: { title: 'Test' },
+      },
+    ],
+  },
 ]
 
 export default routes

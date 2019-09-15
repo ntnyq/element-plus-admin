@@ -27,13 +27,13 @@ import { localeKeys } from '@i18n'
 export default {
   computed: {
     ...mapGetters([
-      'language'
-    ])
+      'language',
+    ]),
   },
 
   data () {
     return {
-      localeKeys
+      localeKeys,
     }
   },
 
@@ -43,10 +43,10 @@ export default {
       this.$store.dispatch('setLanguage', lang)
       this.$message({
         message: this.$i18n.t('tip.languageSwitched'),
-        type: 'success'
+        type: 'success',
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -8,19 +8,19 @@ Vue.use(Vuex)
 
 const state = {
   isCollapse: false,
-  routers
+  routers,
 }
 
 const actions = {
   toggleCollapse ({ commit }) {
     commit('TOGGLE_COLLAPSE')
-  }
+  },
 }
 
 const mutations = {
   TOGGLE_COLLAPSE (state) {
     state.isCollapse = !state.isCollapse
-  }
+  },
 }
 
 const store = new Vuex.Store({
@@ -28,7 +28,7 @@ const store = new Vuex.Store({
   actions,
   mutations,
   getters,
-  modules
+  modules,
 })
 
 export default store

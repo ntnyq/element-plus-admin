@@ -20,9 +20,9 @@ export default {
 
   data () {
     return {
-      primaryColor
+      primaryColor,
     }
-  }
+  },
 }
 </script>
 

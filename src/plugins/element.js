@@ -14,7 +14,7 @@ import {
   Submenu,
   Form,
   FormItem,
-  Tooltip
+  Tooltip,
 } from 'element-ui'
 
 Vue.prototype.$ELEMENT = { size: 'medium', zIndex: 9999 }
