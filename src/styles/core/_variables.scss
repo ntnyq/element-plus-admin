@@ -23,8 +23,11 @@ $sub-menu-height: 90px;
 $sub-menu-item-width: 200px;
 $sub-menu-item-height: 60px;
 
+// stylelint disbale comments not working with --fix
+// For now, the whole file need to add to .stylelintignore
+// See https://github.com/stylelint/stylelint/issues/2643
 /* stylelint-disable */
 :export {
-  primarycolor: $primary-color;
+  primaryColor: $primary-color;
 }
 /* stylelint-enable */

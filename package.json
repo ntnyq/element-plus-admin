@@ -20,7 +20,7 @@
       "vue-cli-service lint",
       "git add"
     ],
-    "*.{scss,vue}": [
+    "!(_variables).{scss,vue}": [
       "stylelint --fix",
       "git add"
     ]
@@ -33,7 +33,7 @@
     "qs": "^6.8.0",
     "vue": "^2.6.9",
     "vue-clipboard2": "^0.3.1",
-    "vue-i18n": "^8.14.0",
+    "vue-i18n": "^8.14.1",
     "vue-router": "^3.1.3",
     "vuex": "^3.1.1"
   },
@@ -45,7 +45,7 @@
     "anywhere": "^1.5.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
-    "eslint": "^6.3.0",
+    "eslint": "^6.4.0",
     "eslint-plugin-vue": "^5.2.3",
     "hygen": "^4.0.9",
     "imagemin-mozjpeg": "^8.0.0",
