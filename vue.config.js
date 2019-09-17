@@ -8,14 +8,14 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: '@import "@styles/core/style";'
-      }
-    }
+        prependData: '@import "@styles/core/style";',
+      },
+    },
   },
 
   devServer: {
     port: 9527,
-    open: true
+    open: true,
   },
 
   configureWebpack: config => {
@@ -40,8 +40,8 @@ module.exports = {
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
-        symbolId: 'icon-[name]'
+        symbolId: 'icon-[name]',
       })
       .end()
-  }
+  },
 }

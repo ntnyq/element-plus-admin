@@ -11,6 +11,7 @@ script:
 
 after_script:
   - cd ./dist
+  - echo > .nojekyll
   - git init
   - git config user.name "ntnyq"
   - git config user.email "ntnyq13@gmail.com"

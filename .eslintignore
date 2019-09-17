@@ -1,0 +1,5 @@
+# Enable lint dotfiles
+!.*
+node_modules/.*
+
+/dist

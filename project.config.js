@@ -11,11 +11,11 @@ const plugins = [
         plugins: [
           imageminMozjpeg({
             quality: 70,
-            progressive: true
-          })
-        ]
+            progressive: true,
+          }),
+        ],
       }),
-      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // no i18n
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/), // no i18n
       // new webpack.ContextReplacementPugin(/moment[\/\\]locales$/, /zh-cn|en-use/) with i18n
     ]
     : [
@@ -23,9 +23,9 @@ const plugins = [
         files: ['**/*.{vue,scss}'],
         // cache: true,
         emitErrors: true,
-        failOnError: false
-      })
-    ])
+        failOnError: false,
+      }),
+    ]),
 ]
 
 exports.aliases = {
@@ -45,6 +45,7 @@ exports.aliases = {
   '@styles': '@/styles',
   '@store': '@/store',
   '@utils': '@/utils',
-  '@views': '@/views'
+  '@views': '@/views',
 }
+
 exports.plugins = plugins
