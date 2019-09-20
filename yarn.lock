@@ -687,6 +687,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@goy/utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/@goy/utils/-/utils-0.0.1.tgz#ef7f69a24d6af052ce8a6a0fdb239a0159394a34"
+  integrity sha512-LQ0q6iolYulr8iHSm+oeg8jAJpMQH85hL4uPjAfeZYMS6q5cLU9EMjcxESqtg41qr7VWnWoiCDPlGGuzpegD5A==
+
 "@hapi/address@2.x.x":
   version "2.1.1"
   resolved "https://registry.npmjs.org/@hapi/address/-/address-2.1.1.tgz#61395b5ed94c4cb19c2dc4c85969cff3d40d583f"
