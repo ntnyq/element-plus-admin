@@ -1,0 +1,24 @@
+name: Deploy to gh-pages
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+      - run: yarn install --frozen-lockfile --non-interactive
+      - run: yarn build
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

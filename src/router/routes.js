@@ -1,13 +1,11 @@
-import Layout from '@views/layout/Layout'
-
-const loadView = viewPath => () => import(`@views/${viewPath}`)
+import Layout from '@/views/layout/Layout'
 
 const routes = [
   {
     path: '/login',
     name: 'Login',
     hidden: true,
-    component: loadView('Login'),
+    component: () => import('@/views/Login'),
   },
 
   {
@@ -18,7 +16,7 @@ const routes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: loadView('Dashboard'),
+        component: () => import('@/views/Dashboard'),
         meta: { icon: 'dashboard', title: 'Dashboard' },
       },
     ],
@@ -33,7 +31,7 @@ const routes = [
       {
         path: 'index',
         name: 'GuideIndex',
-        component: loadView('Common/Guide'),
+        component: () => import('@/views/Common/Guide'),
         meta: { icon: 'guide', title: 'Guide' },
       },
     ],
@@ -48,7 +46,7 @@ const routes = [
       {
         path: 'index',
         name: 'IconsIndex',
-        component: loadView('Icons'),
+        component: () => import('@/views/Icons'),
         meta: { icon: 'icon', title: 'Icons' },
       },
     ],
@@ -64,14 +62,8 @@ const routes = [
       {
         path: 'index',
         name: 'HomeIndex',
-        component: loadView('Home'),
+        component: () => import('@/views/Home'),
         meta: { title: 'HomePage' },
-      },
-      {
-        path: 'test',
-        name: 'HomeTest',
-        component: loadView('Home/test'),
-        meta: { title: 'Test' },
       },
     ],
   },

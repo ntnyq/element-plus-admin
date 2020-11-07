@@ -4,16 +4,16 @@ import {
   Message,
   MessageBox,
 } from 'element-ui'
-import store from '@store'
+import store from '@/store'
 import {
   getToken,
-} from '@utils/auth'
+} from '@/utils/auth'
 import {
   CODE_SUCCESS,
   CODE_NO_AUTH,
   CODE_NOT_LOGIN,
   CODE_WRONG_PARAMS,
-} from '@constants/http-status'
+} from '@/constants/http-status'
 
 const {
   VUE_APP_API_HOST,
@@ -72,7 +72,7 @@ instance.interceptors.request.use(
   },
   err => {
     return Promise.reject(err)
-  }
+  },
 )
 
 instance.interceptors.response.use(
@@ -89,16 +89,15 @@ instance.interceptors.response.use(
         return Promise.reject(new Error(data.msg || '当前用户无操作权限'))
 
       case CODE_NOT_LOGIN:
-        MessageBox
-          .confirm(
-            '您的登录状态已失效，您可以选择重新登录，或者停留在此页面',
-            '提示',
-            {
-              confirmButtonText: '重新登录',
-              cancelButtonText: '取消',
-              type: 'warning',
-            }
-          )
+        MessageBox.confirm(
+          '您的登录状态已失效，您可以选择重新登录，或者停留在此页面',
+          '提示',
+          {
+            confirmButtonText: '重新登录',
+            cancelButtonText: '取消',
+            type: 'warning',
+          },
+        )
           .then(async () => {
             await store.dispatch('logoutFE')
             window.location.reload()
@@ -124,7 +123,7 @@ instance.interceptors.response.use(
       Message.error({ message: err.message || '接口响应出错' })
     }
     return Promise.reject(err)
-  }
+  },
 )
 
 export default function (path, {

@@ -45,7 +45,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import LangSelect from '@components/LangSelect'
+import LangSelect from '@/components/LangSelect'
 
 export default {
   name: 'AppNavbar',

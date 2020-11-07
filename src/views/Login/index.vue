@@ -53,8 +53,8 @@
 </template>
 
 <script>
-import './style'
-import { isvalidUsername } from '@utils/validate'
+import './style.scss'
+import { isvalidUsername } from '@/utils/validate'
 
 export default {
   name: 'Login',

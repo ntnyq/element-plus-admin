@@ -1,31 +1,26 @@
 const path = require('path')
-const { aliases, plugins } = require('./project.config')
 const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
   publicPath: process.env.BASE_URL || './',
 
+  assetsDir: 'static',
+
+  productionSourceMap: process.env.NODE_ENV === 'production',
+
   css: {
     loaderOptions: {
       sass: {
-        prependData: '@import "@styles/core/style";',
+        additionalData: '@import "@/styles/core/style";',
       },
     },
   },
 
   devServer: {
-    port: 9527,
     open: true,
   },
 
-  configureWebpack: config => {
-    config.plugins.push(...plugins)
-    config.resolve.alias = { ...config.resolve.alias, ...aliases }
-  },
-
   chainWebpack: config => {
-    config.resolve.extensions.store.add('.scss')
-
     // set svg-sprite-loader
     config.module
       .rule('svg')

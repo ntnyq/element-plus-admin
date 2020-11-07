@@ -1,33 +1,18 @@
 {
-  "[handlebars]": {
-    "editor.formatOnSave": false
-  },
   "emmet.syntaxProfiles": {
     "vue-html": "html"
   },
   "emmet.includeLanguages": {
     "vue-html": "html"
   },
+  "editor.formatOnSave": true,
   // Eslint
-  "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
   "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "vue-html",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
+    "javascript",
+    "javascriptreact",
+    "vue-html",
+    "vue",
   ],
   // Vetur
   "vetur.completion.autoImport": true,
@@ -40,5 +25,14 @@
     "js-beautify-html": {
       "wrap_attributes": "force-expand-multiline"
     }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[handlebars]": {
+    "editor.formatOnSave": false
   }
 }

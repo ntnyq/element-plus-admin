@@ -1,4 +1,4 @@
-const ctx = require.context('@icons/svg', false, /\.svg$/)
+const ctx = require.context('@/icons/svg', false, /\.svg$/)
 const RE = /\.\/(.*)\.svg/
 
 const icons = ctx.keys().map(i => {

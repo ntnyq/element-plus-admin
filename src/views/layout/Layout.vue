@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import './style'
+import './style.scss'
 import { mapState } from 'vuex'
 import {
   AppMain,

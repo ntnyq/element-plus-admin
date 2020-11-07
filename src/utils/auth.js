@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 import {
   APP_TOKEN_KEY,
   APP_USERNAME_KEY,
-} from '@constants/storage-key'
+} from '@/constants/storage-key'
 
 export function getToken () {
   return Cookies.get(APP_TOKEN_KEY)
