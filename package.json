@@ -34,6 +34,7 @@
     "vuex": "^3.2.0"
   },
   "devDependencies": {
+    "@ntnyq/eslint-config": "^0.1.0",
     "@vue/cli-plugin-babel": "^4.5.8",
     "@vue/cli-plugin-eslint": "^4.5.8",
     "@vue/cli-service": "^4.5.8",
@@ -41,7 +42,6 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
     "eslint": "^7.13.0",
-    "eslint-config-goy": "^0.2.3",
     "eslint-plugin-vue": "^7.1.0",
     "lint-staged": "^10.5.1",
     "node-sass": "^5.0.0",
