@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "lint:ls": "ls-lint",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.config.yml"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
+    "@ls-lint/ls-lint": "^1.9.2",
     "@ntnyq/eslint-config": "^0.3.0",
     "@ntnyq/prettier-config": "^0.2.0",
     "@types/js-cookie": "^2.2.6",

@@ -958,6 +958,11 @@
   resolved "https://registry.yarnpkg.com/@intlify/shared/-/shared-9.0.0-beta.18.tgz#b2f04c061d02e34d667d36d807686b3a81724915"
   integrity sha512-h0kc0UhP9HKNq13ZKnC7asm3C5FwRIVKxdXZcDNVRCCzfJX0dO3REYkP1Szs8gOe5YGPqkKdsTZJtiffzMY+BA==
 
+"@ls-lint/ls-lint@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@ls-lint/ls-lint/-/ls-lint-1.9.2.tgz#689f1f4c06072823a726802ba167340efcefe19c"
+  integrity sha512-sugEjWjSSy9OHF6t1ZBLZCAROj52cZthB9dIePmzZzzMwmWwy3qAEMSdJheHeS1FOwDZI7Ipm1H/bWgzJNnSAw==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
