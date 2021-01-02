@@ -1,0 +1,13 @@
+// layout/main
+
+.app-main {
+  &-wrapper {
+    position: relative;
+    padding: $navbar-height + $gutter-sm $gutter-sm $gutter-sm;
+    margin-left: $sidebar-width;
+    max-height: calc(100% - #{$navbar-height + $gutter-sm * 2});
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include trs;
+  }
+}

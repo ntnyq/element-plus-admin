@@ -1,0 +1,45 @@
+/* mixins - utils */
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.is-#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin has($state) {
+  @at-root {
+    &.has-#{$state} {
+      @content;
+    }
+  }
+}
+
+@mixin v-deep {
+  &::v-deep {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  zoom: 1;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+@mixin trs($t: 0.3s, $fn: ease-out, $prop: all) {
+  transition: $prop $t $fn;
+}

@@ -1,0 +1,11 @@
+/* mixins - bg */
+
+@mixin bg-style($size: contain, $position: center) {
+  background-repeat: no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin bg($name, $ext: "png", $path: "~@/assets/images", $prefix: "") {
+  background-image: url("#{$path}/#{$prefix + $name}.#{$ext}");
+}

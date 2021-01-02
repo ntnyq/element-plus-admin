@@ -1,9 +1,0 @@
-const { VUE_APP_BRAND_PREFIX = '' } = process.env
-
-const APP_TOKEN_KEY = `${VUE_APP_BRAND_PREFIX}TOKEN`
-const APP_USERNAME_KEY = `${VUE_APP_BRAND_PREFIX}USERNAME`
-
-export {
-  APP_TOKEN_KEY,
-  APP_USERNAME_KEY,
-}

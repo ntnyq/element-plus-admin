@@ -1,11 +1,16 @@
 <template>
-  <div class="dashboard">
+  <div class="app-container">
     <h1>Dashboard</h1>
+    <svg-icon name="dashboard" />
+    <app-screenfull />
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'Dashboard',
-}
+  components: {},
+})
 </script>

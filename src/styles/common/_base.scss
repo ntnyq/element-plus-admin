@@ -1,3 +1,5 @@
+/* Styles - base */
+
 body,
 input,
 button,
@@ -9,17 +11,29 @@ option {
 
 body {
   position: relative;
-  min-width: $layout-min-width;
   line-height: $line-height;
   overflow-x: hidden;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 :focus {
   outline: none;
+}
+
+// type="text"
+input::-ms-clear {
+  display: none;
+}
+
+// type="password"
+input::-ms-reveal {
+  display: none;
+}
+
+#app,
+.app-wrapper,
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }

@@ -1,17 +1,28 @@
+/**
+ * @fileoverview VueCli config
+ */
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
+
 const resolve = (...args) => path.resolve(__dirname, ...args)
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   publicPath: process.env.BASE_URL || './',
 
   assetsDir: 'static',
 
-  productionSourceMap: process.env.NODE_ENV === 'production',
+  productionSourceMap: false,
+
+  transpileDependencies: [],
 
   css: {
     loaderOptions: {
       sass: {
         additionalData: '@import "@/styles/core/style";',
+        ...(isProduction ? { implementation: require('node-sass') } : {}),
       },
     },
   },
@@ -21,11 +32,14 @@ module.exports = {
   },
 
   chainWebpack: config => {
-    // set svg-sprite-loader
-    config.module
-      .rule('svg')
-      .exclude.add(resolve('src/icons'))
-      .end()
+    // Disable Prefetch
+    config.plugins.delete('prefetch')
+
+    // https://webpack.js.org/configuration/devtool/#development
+    config.when(!isProduction, config => config.devtool('cheap-source-map'))
+
+    // Config svg-sprite-loader
+    config.module.rule('svg').exclude.add(resolve('src/icons')).end()
 
     config.module
       .rule('icons')

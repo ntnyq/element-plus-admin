@@ -1,0 +1,18 @@
+// layout/wrapper
+
+.app-wrapper {
+  position: relative;
+
+  @include when(sidebar-open) {
+  }
+
+  @include when(sidebar-close) {
+    .app-sidebar {
+      transform: translate(-100%, 0);
+    }
+
+    .app-main-wrapper {
+      margin-left: 0;
+    }
+  }
+}

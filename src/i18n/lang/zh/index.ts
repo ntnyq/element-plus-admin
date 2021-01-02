@@ -1,0 +1,11 @@
+/**
+ * @file Language zh-CN
+ * @module i18n/lang/zh
+ * @author ntnyq <https://github.com/ntnyq>
+ */
+
+export default {
+  action: {
+    toggleFullscreen: '切换全屏',
+  },
+}

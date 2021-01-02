@@ -1,0 +1,88 @@
+// layout/navbar
+
+.app-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $navbar-height;
+  line-height: $navbar-height;
+  padding-right: $gutter-md;
+  background-color: $bg-light-black;
+  box-shadow: 0 1px 3px rgba($black, 0.12), 0 0 3px rgba($black, 0.04);
+  color: $white;
+
+  .navbar-brand {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .navbar-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+
+  .user-message-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .user-avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: $gutter-sm;
+    border-radius: 50%;
+  }
+
+  .user-name {
+    position: relative;
+    margin-right: $gutter-xs;
+    font-size: 16px;
+    user-select: none;
+  }
+
+  .navbar-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &-item {
+      position: relative;
+      min-width: $navbar-height;
+      margin-right: $gutter-sm;
+      text-align: center;
+      font-size: 24px;
+      @include trs;
+
+      &:hover {
+        background-color: darken($bg-light-black, 20%);
+      }
+    }
+  }
+
+  .app-hamburger {
+    position: relative;
+    display: block;
+    height: $navbar-height;
+    padding: 0 $gutter-sm;
+    margin-right: $gutter-md;
+    background-color: $primary-color;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+    font-size: 32px;
+    color: $white;
+    cursor: pointer;
+  }
+}

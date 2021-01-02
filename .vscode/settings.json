@@ -1,38 +1,18 @@
 {
-  "emmet.syntaxProfiles": {
-    "vue-html": "html"
-  },
-  "emmet.includeLanguages": {
-    "vue-html": "html"
-  },
   "editor.formatOnSave": true,
-  // Eslint
-  "eslint.packageManager": "yarn",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue-html",
-    "vue",
-  ],
-  // Vetur
-  "vetur.completion.autoImport": true,
-  "vetur.completion.tagCasing": "kebab",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.experimental.templateInterpolationService": false,
-  "vetur.format.defaultFormatterOptions": {
-    "js-beautify-html": {
-      "wrap_attributes": "force-expand-multiline"
-    }
-  },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.eslint.fixAll": true
   },
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "[javascript]": {
     "editor.formatOnSave": false
   },
-  "[handlebars]": {
+  "[typescript]": {
     "editor.formatOnSave": false
-  }
+  },
+  "cSpell.words": [
+    "SVGO",
+    "xlink"
+  ]
 }

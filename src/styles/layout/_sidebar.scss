@@ -1,0 +1,16 @@
+// layout/sidebar
+
+.app-sidebar {
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  z-index: 999;
+  width: $sidebar-width;
+  height: calc(100% - #{$navbar-height});
+  padding: $gutter-sm 0;
+  background-color: $bg-light-black;
+  box-shadow: 3px 3px 5px 1px rgba(9, 15, 20, 0.08);
+  user-select: none;
+  overflow: hidden;
+  @include trs;
+}

@@ -1,3 +1,0 @@
-@mixin transition ($t: .3s, $fn: ease-out, $prop: all) {
-  transition: $prop $t $fn;
-}

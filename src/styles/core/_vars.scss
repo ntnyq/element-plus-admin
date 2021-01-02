@@ -1,0 +1,26 @@
+/* Sass Variables */
+
+// Typo
+$font: "Helvetica Neue", helvetica, "PingFang SC", "Hiragino Sans GB",
+  "Microsoft YaHei", arial, sans-serif !default;
+$font-size: 14px !default;
+$line-height: 1.2 !default;
+
+// Palette
+$white: #fff !default;
+$black: #000 !default;
+$transparent: transparent !default;
+$bg-light-black: #2d333f !default;
+$primary-color: #095ce5 !default;
+
+// Animation
+$transition-duration: 0.3s !default;
+$transition-timing-function: cubic-bezier(1, 0.5, 0.8, 1) !default;
+
+// Layout
+$navbar-height: 70px;
+$sidebar-width: 230px;
+
+$gutter-xs: 5px;
+$gutter-sm: 10px;
+$gutter-md: 20px;
