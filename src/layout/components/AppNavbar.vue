@@ -42,9 +42,7 @@
               class="user-avatar"
               alt="User Avatar"
             >
-            <span class="user-name">
-              Hi, {{ username }}
-            </span>
+            <span class="user-name"> Hi, {{ username }} </span>
             <i class="el-icon-caret-bottom" />
           </el-badge>
         </div>
@@ -70,30 +68,20 @@
 import { defineComponent, computed } from 'vue'
 import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
-import {
-  SIGN_OUT,
-  TOGGLE_SIDEBAR,
-} from '@/constants/store'
+import { SIGN_OUT, TOGGLE_SIDEBAR } from '@/constants/store'
 
 export default defineComponent({
   name: 'AppNavbar',
 
   setup () {
-    const {
-      i18n,
-      router,
-      store,
-    } = useEnhancer()
+    const { i18n, router, store } = useEnhancer()
 
     const username = computed(() => 'ntnyq')
-    const menuIconName = computed(() => store.getters.sidebar?.isOpen
-      ? 'menu-open'
-      : 'menu-collapse')
+    const menuIconName = computed(() => store.getters.sidebar?.isOpen ? 'left' : 'hamburger')
 
     const toggleSidebar = (): void => {
       store.dispatch(TOGGLE_SIDEBAR.action)
     }
-
     const handleCommand = (command: string): void => {
       switch (command) {
         case 'dashboard':

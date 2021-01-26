@@ -61,6 +61,7 @@
       margin-right: $gutter-sm;
       text-align: center;
       font-size: 24px;
+      cursor: pointer;
       @include trs;
 
       &:hover {

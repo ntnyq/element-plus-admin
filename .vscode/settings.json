@@ -11,6 +11,7 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
+  "vetur.format.defaultFormatter.ts": "vscode-typescript",
   "cSpell.words": [
     "SVGO",
     "xlink"
