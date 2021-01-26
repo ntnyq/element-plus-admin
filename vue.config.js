@@ -1,5 +1,5 @@
 /**
- * @fileoverview VueCli config
+ * @file VueCli config
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

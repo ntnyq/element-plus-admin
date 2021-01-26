@@ -1,3 +1,7 @@
+/**
+ * @file ESLint config
+ */
+
 module.exports = {
   root: true,
   env: {
