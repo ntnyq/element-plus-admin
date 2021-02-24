@@ -22,7 +22,7 @@ export const actions: ActionTree<UserState, unknown> = {
     commit(SET_TOKEN.mutation, token)
   },
 
-  async [SIGN_OUT.action] ({ commit }) {
+  [SIGN_OUT.action] ({ commit }) {
     storage.removeToken()
     console.log('User signed out')
     commit(SET_TOKEN.mutation, '')

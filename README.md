@@ -2,6 +2,8 @@
 
 > Admin boilerplate based on Vue 3 and ElementPlus。
 
+![CI](https://github.com/ntnyq/element-plus-admin/workflows/CI/badge.svg)
+
 ## :clapper: Preview
 
 [Online demo](https://ntnyq.github.io/element-plus-admin)
@@ -10,14 +12,16 @@
 
 Work In Progress
 
-## :apple: Have a try
+## :apple: Try
 
 ```sh
 $ git clone https://github.com/ntnyq/element-plus-admin.git
 
 $ cd element-plus-admin
 
-$ yarn
+$ npm install pnpm -g
 
-$ yarn serve
+$ pnpm install
+
+$ pnpm run serve
 ```

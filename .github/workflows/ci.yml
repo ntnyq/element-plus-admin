@@ -1,4 +1,4 @@
-name: Deploy to gh-pages
+name: CI
 
 on:
   pull_request:
@@ -15,9 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
-      - run: yarn install --frozen-lockfile --non-interactive
-      - run: yarn build
-
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.17.2
+          run_install: true
+      - run: pnpm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
