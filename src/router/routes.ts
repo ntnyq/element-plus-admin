@@ -10,10 +10,10 @@ import Layout from '@/layout/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/redirect',
-    component: Layout,
     meta: {
       hidden: true,
     },
+    component: Layout,
     children: [
       {
         path: '/redirect/:path(.*)',
@@ -21,13 +21,22 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+
   {
     path: '/not-found',
-    name: 'NotFound',
     meta: {
       hidden: true,
     },
     component: () => import('@/views/common/not-found.vue'),
+  },
+
+  {
+    path: '/sign-in',
+    name: 'SignIn',
+    meta: {
+      hidden: true,
+    },
+    component: () => import('@/views/sign-in/index.vue'),
   },
 
   {
@@ -38,6 +47,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/dashboard',
         name: 'Dashboard',
+        meta: {},
         component: () => import('@/views/dashboard/index.vue'),
       },
     ],
@@ -45,8 +55,7 @@ const routes: Array<RouteRecordRaw> = [
 
   {
     path: '/:pathMatch(.*)',
-    name: 'Fallback',
-    redirect: { name: 'NotFound' },
+    redirect: '/not-found',
     meta: {
       hidden: true,
     },

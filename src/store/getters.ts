@@ -16,6 +16,9 @@ const getters: GetterTree<GlobalState, unknown> = {
   // user
   token: state => state.user.token,
 
+  // router
+  routes: state => state.router.routes,
+
   // view
   visitedViews: state => state.view.visitedViews,
   cachedViews: state => state.view.cachedViews,

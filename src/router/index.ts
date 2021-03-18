@@ -7,7 +7,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import routes from './routes'
 
-export const ROUTE_WHITE_LIST: string[] = []
+export const ROUTE_WHITE_LIST: string[] = [
+  'SignIn',
+  'Dashboard',
+]
 
 /**
  * Create router

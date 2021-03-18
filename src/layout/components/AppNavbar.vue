@@ -82,18 +82,20 @@ export default defineComponent({
     const toggleSidebar = (): void => {
       store.dispatch(TOGGLE_SIDEBAR.action)
     }
-    const handleCommand = (command: string): void => {
+
+    const handleCommand = async (command: string): Promise<void> => {
       switch (command) {
         case 'dashboard':
           router.push('/')
           break
 
         case 'updatePassword':
-          message.warning('正在开发')
+          message.warning(i18n.t(`message.workInProgress`))
           break
 
         case 'signOut':
-          store.dispatch(SIGN_OUT.action)
+          await store.dispatch(SIGN_OUT.action)
+          router.push({ name: 'SignIn' })
           break
 
         default:

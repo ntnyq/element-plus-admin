@@ -11,6 +11,7 @@ import {
   SET_TOKEN,
   SIGN_OUT,
 } from '@/constants/store'
+import { resetRouter } from '@/router'
 
 export const state: UserState = {
   token: storage.getToken() || '',
@@ -23,9 +24,10 @@ export const actions: ActionTree<UserState, unknown> = {
   },
 
   [SIGN_OUT.action] ({ commit }) {
-    storage.removeToken()
     console.log('User signed out')
+    storage.removeToken()
     commit(SET_TOKEN.mutation, '')
+    resetRouter()
   },
 }
 

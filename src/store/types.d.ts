@@ -4,6 +4,8 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
+import type { RouteRecordRaw } from 'vue-router'
+
 export type AppState = {
   language: string
   theme: string
@@ -23,7 +25,8 @@ export type ViewState = {
 }
 
 export type RouterState = {
-  routes: string[]
+  routes: RouteRecordRaw[]
+  addRoutes: RouteRecordRaw[]
 }
 
 export type GlobalState = {

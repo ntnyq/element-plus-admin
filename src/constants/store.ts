@@ -25,3 +25,9 @@ export const SET_TOKEN = {
   action: 'setToken',
   mutation: 'SET_TOKEN',
 }
+
+// router
+export const SET_ROUTES = {
+  action: 'setRoutes',
+  mutation: 'SET_ROUTES',
+}
