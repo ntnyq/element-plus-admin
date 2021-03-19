@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
       - uses: pnpm/action-setup@v1.2.1
         with:
-          version: 5.17.2
+          version: 5.18.2
           run_install: true
       - run: pnpm run lint
       - run: pnpm run build

@@ -9,6 +9,9 @@ const resolve = (...args) => path.resolve(__dirname, ...args)
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+/**
+ * @type { import('@vue/cli-service').ProjectOptions }
+ */
 module.exports = {
   publicPath: process.env.BASE_URL || './',
 
