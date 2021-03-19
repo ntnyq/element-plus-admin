@@ -6,7 +6,7 @@
 
 ## :clapper: Preview
 
-[Online demo](https://ntnyq.github.io/element-plus-admin)
+[Online demo](https://admin.ntnyq.com)
 
 ## :construction: Status
 
