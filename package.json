@@ -1,6 +1,6 @@
 {
   "name": "element-plus-admin",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
