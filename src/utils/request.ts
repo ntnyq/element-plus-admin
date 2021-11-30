@@ -29,10 +29,10 @@ const instance = axios.create({
 
 instance.interceptors.request.use(config => {
   if (storage.getToken()) {
-    config.headers.Authorization = storage.getToken()
+    (config.headers as $TODO).Authorization = storage.getToken()
   }
 
-  config.headers['X-Requested-With'] = 'XMLHttpRequest'
+  (config.headers as $TODO)['X-Requested-With'] = 'XMLHttpRequest'
 
   return config
 }, error => {

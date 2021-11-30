@@ -3,7 +3,7 @@ import { h, VNodeTypes } from 'vue'
 import { useEnhancer } from '@/enhancers'
 
 export default {
-  name: 'Redirect',
+  name: 'TheRedirect',
 
   setup (): VNodeTypes {
     const { route, router } = useEnhancer()

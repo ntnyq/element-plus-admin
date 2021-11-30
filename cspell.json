@@ -1,0 +1,34 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "ntnyq",
+    "tsbuildinfo",
+    "unplugin",
+    "vitepress",
+    "SVGO",
+    "xlink",
+    "pnpm",
+    "echarts",
+    "screenfull",
+    "vuex",
+    "scripthost",
+    "prefetch",
+    "Elems"
+  ],
+  "flagWords": [],
+  "ignoreWords": [],
+  "dictionaries": [],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    "**/*.tsbuildinfo",
+    "**/yarn.lock",
+    "**/pnpm-lock.yaml",
+    "**/package-lock.json",
+    "*.spec.js.snap",
+    "*.min.*",
+    "*.log*"
+  ]
+}

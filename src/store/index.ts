@@ -5,7 +5,6 @@
  */
 
 import {
-  Store,
   ModuleTree,
   createStore as createVuexStore,
 } from 'vuex'
@@ -23,7 +22,7 @@ const modules: ModuleTree<unknown> = {
   router,
 }
 
-export const createStore = (): Store<GlobalState> => createVuexStore({ getters, modules })
+export const createStore = () => createVuexStore<GlobalState>({ getters, modules })
 
 const store = createStore()
 

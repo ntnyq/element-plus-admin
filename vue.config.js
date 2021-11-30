@@ -4,22 +4,22 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
+const { defineConfig } = require('@vue/cli-service')
+const UnpluginComponents = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 const resolve = (...args) => path.resolve(__dirname, ...args)
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-/**
- * @type { import('@vue/cli-service').ProjectOptions }
- */
-module.exports = {
+module.exports = defineConfig({
   publicPath: process.env.BASE_URL || './',
 
   assetsDir: 'static',
 
   productionSourceMap: false,
 
-  transpileDependencies: [],
+  transpileDependencies: true,
 
   css: {
     loaderOptions: {
@@ -34,8 +34,18 @@ module.exports = {
     open: true,
   },
 
+  configureWebpack: {
+    plugins: [
+      UnpluginComponents({
+        resolvers: [
+          ElementPlusResolver(),
+        ],
+      }),
+    ],
+  },
+
   chainWebpack: config => {
-    // Disable Prefetch
+    // Disable prefetch
     config.plugins.delete('prefetch')
 
     // https://webpack.js.org/configuration/devtool/#development
@@ -56,4 +66,4 @@ module.exports = {
       })
       .end()
   },
-}
+})

@@ -1,7 +1,7 @@
 import { h, VNodeTypes } from 'vue'
 
 interface ISvgIconProps {
-  name: string
+  name?: string
 }
 
 export default {

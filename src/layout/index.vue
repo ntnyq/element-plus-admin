@@ -19,7 +19,7 @@ import AppNavbar from './components/AppNavbar.vue'
 import AppSidebar from './components/AppSidebar/index.vue'
 
 export default defineComponent({
-  name: 'Layout',
+  name: 'TheLayout',
 
   components: {
     AppMain,
