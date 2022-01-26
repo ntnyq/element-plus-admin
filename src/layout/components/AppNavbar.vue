@@ -19,11 +19,10 @@
     <div class="navbar-block">
       <el-tooltip
         :content="i18n.t(`action.toggleFullscreen`)"
-        class="navbar-block-item"
         effect="dark"
         placement="bottom"
       >
-        <app-screenfull />
+        <app-screenfull class="navbar-block-item" />
       </el-tooltip>
 
       <el-dropdown
