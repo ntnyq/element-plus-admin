@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useEnhancer } from '@/enhancers'
 
 export default defineComponent({
@@ -31,12 +31,10 @@ export default defineComponent({
   },
 
   setup () {
-    const { route, store } = useEnhancer()
-    const cachedViews = computed(() => store.getters.cachedViews)
+    const { route } = useEnhancer()
 
     return {
       route,
-      cachedViews,
     }
   },
 })

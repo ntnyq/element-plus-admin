@@ -32,6 +32,7 @@ specifiers:
   node-sass: ^7.0.1
   npm-run-all: ^4.1.5
   path-to-regexp: ^6.2.0
+  pinia: ^2.0.9
   prettier: ^2.5.1
   qs: ^6.10.3
   regenerator-runtime: ^0.13.9
@@ -45,7 +46,6 @@ specifiers:
   vue: ^3.2.29
   vue-i18n: ^9.2.0-beta.29
   vue-router: ^4.0.12
-  vuex: ^4.0.2
 
 dependencies:
   axios: 0.25.0
@@ -57,12 +57,12 @@ dependencies:
   js-cookie: 3.0.1
   lodash-es: 4.17.21
   path-to-regexp: 6.2.0
+  pinia: 2.0.9_typescript@4.5.5+vue@3.2.29
   qs: 6.10.3
   screenfull: 6.0.1
   vue: 3.2.29
   vue-i18n: 9.2.0-beta.29_vue@3.2.29
   vue-router: 4.0.12_vue@3.2.29
-  vuex: 4.0.2_vue@3.2.29
 
 devDependencies:
   '@ls-lint/ls-lint': 1.10.0
@@ -7598,6 +7598,24 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /pinia/2.0.9_typescript@4.5.5+vue@3.2.29:
+    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.21.1
+      typescript: 4.5.5
+      vue: 3.2.29
+      vue-demi: 0.12.1_vue@3.2.29
+    dev: false
+
   /pkg-dir/2.0.0:
     resolution: {integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=}
     engines: {node: '>=4'}
@@ -9844,15 +9862,6 @@ packages:
       '@vue/runtime-dom': 3.2.29
       '@vue/server-renderer': 3.2.29_vue@3.2.29
       '@vue/shared': 3.2.29
-    dev: false
-
-  /vuex/4.0.2_vue@3.2.29:
-    resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}
-    peerDependencies:
-      vue: ^3.0.2
-    dependencies:
-      '@vue/devtools-api': 6.0.0-beta.21.1
-      vue: 3.2.29
     dev: false
 
   /watchpack/2.3.1:

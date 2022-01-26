@@ -65,21 +65,24 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
+import { useAppStore } from '@/store/app'
+import { useUserStore } from '@/store/user'
 import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
-import { SIGN_OUT, TOGGLE_SIDEBAR } from '@/constants/store'
 
 export default defineComponent({
   name: 'AppNavbar',
 
   setup () {
-    const { i18n, router, store } = useEnhancer()
+    const { i18n, router } = useEnhancer()
+    const app = useAppStore()
+    const user = useUserStore()
 
     const username = computed(() => 'ntnyq')
-    const menuIconName = computed(() => store.getters.sidebar?.isOpen ? 'left' : 'hamburger')
+    const menuIconName = computed(() => app.sidebar?.isOpen ? 'left' : 'hamburger')
 
     const toggleSidebar = (): void => {
-      store.dispatch(TOGGLE_SIDEBAR.action)
+      app.toggleSidebar()
     }
 
     const handleCommand = async (command: string): Promise<void> => {
@@ -93,7 +96,7 @@ export default defineComponent({
           break
 
         case 'signOut':
-          await store.dispatch(SIGN_OUT.action)
+          user.signOut()
           router.push({ name: 'SignIn' })
           break
 

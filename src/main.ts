@@ -5,9 +5,9 @@
  */
 
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import router from '@/router'
-import store from '@/store'
 import i18n from '@/i18n'
 import 'element-plus/theme-chalk/index.css'
 import '@/styles/style.scss'
@@ -16,6 +16,7 @@ import ElementPlus from 'element-plus'
 import components from '@/components'
 
 const app = createApp(App)
+const store = createPinia()
 
 app.use(store)
 app.use(router)

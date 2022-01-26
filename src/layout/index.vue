@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useEnhancer } from '@/enhancers'
+import { useAppStore } from '@/store/app'
 import AppMain from './components/AppMain.vue'
 import AppNavbar from './components/AppNavbar.vue'
 import AppSidebar from './components/AppSidebar/index.vue'
@@ -28,14 +28,17 @@ export default defineComponent({
   },
 
   setup () {
-    const { store } = useEnhancer()
+    const app = useAppStore()
+
+    console.log({ app })
 
     const wrapperClass = computed(() => ({
-      'is-sidebar-open': store.getters.sidebar.isOpen,
-      'is-sidebar-close': !store.getters.sidebar.isOpen,
+      'is-sidebar-open': app.sidebar.isOpen,
+      'is-sidebar-close': !app.sidebar.isOpen,
     }))
 
     return {
+      app,
       wrapperClass,
     }
   },

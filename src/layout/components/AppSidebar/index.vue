@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
+import { useAppStore } from '@/store/app'
 import { useEnhancer } from '@/enhancers'
 import SidebarItem from './Item.vue'
 
@@ -34,11 +35,13 @@ export default defineComponent({
   },
 
   setup () {
-    const { route, store } = useEnhancer()
+    const { route } = useEnhancer()
+    const app = useAppStore()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const routes: any = []
 
     const activeMenu = computed(() => route.meta.activeMenu || route.path)
-    const routes = computed(() => store.getters.routes)
-    const sidebar = computed(() => store.getters.sidebar)
+    const sidebar = computed(() => app.sidebar)
 
     return {
       routes,
