@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/ntnyq/element-plus-admin/compare/v0.3.0...v0.3.1) (2022-01-26)
+
+
+### Features
+
+* use pinia ([71a5f96](https://github.com/ntnyq/element-plus-admin/commit/71a5f966e22eeae8ae1c47e38947611b99edf320))
+
 ## [0.3.0](https://github.com/ntnyq/element-plus-admin/compare/v0.2.0...v0.3.0) (2021-11-30)
 
 ### Features
