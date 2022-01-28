@@ -8,6 +8,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - .vscode
+      - .husky
+      - .github
 
 jobs:
   deploy:
@@ -17,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v2
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.23.2
+          version: latest
           run_install: true
       - run: pnpm run lint
       - run: pnpm run build
