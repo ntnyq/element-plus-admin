@@ -2,7 +2,6 @@
  * @file VueCli config
  */
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
 const { defineConfig } = require('@vue/cli-service')
 const UnpluginComponents = require('unplugin-vue-components/webpack')
@@ -31,12 +30,14 @@ module.exports = defineConfig({
   },
 
   devServer: {
+    host: `localhost`,
     open: true,
   },
 
   configureWebpack: {
     plugins: [
       UnpluginComponents({
+        dts: true,
         resolvers: [
           ElementPlusResolver(),
         ],

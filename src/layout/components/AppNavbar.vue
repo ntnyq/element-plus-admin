@@ -2,10 +2,10 @@
   <div class="app-navbar">
     <div class="navbar-block">
       <button
+        @click="toggleSidebar"
         type="button"
         role="hamburger"
         class="app-hamburger"
-        @click="toggleSidebar"
       >
         <svg-icon :name="menuIconName" />
       </button>
@@ -26,10 +26,10 @@
       </el-tooltip>
 
       <el-dropdown
+        @command="handleCommand"
         placement="bottom"
         trigger="click"
         class="navbar-dropdown"
-        @command="handleCommand"
       >
         <div class="navbar-dropdown-trigger">
           <el-badge
@@ -41,7 +41,9 @@
               class="user-avatar"
               alt="User Avatar"
             >
-            <span class="user-name"> Hi, {{ username }} </span>
+            <span class="user-name">
+              Hi, {{ username }}
+            </span>
             <i class="el-icon-caret-bottom" />
           </el-badge>
         </div>

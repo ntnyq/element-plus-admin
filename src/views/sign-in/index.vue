@@ -6,7 +6,7 @@
         :model="formValues"
         :rules="formRules"
       >
-        <h1 class="sitn-in-title">
+        <h1 class="sign-in-title">
           ElementPlus Admin
         </h1>
         <el-form-item prop="username">
@@ -17,18 +17,18 @@
         </el-form-item>
         <el-form-item prop="password">
           <el-input
+            @keyup.enter="handleSignIn"
             v-model.trim="formValues.password"
             type="new-password"
             placeholder="请输入密码"
-            @keyup.enter="handleSignIn"
           />
         </el-form-item>
       </el-form>
       <el-button
+        @click.stop="handleSignIn"
         class="sign-in-btn"
         type="primary"
         :loading="isLoading"
-        @click.stop="handleSignIn"
       >
         {{ i18n.t(`action.signIn`) }}
       </el-button>
@@ -109,7 +109,7 @@ export default defineComponent({
     max-width: 460px;
   }
 
-  .sitn-in-title {
+  .sign-in-title {
     position: relative;
     margin-bottom: 30px;
     text-align: center;
