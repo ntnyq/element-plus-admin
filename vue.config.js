@@ -25,7 +25,6 @@ module.exports = defineConfig({
     loaderOptions: {
       sass: {
         additionalData: '@import "@/styles/core/style";',
-        ...(isProduction ? { implementation: require('node-sass') } : {}),
       },
     },
   },
