@@ -7,18 +7,38 @@
 import { defineStore } from 'pinia'
 import * as storage from '@/utils/storage'
 import { resetRouter } from '@/router'
+import { UserRole } from '@/constants/app'
+import { StoreModule } from '@/constants/store'
+
+export interface IUserStateTree {
+  token: string
+  roles: string[]
+}
 
 export const useUserStore = defineStore({
-  id: `user`,
+  id: StoreModule.USER,
 
-  state: () => ({
+  state: () => <IUserStateTree>({
     token: storage.getToken() || ``,
+    roles: [],
   }),
 
   actions: {
+    async getUserInfo () {
+      const roles = [UserRole.USER, UserRole.ADMIN]
+
+      this.$patch({ roles })
+
+      return { roles }
+    },
+
     setToken (token: string) {
       storage.setToken(token)
       this.$patch({ token })
+    },
+
+    setRoles (roles: string[]) {
+      this.$patch({ roles })
     },
 
     signOut () {

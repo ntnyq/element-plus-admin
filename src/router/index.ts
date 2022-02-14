@@ -5,11 +5,12 @@
  */
 
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { RouteName } from '@/constants/route'
 import routes from './routes'
 
 export const ROUTE_WHITE_LIST: string[] = [
-  'SignIn',
-  'Dashboard',
+  RouteName.SIGN_IN,
+  RouteName.DASHBOARD,
 ]
 
 /**

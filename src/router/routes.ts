@@ -5,6 +5,7 @@
  */
 
 import type { RouteRecordRaw } from 'vue-router'
+import { RouteName } from '@/constants/route'
 import Layout from '@/layout/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -32,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
 
   {
     path: '/sign-in',
-    name: 'SignIn',
+    name: RouteName.SIGN_IN,
     meta: {
       hidden: true,
     },
@@ -46,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/dashboard',
-        name: 'Dashboard',
+        name: RouteName.DASHBOARD,
         meta: {},
         component: () => import('@/views/dashboard/index.vue'),
       },

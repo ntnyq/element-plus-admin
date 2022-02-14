@@ -30,15 +30,12 @@ export default defineComponent({
   setup () {
     const app = useAppStore()
 
-    console.log({ app })
-
     const wrapperClass = computed(() => ({
       'is-sidebar-open': app.sidebar.isOpen,
       'is-sidebar-close': !app.sidebar.isOpen,
     }))
 
     return {
-      app,
       wrapperClass,
     }
   },

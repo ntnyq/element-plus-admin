@@ -19,7 +19,7 @@ module.exports = defineConfig({
 
   productionSourceMap: false,
 
-  transpileDependencies: true,
+  transpileDependencies: [],
 
   css: {
     loaderOptions: {

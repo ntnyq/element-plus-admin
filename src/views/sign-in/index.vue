@@ -45,6 +45,7 @@ import {
   defineComponent,
 } from 'vue'
 import { useEnhancer } from '@/enhancers'
+import { useUserStore } from '@/store/user'
 
 export default defineComponent({
   name: 'SignIn',
@@ -55,10 +56,9 @@ export default defineComponent({
       route,
       router,
     } = useEnhancer()
-
+    const userStore = useUserStore()
     const form = ref(null)
     const isLoading = ref(false)
-
     const formValues = reactive({
       username: '',
       password: '',
@@ -77,6 +77,8 @@ export default defineComponent({
       formValidator.validate((valid: boolean) => {
         if (!valid) return false
         isLoading.value = true
+        // Call sign-in service here
+        userStore.setToken(`${formValues.username}_${formValues.password}`)
         router.push(redirect.value || '/')
         isLoading.value = false
       })

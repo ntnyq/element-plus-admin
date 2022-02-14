@@ -9,10 +9,10 @@ import { ElMessage } from 'element-plus'
 import type { MessageHandle, MessageOptions } from 'element-plus/lib'
 
 enum ELMessageType {
-  SUCCESS = 'success',
-  ERROR = 'error',
-  INFO = 'info',
-  WARNING = 'warning'
+  SUCCESS = `success`,
+  ERROR = `error`,
+  INFO = `info`,
+  WARNING = `warning`
 }
 type EMssageContent = string | VNode
 type EIMessageOptions = Partial<MessageOptions>
