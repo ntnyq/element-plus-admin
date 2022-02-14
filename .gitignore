@@ -19,5 +19,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-components.d.ts

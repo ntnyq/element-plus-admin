@@ -5,6 +5,7 @@
 const path = require('path')
 const { defineConfig } = require('@vue/cli-service')
 const UnpluginComponents = require('unplugin-vue-components/webpack')
+const UnpluginAutoImport = require('unplugin-auto-import/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 const resolve = (...args) => path.resolve(__dirname, ...args)
@@ -38,6 +39,11 @@ module.exports = defineConfig({
     plugins: [
       UnpluginComponents({
         dts: true,
+        resolvers: [
+          ElementPlusResolver(),
+        ],
+      }),
+      UnpluginAutoImport({
         resolvers: [
           ElementPlusResolver(),
         ],
