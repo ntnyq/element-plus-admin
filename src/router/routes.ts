@@ -10,21 +10,21 @@ import Layout from '@/layout/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/redirect',
+    path: `/redirect`,
     meta: {
       hidden: true,
     },
     component: Layout,
     children: [
       {
-        path: '/redirect/:path(.*)',
+        path: `/redirect/:path(.*)`,
         component: () => import('@/views/common/redirect.vue'),
       },
     ],
   },
 
   {
-    path: '/not-found',
+    path: `/not-found`,
     meta: {
       hidden: true,
     },
@@ -32,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: '/sign-in',
+    path: `/sign-in`,
     name: RouteName.SIGN_IN,
     meta: {
       hidden: true,
@@ -41,12 +41,12 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: '/',
-    redirect: '/dashboard',
+    path: `/`,
+    redirect: `/dashboard`,
     component: Layout,
     children: [
       {
-        path: '/dashboard',
+        path: `/dashboard`,
         name: RouteName.DASHBOARD,
         meta: {},
         component: () => import('@/views/dashboard/index.vue'),
@@ -55,8 +55,8 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: '/:pathMatch(.*)',
-    redirect: '/not-found',
+    path: `/:pathMatch(.*)`,
+    redirect: `/not-found`,
     meta: {
       hidden: true,
     },

@@ -4,6 +4,7 @@
   "words": [
     "echarts",
     "Elems",
+    "iconify",
     "ntnyq",
     "pinia",
     "pnpm",
@@ -14,6 +15,7 @@
     "tsbuildinfo",
     "unplugin",
     "unref",
+    "vetur",
     "vitepress",
     "vuex",
     "xlink"

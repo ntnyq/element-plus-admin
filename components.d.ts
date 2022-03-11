@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppScreenfull: typeof import('./src/components/AppScreenfull.vue')['default']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
@@ -15,7 +16,10 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    Screenfull: typeof import('./src/components/Screenfull.vue')['default']
+    IconMdiFullscreen: typeof import('~icons/mdi/fullscreen')['default']
+    IconMdiFullscreenExit: typeof import('~icons/mdi/fullscreen-exit')['default']
+    IconMdiMenu: typeof import('~icons/mdi/menu')['default']
+    IconMdiMenuOpen: typeof import('~icons/mdi/menu-open')['default']
   }
 }
 

@@ -1,8 +1,7 @@
 <template>
   <div class="app-container">
     <h1>Dashboard</h1>
-    <svg-icon name="dashboard" />
-    <app-screenfull />
+    <AppScreenfull />
   </div>
 </template>
 
@@ -10,7 +9,6 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'TheDashboard',
-  components: {},
+  name: `TheDashboard`,
 })
 </script>

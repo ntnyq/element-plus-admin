@@ -8,13 +8,14 @@ module.exports = {
     node: true,
   },
   extends: [
-    '@ntnyq/vue',
-    '@vue/typescript/recommended',
+    `@ntnyq/vue`,
+    `@vue/typescript/recommended`,
   ],
   parserOptions: {
     ecmaVersion: 2022,
   },
   rules: {
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === `production` ? `warn` : `off`,
+    'vue/component-name-in-template-casing': [`error`, `PascalCase`],
   },
 }

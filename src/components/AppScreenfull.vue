@@ -3,7 +3,8 @@
     @click="handleClick"
     class="screenfull-container"
   >
-    <svg-icon :name="iconName" />
+    <IconMdiFullscreenExit v-if="isFullscreen" />
+    <IconMdiFullscreen v-else />
   </div>
 </template>
 
@@ -11,7 +12,6 @@
 import screenfull from 'screenfull'
 import {
   ref,
-  computed,
   defineComponent,
   onMounted,
   onBeforeUnmount,
@@ -44,14 +44,9 @@ export default defineComponent({
       }
     })
 
-    const iconName = computed(() => isFullscreen.value
-      ? `fullscreen-out`
-      : `fullscreen-in`,
-    )
-
     return {
-      iconName,
       handleClick,
+      isFullscreen,
     }
   },
 })

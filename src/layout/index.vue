@@ -1,25 +1,28 @@
 <template>
   <div
-    :class="wrapperClass"
+    :class="{
+      'is-sidebar-open': app.sidebar.isOpen,
+      'is-sidebar-close': !app.sidebar.isOpen,
+    }"
     class="app-wrapper"
   >
-    <app-navbar />
-    <app-sidebar />
+    <AppNavbar />
+    <AppSidebar />
     <div class="app-main-wrapper">
-      <app-main />
+      <AppMain />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useAppStore } from '@/store/app'
 import AppMain from './components/AppMain.vue'
 import AppNavbar from './components/AppNavbar.vue'
 import AppSidebar from './components/AppSidebar/index.vue'
 
 export default defineComponent({
-  name: 'TheLayout',
+  name: `TheLayout`,
 
   components: {
     AppMain,
@@ -30,13 +33,8 @@ export default defineComponent({
   setup () {
     const app = useAppStore()
 
-    const wrapperClass = computed(() => ({
-      'is-sidebar-open': app.sidebar.isOpen,
-      'is-sidebar-close': !app.sidebar.isOpen,
-    }))
-
     return {
-      wrapperClass,
+      app,
     }
   },
 })

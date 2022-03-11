@@ -8,6 +8,6 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'SidebarItem',
+  name: `SidebarItem`,
 })
 </script>

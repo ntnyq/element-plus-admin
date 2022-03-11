@@ -1,7 +1,7 @@
 <template>
   <div class="sign-in-container">
     <div class="sign-in-form">
-      <el-form
+      <ElForm
         ref="form"
         :model="formValues"
         :rules="formRules"
@@ -9,29 +9,29 @@
         <h1 class="sign-in-title">
           ElementPlus Admin
         </h1>
-        <el-form-item prop="username">
-          <el-input
+        <ElFormItem prop="username">
+          <ElInput
             v-model.trim="formValues.username"
             placeholder="请输入用户名"
           />
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input
+        </ElFormItem>
+        <ElFormItem prop="password">
+          <ElInput
             @keyup.enter="handleSignIn"
             v-model.trim="formValues.password"
             type="new-password"
             placeholder="请输入密码"
           />
-        </el-form-item>
-      </el-form>
-      <el-button
+        </ElFormItem>
+      </ElForm>
+      <ElButton
         @click.stop="handleSignIn"
         class="sign-in-btn"
         type="primary"
         :loading="isLoading"
       >
         {{ i18n.t(`action.signIn`) }}
-      </el-button>
+      </ElButton>
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
 
 export default defineComponent({
-  name: 'SignIn',
+  name: `SignIn`,
 
   setup () {
     const {
@@ -60,12 +60,12 @@ export default defineComponent({
     const form = ref(null)
     const isLoading = ref(false)
     const formValues = reactive({
-      username: '',
-      password: '',
+      username: ``,
+      password: ``,
     })
     const formRules = reactive({
-      username: { required: true, message: '请填写用户名', trigger: ['blur', 'change'] },
-      password: { required: true, message: '请填写密码', trigger: ['blur', 'change'] },
+      username: { required: true, message: `请填写用户名`, trigger: [`blur`, `change`] },
+      password: { required: true, message: `请填写密码`, trigger: [`blur`, `change`] },
     })
 
     const redirect = computed(() => route.query && route.query.redirect)
@@ -79,14 +79,14 @@ export default defineComponent({
         isLoading.value = true
         // Call sign-in service here
         userStore.setToken(`${formValues.username}_${formValues.password}`)
-        router.push(redirect.value || '/')
+        router.push(redirect.value || `/`)
         isLoading.value = false
       })
     }
 
     return {
       i18n,
-      form, // Must return
+      form, // return required
       isLoading,
       formValues,
       formRules,

@@ -1,6 +1,6 @@
 <template>
   <div class="app-main">
-    <router-view
+    <RouterView
       v-slot="{ Component }"
       :key="route.fullPath"
     >
@@ -8,11 +8,11 @@
         :name="transitionName"
         mode="out-in"
       >
-        <keep-alive :include="[]">
+        <KeepAlive :include="[]">
           <component :is="Component" />
-        </keep-alive>
+        </KeepAlive>
       </transition>
-    </router-view>
+    </RouterView>
   </div>
 </template>
 
@@ -21,12 +21,12 @@ import { defineComponent } from 'vue'
 import { useEnhancer } from '@/enhancers'
 
 export default defineComponent({
-  name: 'AppMain',
+  name: `AppMain`,
 
   props: {
     transitionName: {
       type: String,
-      default: 'el-fade-in',
+      default: `el-fade-in`,
     },
   },
 

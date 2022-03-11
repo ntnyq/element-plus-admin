@@ -13,6 +13,7 @@ import { StoreModule } from '@/constants/store'
 export interface IUserStateTree {
   token: string
   roles: string[]
+  username: string
 }
 
 export const useUserStore = defineStore({
@@ -21,6 +22,7 @@ export const useUserStore = defineStore({
   state: () => <IUserStateTree>({
     token: storage.getToken() || ``,
     roles: [],
+    username: `ntnyq`,
   }),
 
   actions: {
@@ -42,7 +44,7 @@ export const useUserStore = defineStore({
     },
 
     signOut () {
-      console.log('User signed out')
+      console.log(`User signed out`)
       storage.removeToken()
       resetRouter()
       this.$patch({ token: `` })

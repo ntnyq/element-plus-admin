@@ -2,37 +2,38 @@
   <div class="app-navbar">
     <div class="navbar-block">
       <button
-        @click="toggleSidebar"
+        @click="app.toggleSidebar"
         type="button"
         role="hamburger"
         class="app-hamburger"
       >
-        <svg-icon :name="menuIconName" />
+        <IconMdiMenuOpen v-if="app.sidebar.isOpen" />
+        <IconMdiMenu v-else />
       </button>
-      <router-link
+      <RouterLink
         to="/"
         class="navbar-brand"
       >
         Element Plus Admin
-      </router-link>
+      </RouterLink>
     </div>
     <div class="navbar-block">
-      <el-tooltip
+      <ElTooltip
         :content="i18n.t(`action.toggleFullscreen`)"
         effect="dark"
         placement="bottom"
       >
-        <app-screenfull class="navbar-block-item" />
-      </el-tooltip>
+        <AppScreenfull class="navbar-block-item" />
+      </ElTooltip>
 
-      <el-dropdown
+      <ElDropdown
         @command="handleCommand"
         placement="bottom"
         trigger="click"
         class="navbar-dropdown"
       >
         <div class="navbar-dropdown-trigger">
-          <el-badge
+          <ElBadge
             :max="99"
             class="user-message-badge"
           >
@@ -42,64 +43,57 @@
               alt="User Avatar"
             >
             <span class="user-name">
-              Hi, {{ username }}
+              Hi, {{ user.username }}
             </span>
             <i class="el-icon-caret-bottom" />
-          </el-badge>
+          </ElBadge>
         </div>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="dashboard">
+          <ElDropdownMenu>
+            <ElDropdownItem command="dashboard">
               首页
-            </el-dropdown-item>
-            <el-dropdown-item command="updatePassword">
+            </ElDropdownItem>
+            <ElDropdownItem command="updatePassword">
               更新密码
-            </el-dropdown-item>
-            <el-dropdown-item command="signOut">
+            </ElDropdownItem>
+            <ElDropdownItem command="signOut">
               退出
-            </el-dropdown-item>
-          </el-dropdown-menu>
+            </ElDropdownItem>
+          </ElDropdownMenu>
         </template>
-      </el-dropdown>
+      </ElDropdown>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useAppStore } from '@/store/app'
 import { useUserStore } from '@/store/user'
 import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
 
 export default defineComponent({
-  name: 'AppNavbar',
+  name: `AppNavbar`,
 
   setup () {
     const { i18n, router } = useEnhancer()
     const app = useAppStore()
     const user = useUserStore()
 
-    const username = computed(() => 'ntnyq')
-    const menuIconName = computed(() => app.sidebar?.isOpen ? 'left' : 'hamburger')
-
-    const toggleSidebar = (): void => {
-      app.toggleSidebar()
-    }
-
-    const handleCommand = async (command: string): Promise<void> => {
+    const handleCommand = (command: string) => {
       switch (command) {
-        case 'dashboard':
-          router.push('/')
+        case `dashboard`:
+          router.push(`/`)
           break
 
-        case 'updatePassword':
+        case `updatePassword`:
           message.warning(i18n.t(`message.workInProgress`))
           break
 
-        case 'signOut':
+        case `signOut`:
           user.signOut()
-          router.push({ name: 'SignIn' })
+          router.push({ name: `SignIn` })
           break
 
         default:
@@ -108,10 +102,9 @@ export default defineComponent({
     }
 
     return {
+      app,
       i18n,
-      username,
-      menuIconName,
-      toggleSidebar,
+      user,
       handleCommand,
     }
   },

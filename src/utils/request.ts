@@ -23,7 +23,7 @@ type HTTPResult<T = $TODO> = {
 }
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_API_HOST || '/',
+  baseURL: process.env.VUE_APP_API_HOST || `/`,
   timeout: HTTP_REQUEST_TIMEOUT_MILLISECONDS,
 })
 
@@ -32,7 +32,7 @@ instance.interceptors.request.use(config => {
     (config.headers as $TODO).Authorization = storage.getToken()
   }
 
-  (config.headers as $TODO)['X-Requested-With'] = 'XMLHttpRequest'
+  (config.headers as $TODO)['X-Requested-With'] = `XMLHttpRequest`
 
   return config
 }, error => {
@@ -47,16 +47,14 @@ instance.interceptors.response.use(res => {
   }
 
   switch (status) {
-    case '':
+    case ``:
       return data
-      break
 
     default:
       return data
-      break
   }
 }, error => {
-  if (error.code === 'ECONNABORTED' && error.message.includes('timeout')) {
+  if (error.code === `ECONNABORTED` && error.message.includes(`timeout`)) {
     console.log(1)
   }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="app-sidebar">
-    <el-scrollbar class="sidebar-scrollbar">
-      <el-menu
+    <ElScrollbar class="sidebar-scrollbar">
+      <ElMenu
         :default-active="activeMenu"
         :collapse="!sidebar.isOpen"
         :collapse-transition="false"
@@ -10,14 +10,14 @@
         unique-opened
         router
       >
-        <sidebar-item
+        <SidebarItem
           v-for="route in routes"
           :key="route.path"
           :item="route"
           :base-path="route.path"
         />
-      </el-menu>
-    </el-scrollbar>
+      </ElMenu>
+    </ElScrollbar>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ import { useEnhancer } from '@/enhancers'
 import SidebarItem from './Item.vue'
 
 export default defineComponent({
-  name: 'AppSidebar',
+  name: `AppSidebar`,
 
   components: {
     SidebarItem,
