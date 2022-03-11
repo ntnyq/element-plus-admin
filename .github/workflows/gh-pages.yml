@@ -1,4 +1,4 @@
-name: CI
+name: GHPages
 
 on:
   pull_request:
@@ -18,16 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-
       - uses: actions/setup-node@v2
-
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: latest
           run_install: true
       - run: pnpm run lint
       - run: pnpm run build
-
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
