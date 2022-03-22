@@ -3,10 +3,10 @@
  */
 
 const { defineConfig } = require('@vue/cli-service')
-const UnpluginComponents = require('unplugin-vue-components/webpack')
-const UnpluginAutoImport = require('unplugin-auto-import/webpack')
-const UnpluginIcons = require('unplugin-icons/webpack')
-const UnpluginIconsResolver = require('unplugin-icons/resolver')
+const Components = require('unplugin-vue-components/webpack')
+const AutoImport = require('unplugin-auto-import/webpack')
+const Icons = require('unplugin-icons/webpack')
+const IconsResolver = require('unplugin-icons/resolver')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 const isProduction = process.env.NODE_ENV === `production`
@@ -38,26 +38,27 @@ module.exports = defineConfig({
       topLevelAwait: true,
     },
     plugins: [
-      UnpluginComponents({
+      Components({
         dts: true,
         dirs: [`src/components`],
         resolvers: [
           ElementPlusResolver(),
-          UnpluginIconsResolver({
+          IconsResolver({
             prefix: `icon`,
             enabledCollections: [`mdi`],
           }),
         ],
       }),
-      UnpluginAutoImport({
+      AutoImport({
         resolvers: [
           ElementPlusResolver(),
-          UnpluginIconsResolver(),
+          IconsResolver(),
         ],
       }),
-      UnpluginIcons({
+      Icons({
         compiler: `vue3`,
-        defaultClass: `icon-mdi`,
+        defaultClass: ``,
+        defaultStyle: `vertical-align: sub;`,
       }),
     ],
   },

@@ -24,6 +24,6 @@ app.use(router)
 app.use(i18n)
 app.use(ElementPlus, { size: `large` })
 
-await router.isReady().then()
+await router.isReady()
 setupRouterGuard(router)
 app.mount('#app')
