@@ -8,46 +8,29 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import screenfull from 'screenfull'
-import {
-  ref,
-  defineComponent,
-  onMounted,
-  onBeforeUnmount,
-} from 'vue'
 
-export default defineComponent({
-  name: 'AppScreenfull',
+const isFullscreen = ref(false)
 
-  setup () {
-    const isFullscreen = ref(false)
+const handleClick = () => {
+  if (!screenfull.isEnabled) return false
+  screenfull.toggle()
+}
 
-    const handleClick = () => {
-      if (!screenfull.isEnabled) return false
-      screenfull.toggle()
-    }
+const handleChange = () => {
+  isFullscreen.value = (screenfull as { isFullscreen: boolean }).isFullscreen
+}
 
-    const handleChange = () => {
-      isFullscreen.value = (screenfull as { isFullscreen: boolean }).isFullscreen
-    }
+onMounted(() => {
+  if (screenfull.isEnabled) {
+    screenfull.on('change', handleChange)
+  }
+})
 
-    onMounted(() => {
-      if (screenfull.isEnabled) {
-        screenfull.on('change', handleChange)
-      }
-    })
-
-    onBeforeUnmount(() => {
-      if (screenfull.isEnabled) {
-        screenfull.off('change', handleChange)
-      }
-    })
-
-    return {
-      handleClick,
-      isFullscreen,
-    }
-  },
+onBeforeUnmount(() => {
+  if (screenfull.isEnabled) {
+    screenfull.off('change', handleChange)
+  }
 })
 </script>

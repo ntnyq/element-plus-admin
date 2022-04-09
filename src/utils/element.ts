@@ -4,8 +4,7 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-import { VNode } from 'vue'
-import { ElMessage } from 'element-plus'
+import type { VNode } from 'vue'
 import type { MessageHandle, MessageOptions } from 'element-plus/lib'
 
 enum ELMessageType {

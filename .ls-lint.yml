@@ -27,3 +27,4 @@ ignore:
   - dist
   - coverage
   - public/static
+  - .eslintrc-auto-import.json

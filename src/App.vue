@@ -1,11 +1,5 @@
 <template>
-  <RouterView />
+  <ElConfigProvider size="large">
+    <RouterView />
+  </ElConfigProvider>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: `App`,
-})
-</script>

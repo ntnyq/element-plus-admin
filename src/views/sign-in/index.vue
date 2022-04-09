@@ -36,64 +36,42 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  ref,
-  unref,
-  computed,
-  reactive,
-  defineComponent,
-} from 'vue'
+<script lang="ts" setup>
 import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
 
-export default defineComponent({
-  name: `SignIn`,
-
-  setup () {
-    const {
-      i18n,
-      route,
-      router,
-    } = useEnhancer()
-    const userStore = useUserStore()
-    const form = ref(null)
-    const isLoading = ref(false)
-    const formValues = reactive({
-      username: ``,
-      password: ``,
-    })
-    const formRules = reactive({
-      username: { required: true, message: `请填写用户名`, trigger: [`blur`, `change`] },
-      password: { required: true, message: `请填写密码`, trigger: [`blur`, `change`] },
-    })
-
-    const redirect = computed(() => route.query && route.query.redirect)
-
-    const handleSignIn = () => {
-      const formValidator = unref(form)
-
-      // @ts-expect-error TODO
-      formValidator.validate((valid: boolean) => {
-        if (!valid) return false
-        isLoading.value = true
-        // Call sign-in service here
-        userStore.setToken(`${formValues.username}_${formValues.password}`)
-        router.push(redirect.value || `/`)
-        isLoading.value = false
-      })
-    }
-
-    return {
-      i18n,
-      form, // return required
-      isLoading,
-      formValues,
-      formRules,
-      handleSignIn,
-    }
-  },
+const {
+  i18n,
+  route,
+  router,
+} = useEnhancer()
+const userStore = useUserStore()
+const form = ref(null)
+const isLoading = ref(false)
+const formValues = reactive({
+  username: ``,
+  password: ``,
 })
+const formRules = reactive({
+  username: { required: true, message: `请填写用户名`, trigger: [`blur`, `change`] },
+  password: { required: true, message: `请填写密码`, trigger: [`blur`, `change`] },
+})
+
+const redirect = computed(() => route.query && route.query.redirect)
+
+const handleSignIn = () => {
+  const formValidator = unref(form)
+
+  // @ts-expect-error TODO
+  formValidator.validate((valid: boolean) => {
+    if (!valid) return false
+    isLoading.value = true
+    // Call sign-in service here
+    userStore.setToken(`${formValues.username}_${formValues.password}`)
+    router.push(redirect.value || `/`)
+    isLoading.value = false
+  })
+}
 </script>
 
 <style lang="scss" scoped>

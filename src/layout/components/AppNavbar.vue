@@ -66,47 +66,33 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useAppStore } from '@/store/app'
 import { useUserStore } from '@/store/user'
 import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
 
-export default defineComponent({
-  name: `AppNavbar`,
+const { i18n, router } = useEnhancer()
+const app = useAppStore()
+const user = useUserStore()
 
-  setup () {
-    const { i18n, router } = useEnhancer()
-    const app = useAppStore()
-    const user = useUserStore()
+const handleCommand = (command: string) => {
+  switch (command) {
+    case `dashboard`:
+      router.push(`/`)
+      break
 
-    const handleCommand = (command: string) => {
-      switch (command) {
-        case `dashboard`:
-          router.push(`/`)
-          break
+    case `updatePassword`:
+      message.warning(i18n.t(`message.workInProgress`))
+      break
 
-        case `updatePassword`:
-          message.warning(i18n.t(`message.workInProgress`))
-          break
+    case `signOut`:
+      user.signOut()
+      router.push({ name: `SignIn` })
+      break
 
-        case `signOut`:
-          user.signOut()
-          router.push({ name: `SignIn` })
-          break
-
-        default:
-          break
-      }
-    }
-
-    return {
-      app,
-      i18n,
-      user,
-      handleCommand,
-    }
-  },
-})
+    default:
+      break
+  }
+}
 </script>

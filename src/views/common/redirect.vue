@@ -1,11 +1,10 @@
 <script lang="ts">
-import { h, VNodeTypes } from 'vue'
 import { useEnhancer } from '@/enhancers'
 
 export default {
   name: `TheRedirect`,
 
-  setup (): VNodeTypes {
+  setup () {
     const { route, router } = useEnhancer()
     const { params, query } = route
     const { path } = params

@@ -6,7 +6,7 @@
 
 import type { RouteRecordRaw } from 'vue-router'
 import { RouteName } from '@/constants/route'
-import Layout from '@/layout/index.vue'
+import Layout from '@/layout/layout.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -49,7 +49,7 @@ const routes: Array<RouteRecordRaw> = [
         path: `/dashboard`,
         name: RouteName.DASHBOARD,
         meta: {},
-        component: () => import('@/views/dashboard/index.vue'),
+        component: () => import('@/views/dashboard/dashboard.vue'),
       },
     ],
   },

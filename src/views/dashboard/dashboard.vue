@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
-    <h1>404 not found</h1>
+    <h1>Dashboard</h1>
+    <AppScreenfull />
   </div>
 </template>

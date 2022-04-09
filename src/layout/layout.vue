@@ -14,28 +14,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useAppStore } from '@/store/app'
 import AppMain from './components/AppMain.vue'
 import AppNavbar from './components/AppNavbar.vue'
-import AppSidebar from './components/AppSidebar/index.vue'
+import AppSidebar from './components/AppSidebar/TheSidebar.vue'
 
-export default defineComponent({
-  name: `TheLayout`,
-
-  components: {
-    AppMain,
-    AppNavbar,
-    AppSidebar,
-  },
-
-  setup () {
-    const app = useAppStore()
-
-    return {
-      app,
-    }
-  },
-})
+const app = useAppStore()
 </script>

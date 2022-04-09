@@ -16,26 +16,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useEnhancer } from '@/enhancers'
 
-export default defineComponent({
-  name: `AppMain`,
-
-  props: {
-    transitionName: {
-      type: String,
-      default: `el-fade-in`,
-    },
-  },
-
-  setup () {
-    const { route } = useEnhancer()
-
-    return {
-      route,
-    }
+// FIXME: remove when @ntnyq/eslint-config-vue use vue3 preset
+// eslint-disable-next-line no-undef
+defineProps({
+  transitionName: {
+    type: String,
+    default: `el-fade-in`,
   },
 })
+
+const { route } = useEnhancer()
 </script>

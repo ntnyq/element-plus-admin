@@ -50,6 +50,10 @@ module.exports = defineConfig({
         ],
       }),
       AutoImport({
+        imports: [`vue`, { 'element-plus': ['ElMessage'] }],
+        eslintrc: {
+          enabled: true,
+        },
         resolvers: [
           ElementPlusResolver(),
           IconsResolver(),
@@ -63,10 +67,10 @@ module.exports = defineConfig({
     ],
   },
 
+  /**
+   *
+   */
   chainWebpack: config => {
-    // Disable prefetch
-    config.plugins.delete(`prefetch`)
-
     // https://webpack.js.org/configuration/devtool/#development
     config.when(!isProduction, config => config.devtool(`cheap-source-map`))
   },
