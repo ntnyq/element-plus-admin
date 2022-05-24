@@ -4,20 +4,30 @@
 
 module.exports = {
   root: true,
+
   env: {
-    node: true,
+    'vue/setup-compiler-macros': true,
   },
+
   extends: [
-    `@ntnyq/vue`,
-    `@vue/typescript/recommended`,
+    `@ntnyq`,
     `.eslintrc-auto-import.json`,
   ],
-  parserOptions: {
-    ecmaVersion: 2022,
-  },
+
   rules: {
     'no-debugger': process.env.NODE_ENV === `production` ? `warn` : `off`,
     'vue/component-name-in-template-casing': [`error`, `PascalCase`],
     'vue/multi-word-component-names': `off`,
   },
+
+  overrides: [
+    {
+      files: `*.d.ts`,
+      rules: {
+        "vue/prefer-import-from-vue": `off`,
+        "import/newline-after-import": `off`,
+        "@typescript-eslint/consistent-type-imports": `off`,
+      },
+    },
+  ],
 }

@@ -15,10 +15,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useAppStore } from '@/store/app'
 import AppMain from './components/AppMain.vue'
 import AppNavbar from './components/AppNavbar.vue'
 import AppSidebar from './components/AppSidebar/TheSidebar.vue'
+import { useAppStore } from '@/store/app'
 
 const app = useAppStore()
 </script>

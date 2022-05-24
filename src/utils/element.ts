@@ -11,34 +11,34 @@ enum ELMessageType {
   SUCCESS = `success`,
   ERROR = `error`,
   INFO = `info`,
-  WARNING = `warning`
+  WARNING = `warning`,
 }
-type EMssageContent = string | VNode
+type EMessageContent = string | VNode
 type EIMessageOptions = Partial<MessageOptions>
 
 export const message = {
-  success (message: EMssageContent, options: EIMessageOptions): MessageHandle {
+  success (message: EMessageContent, options: EIMessageOptions): MessageHandle {
     return ElMessage({
       type: ELMessageType.SUCCESS,
       message,
       ...options,
     })
   },
-  error (message: EMssageContent, options?: EIMessageOptions): MessageHandle {
+  error (message: EMessageContent, options?: EIMessageOptions): MessageHandle {
     return ElMessage({
       type: ELMessageType.ERROR,
       message,
       ...options,
     })
   },
-  warning (message: EMssageContent, options?: EIMessageOptions): MessageHandle {
+  warning (message: EMessageContent, options?: EIMessageOptions): MessageHandle {
     return ElMessage({
       type: ELMessageType.WARNING,
       message,
       ...options,
     })
   },
-  info (message: EMssageContent, options?: EIMessageOptions): MessageHandle {
+  info (message: EMessageContent, options?: EIMessageOptions): MessageHandle {
     return ElMessage({
       type: ELMessageType.INFO,
       message,

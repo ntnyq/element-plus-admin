@@ -30,10 +30,9 @@ export const usePermissionStore = defineStore({
       } else {
         routes = filterAsyncRoutes(asyncRoutes, roles)
       }
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      this.$patch({ routes })
 
+      // @ts-expect-error TODO: fix type
+      this.$patch({ routes })
       return routes
     },
   },
@@ -59,7 +58,6 @@ function filterAsyncRoutes (routes: RouteRecordRaw[], roles: string[]) {
 
 function hasPermission (roles: string[], route: RouteRecordRaw) {
   if (route.meta && route.meta.roles && Array.isArray(route.meta.roles)) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return roles.some(role => (route.meta!.roles as string[]).includes(role))
   } else {
     return true

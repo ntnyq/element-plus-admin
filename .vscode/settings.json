@@ -7,7 +7,12 @@
     "javascript",
     "typescript",
     "vue",
-    "vue-html"
+    "vue-html",
+    "json",
+    "json5",
+    "jsonc",
+    "yaml",
+    "markdown"
   ],
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,

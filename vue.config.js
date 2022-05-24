@@ -2,12 +2,12 @@
  * @file vue-cli config
  */
 
-const { defineConfig } = require('@vue/cli-service')
-const Components = require('unplugin-vue-components/webpack')
-const AutoImport = require('unplugin-auto-import/webpack')
-const Icons = require('unplugin-icons/webpack')
-const IconsResolver = require('unplugin-icons/resolver')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+const { defineConfig } = require(`@vue/cli-service`)
+const Components = require(`unplugin-vue-components/webpack`)
+const AutoImport = require(`unplugin-auto-import/webpack`)
+const Icons = require(`unplugin-icons/webpack`)
+const IconsResolver = require(`unplugin-icons/resolver`)
+const { ElementPlusResolver } = require(`unplugin-vue-components/resolvers`)
 
 const isProduction = process.env.NODE_ENV === `production`
 
@@ -50,7 +50,7 @@ module.exports = defineConfig({
         ],
       }),
       AutoImport({
-        imports: [`vue`, { 'element-plus': ['ElMessage'] }],
+        imports: [`vue`, { 'element-plus': [`ElMessage`] }],
         eslintrc: {
           enabled: true,
         },
@@ -67,11 +67,16 @@ module.exports = defineConfig({
     ],
   },
 
-  /**
-   *
-   */
   chainWebpack: config => {
     // https://webpack.js.org/configuration/devtool/#development
     config.when(!isProduction, config => config.devtool(`cheap-source-map`))
+
+    config.module
+      .rule(`vue`)
+      .use(`vue-loader`)
+      .tap(options => ({
+        ...options,
+        reactivityTransform: true,
+      }))
   },
 })

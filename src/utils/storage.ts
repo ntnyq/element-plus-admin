@@ -6,10 +6,10 @@
 
 import Cookies from 'js-cookie'
 import {
-  APP_TOKEN_KEY,
-  APP_THEME_KEY,
-  APP_USERNAME_KEY,
   APP_LANGUAGE_KEY,
+  APP_THEME_KEY,
+  APP_TOKEN_KEY,
+  APP_USERNAME_KEY,
 } from '@/constants/storage'
 
 export function getToken (): Maybe<string> {

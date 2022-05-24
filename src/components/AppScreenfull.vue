@@ -1,7 +1,7 @@
 <template>
   <div
-    @click="handleClick"
     class="screenfull-container"
+    @click="handleClick"
   >
     <IconMdiFullscreenExit v-if="isFullscreen" />
     <IconMdiFullscreen v-else />
@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import screenfull from 'screenfull'
 
-const isFullscreen = ref(false)
+let isFullscreen = $ref(false)
 
 const handleClick = () => {
   if (!screenfull.isEnabled) return false
@@ -19,18 +19,18 @@ const handleClick = () => {
 }
 
 const handleChange = () => {
-  isFullscreen.value = (screenfull as { isFullscreen: boolean }).isFullscreen
+  isFullscreen = screenfull.isFullscreen
 }
 
 onMounted(() => {
   if (screenfull.isEnabled) {
-    screenfull.on('change', handleChange)
+    screenfull.on(`change`, handleChange)
   }
 })
 
 onBeforeUnmount(() => {
   if (screenfull.isEnabled) {
-    screenfull.off('change', handleChange)
+    screenfull.off(`change`, handleChange)
   }
 })
 </script>

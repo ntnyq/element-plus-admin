@@ -20,7 +20,7 @@
 import { useEnhancer } from '@/enhancers'
 
 // FIXME: remove when @ntnyq/eslint-config-vue use vue3 preset
-// eslint-disable-next-line no-undef
+
 defineProps({
   transitionName: {
     type: String,

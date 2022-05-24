@@ -22,13 +22,13 @@
 </template>
 
 <script lang="ts" setup>
+import SidebarItem from './SidebarItem.vue'
 import { useAppStore } from '@/store/app'
 import { useEnhancer } from '@/enhancers'
-import SidebarItem from './SidebarItem.vue'
 
 const { route } = useEnhancer()
 const app = useAppStore()
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const routes: any = []
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
 const sidebar = computed(() => app.sidebar)

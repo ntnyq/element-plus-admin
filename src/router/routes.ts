@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: `/redirect/:path(.*)`,
-        component: () => import('@/views/common/redirect.vue'),
+        component: () => import(`@/views/common/redirect.vue`),
       },
     ],
   },
@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       hidden: true,
     },
-    component: () => import('@/views/common/not-found.vue'),
+    component: () => import(`@/views/common/not-found.vue`),
   },
 
   {
@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       hidden: true,
     },
-    component: () => import('@/views/sign-in/index.vue'),
+    component: () => import(`@/views/sign-in/index.vue`),
   },
 
   {
@@ -49,7 +49,7 @@ const routes: Array<RouteRecordRaw> = [
         path: `/dashboard`,
         name: RouteName.DASHBOARD,
         meta: {},
-        component: () => import('@/views/dashboard/dashboard.vue'),
+        component: () => import(`@/views/dashboard/dashboard.vue`),
       },
     ],
   },

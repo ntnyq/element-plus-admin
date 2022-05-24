@@ -17,18 +17,18 @@
         </ElFormItem>
         <ElFormItem prop="password">
           <ElInput
-            @keyup.enter="handleSignIn"
             v-model.trim="formValues.password"
             type="new-password"
             placeholder="请输入密码"
+            @keyup.enter="handleSignIn"
           />
         </ElFormItem>
       </ElForm>
       <ElButton
-        @click.stop="handleSignIn"
         class="sign-in-btn"
         type="primary"
         :loading="isLoading"
+        @click.stop="handleSignIn"
       >
         {{ i18n.t(`action.signIn`) }}
       </ElButton>
@@ -37,6 +37,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { FormContext } from 'element-plus'
 import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
 
@@ -46,8 +47,7 @@ const {
   router,
 } = useEnhancer()
 const userStore = useUserStore()
-const form = ref(null)
-const isLoading = ref(false)
+const form = $ref(null)
 const formValues = reactive({
   username: ``,
   password: ``,
@@ -56,21 +56,22 @@ const formRules = reactive({
   username: { required: true, message: `请填写用户名`, trigger: [`blur`, `change`] },
   password: { required: true, message: `请填写密码`, trigger: [`blur`, `change`] },
 })
+const redirect = $computed(() => route.query && route.query.redirect)
+let isLoading = $ref(false)
 
-const redirect = computed(() => route.query && route.query.redirect)
-
-const handleSignIn = () => {
-  const formValidator = unref(form)
-
-  // @ts-expect-error TODO
-  formValidator.validate((valid: boolean) => {
-    if (!valid) return false
-    isLoading.value = true
-    // Call sign-in service here
+const handleSignIn = async () => {
+  try {
+    // @ts-expect-error ElementPlus issue
+    const isValid: boolean = await (form as unknown as FormContext).validate()
+    if (!isValid) return
+    isLoading = true
     userStore.setToken(`${formValues.username}_${formValues.password}`)
-    router.push(redirect.value || `/`)
-    isLoading.value = false
-  })
+    router.push(redirect || `/`)
+  } catch (err) {
+    console.log(err)
+  } finally {
+    isLoading = false
+  }
 }
 </script>
 

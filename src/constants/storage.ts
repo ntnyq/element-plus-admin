@@ -4,7 +4,7 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-const { VUE_APP_BRAND_PREFIX = `` } = process.env
+const { VUE_APP_BRAND_PREFIX = `ADMIN_` } = process.env
 
 /**
  * Token storage key

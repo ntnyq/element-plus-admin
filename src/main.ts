@@ -23,4 +23,4 @@ app.use(i18n)
 
 await router.isReady()
 setupRouterGuard(router)
-app.mount('#app')
+app.mount(`#app`)
