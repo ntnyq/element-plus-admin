@@ -17,18 +17,18 @@
         </ElFormItem>
         <ElFormItem prop="password">
           <ElInput
+            @keyup.enter="handleSignIn"
             v-model.trim="formValues.password"
             type="new-password"
             placeholder="请输入密码"
-            @keyup.enter="handleSignIn"
           />
         </ElFormItem>
       </ElForm>
       <ElButton
+        @click.stop="handleSignIn"
         class="sign-in-btn"
         type="primary"
         :loading="isLoading"
-        @click.stop="handleSignIn"
       >
         {{ i18n.t(`action.signIn`) }}
       </ElButton>

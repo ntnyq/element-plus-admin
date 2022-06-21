@@ -11,7 +11,7 @@ module.exports = {
 
   extends: [
     `@ntnyq`,
-    `.eslintrc-auto-import.json`,
+    `./.eslintrc-auto-import.json`,
   ],
 
   rules: {
@@ -24,9 +24,8 @@ module.exports = {
     {
       files: `*.d.ts`,
       rules: {
-        "vue/prefer-import-from-vue": `off`,
-        "import/newline-after-import": `off`,
-        "@typescript-eslint/consistent-type-imports": `off`,
+        'vue/prefer-import-from-vue': `off`,
+        '@typescript-eslint/consistent-type-imports': `off`,
       },
     },
   ],

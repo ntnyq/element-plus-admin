@@ -2,6 +2,7 @@
  * @file vue-cli config
  */
 
+const path = require(`path`)
 const { defineConfig } = require(`@vue/cli-service`)
 const Components = require(`unplugin-vue-components/webpack`)
 const AutoImport = require(`unplugin-auto-import/webpack`)
@@ -10,6 +11,7 @@ const IconsResolver = require(`unplugin-icons/resolver`)
 const { ElementPlusResolver } = require(`unplugin-vue-components/resolvers`)
 
 const isProduction = process.env.NODE_ENV === `production`
+const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = defineConfig({
   publicPath: process.env.BASE_URL || `./`,
@@ -39,7 +41,7 @@ module.exports = defineConfig({
     },
     plugins: [
       Components({
-        dts: true,
+        dts: resolve(`src/components.d.ts`),
         dirs: [`src/components`],
         resolvers: [
           ElementPlusResolver(),
@@ -50,6 +52,7 @@ module.exports = defineConfig({
         ],
       }),
       AutoImport({
+        dts: resolve(`src/auto-imports.d.ts`),
         imports: [`vue`, { 'element-plus': [`ElMessage`] }],
         eslintrc: {
           enabled: true,

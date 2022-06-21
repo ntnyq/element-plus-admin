@@ -1,29 +1,19 @@
 {
   "globals": {
+    "EffectScope": true,
+    "ElMessage": true,
     "computed": true,
     "createApp": true,
     "customRef": true,
     "defineAsyncComponent": true,
     "defineComponent": true,
     "effectScope": true,
-    "EffectScope": true,
-    "ElBadge": true,
-    "ElButton": true,
-    "ElConfigProvider": true,
-    "ElDropdown": true,
-    "ElDropdownItem": true,
-    "ElDropdownMenu": true,
-    "ElForm": true,
-    "ElFormItem": true,
-    "ElInput": true,
-    "ElMenu": true,
-    "ElMessage": true,
-    "ElScrollbar": true,
-    "ElTooltip": true,
     "getCurrentInstance": true,
     "getCurrentScope": true,
     "h": true,
     "inject": true,
+    "isProxy": true,
+    "isReactive": true,
     "isReadonly": true,
     "isRef": true,
     "markRaw": true,
@@ -59,6 +49,8 @@
     "useCssVars": true,
     "useSlots": true,
     "watch": true,
-    "watchEffect": true
+    "watchEffect": true,
+    "watchPostEffect": true,
+    "watchSyncEffect": true
   }
 }

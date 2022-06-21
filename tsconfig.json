@@ -30,9 +30,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "components.d.ts",
-    "auto-imports.d.ts"
+    "src/**/*.vue"
   ],
   "exclude": [
     "node_modules"

@@ -1,7 +1,7 @@
 <template>
   <div
-    class="screenfull-container"
     @click="handleClick"
+    class="screenfull-container"
   >
     <IconMdiFullscreenExit v-if="isFullscreen" />
     <IconMdiFullscreen v-else />

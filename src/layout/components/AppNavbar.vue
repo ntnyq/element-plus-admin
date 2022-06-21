@@ -2,10 +2,10 @@
   <div class="app-navbar">
     <div class="navbar-block">
       <button
+        @click="app.toggleSidebar"
         type="button"
         role="hamburger"
         class="app-hamburger"
-        @click="app.toggleSidebar"
       >
         <IconMdiMenuOpen v-if="app.sidebar.isOpen" />
         <IconMdiMenu v-else />
@@ -27,10 +27,10 @@
       </ElTooltip>
 
       <ElDropdown
+        @command="handleCommand"
         placement="bottom"
         trigger="click"
         class="navbar-dropdown"
-        @command="handleCommand"
       >
         <div class="navbar-dropdown-trigger">
           <ElBadge
