@@ -19,13 +19,8 @@
 <script lang="ts" setup>
 import { useEnhancer } from '@/enhancers'
 
-// FIXME: remove when @ntnyq/eslint-config-vue use vue3 preset
-
-defineProps({
-  transitionName: {
-    type: String,
-    default: `el-fade-in`,
-  },
+withDefaults(defineProps<{ transitionName?: string }>(), {
+  transitionName: `el-fade-in`,
 })
 
 const { route } = useEnhancer()

@@ -24,8 +24,8 @@ module.exports = defineConfig({
 
   css: {
     loaderOptions: {
-      sass: {
-        additionalData: `@import "@/styles/core/style";`,
+      scss: {
+        additionalData: `@use "@/styles/core/style" as *;`,
       },
     },
   },
@@ -44,7 +44,7 @@ module.exports = defineConfig({
         dts: resolve(`src/components.d.ts`),
         dirs: [`src/components`],
         resolvers: [
-          ElementPlusResolver(),
+          ElementPlusResolver({ importStyle: `sass` }),
           IconsResolver({
             prefix: `icon`,
             enabledCollections: [`mdi`],
@@ -58,7 +58,7 @@ module.exports = defineConfig({
           enabled: true,
         },
         resolvers: [
-          ElementPlusResolver(),
+          ElementPlusResolver({ importStyle: `sass` }),
           IconsResolver(),
         ],
       }),

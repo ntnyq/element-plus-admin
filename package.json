@@ -2,7 +2,7 @@
   "name": "element-plus-admin",
   "version": "0.3.1",
   "private": true,
-  "packageManager": "pnpm@7.1.5",
+  "packageManager": "pnpm@7.3.0",
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "run-p lint:*",

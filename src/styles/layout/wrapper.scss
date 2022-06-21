@@ -3,10 +3,10 @@
 .app-wrapper {
   position: relative;
 
-  @include when(sidebar-open) {
+  @include is(sidebar-open) {
   }
 
-  @include when(sidebar-close) {
+  @include is(sidebar-close) {
     .app-sidebar {
       transform: translate(-100%, 0);
     }

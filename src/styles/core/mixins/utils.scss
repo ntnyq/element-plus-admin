@@ -7,7 +7,7 @@
   }
 }
 
-@mixin when($state) {
+@mixin is($state) {
   @at-root {
     &.is-#{$state} {
       @content;
@@ -24,14 +24,15 @@
 }
 
 @mixin v-deep {
-  &::v-deep {
-    @content;
+  @at-root {
+    :deep(&) {
+      @content;
+    }
   }
 }
 
 @mixin clearfix {
   zoom: 1;
-
   &:after {
     content: "";
     display: block;
