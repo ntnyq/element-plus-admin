@@ -8,9 +8,7 @@ import type { AxiosInstance } from 'axios'
 import axios from 'axios'
 // import store from '@/store'
 import * as storage from '@/utils/storage'
-import {
-  HTTP_REQUEST_TIMEOUT_MILLISECONDS,
-} from '@/constants/request'
+import { HTTP_REQUEST_TIMEOUT_MILLISECONDS } from '@/constants/request'
 
 export enum HTTPStatus {
   SUCCESS = 1,
@@ -41,7 +39,7 @@ instance.interceptors.request.use(config => {
 })
 
 instance.interceptors.response.use(res => {
-  const { data: { status, data = {} } = {} } = res
+  const { status, data = {} } = res.data || {}
 
   if (status === undefined) {
     return Promise.reject(new Error(`Missed status in response`))

@@ -1,8 +1,8 @@
 /* additionalData for sass-loader */
 
-@import "vars";
+@forward "vars";
 
-@import "mixins/bg";
-@import "mixins/utils";
-@import "mixins/reset";
-@import "mixins/ellipsis";
+@forward "mixins/bg";
+@forward "mixins/utils";
+@forward "mixins/reset";
+@forward "mixins/ellipsis";
