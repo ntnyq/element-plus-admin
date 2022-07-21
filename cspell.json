@@ -17,6 +17,7 @@
     "unref",
     "vetur",
     "vitepress",
+    "vueuse",
     "vuex",
     "xlink"
   ],

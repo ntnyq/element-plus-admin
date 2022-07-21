@@ -5,12 +5,13 @@
  */
 
 import Cookies from 'js-cookie'
-import {
-  APP_LANGUAGE_KEY,
-  APP_THEME_KEY,
-  APP_TOKEN_KEY,
-  APP_USERNAME_KEY,
-} from '@/constants/storage'
+
+const { VUE_APP_BRAND_PREFIX = `ADMIN_` } = process.env
+
+const APP_TOKEN_KEY = `${VUE_APP_BRAND_PREFIX}TOKEN`
+const APP_USERNAME_KEY = `${VUE_APP_BRAND_PREFIX}USERNAME`
+const APP_LANGUAGE_KEY = `${VUE_APP_BRAND_PREFIX}LANGUAGE`
+const APP_THEME_KEY = `${VUE_APP_BRAND_PREFIX}THEME`
 
 export function getToken (): Maybe<string> {
   return Cookies.get(APP_TOKEN_KEY)

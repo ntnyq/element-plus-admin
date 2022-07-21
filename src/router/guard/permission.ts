@@ -22,9 +22,6 @@ export function usePermissionGuard (router: Router) {
       } else {
         const userStore = useUserStore()
         const hasRoles = userStore.roles && userStore.roles.length
-
-        console.log(hasRoles)
-
         if (hasRoles) {
           next()
         } else {

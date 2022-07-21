@@ -9,28 +9,15 @@
 </template>
 
 <script lang="ts" setup>
-import screenfull from 'screenfull'
+import { useFullscreen } from '@vueuse/core'
 
-let isFullscreen = $ref(false)
-
+const {
+  toggle,
+  isFullscreen,
+  isSupported,
+} = useFullscreen()
 const handleClick = () => {
-  if (!screenfull.isEnabled) return false
-  screenfull.toggle()
+  if (!isSupported) return false
+  toggle()
 }
-
-const handleChange = () => {
-  isFullscreen = screenfull.isFullscreen
-}
-
-onMounted(() => {
-  if (screenfull.isEnabled) {
-    screenfull.on(`change`, handleChange)
-  }
-})
-
-onBeforeUnmount(() => {
-  if (screenfull.isEnabled) {
-    screenfull.off(`change`, handleChange)
-  }
-})
 </script>
