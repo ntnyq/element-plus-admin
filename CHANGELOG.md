@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/ntnyq/element-plus-admin/compare/v0.3.1...v0.3.2) (2022-07-21)
+
+
+### Features
+
+* custom theme ([43608f0](https://github.com/ntnyq/element-plus-admin/commit/43608f08edc8d255236a4c51e618b7a0eff94191))
+* migrate to unplugin-icons ([f4a103b](https://github.com/ntnyq/element-plus-admin/commit/f4a103baa35969bbd50b4972c691f0cae64a550b))
+* permission ([1fb7834](https://github.com/ntnyq/element-plus-admin/commit/1fb7834223399721c15c12c7e7e1b477c7faa6f2))
+* use reactive transform ([037600b](https://github.com/ntnyq/element-plus-admin/commit/037600bb50d11f9991113e8649533dca53aca028))
+* vueuse ([23151b6](https://github.com/ntnyq/element-plus-admin/commit/23151b6e38f93deb05efc6359486d159442fea74))
+
 ### [0.3.1](https://github.com/ntnyq/element-plus-admin/compare/v0.3.0...v0.3.1) (2022-01-26)
 
 
