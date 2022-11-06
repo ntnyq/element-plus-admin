@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/ntnyq/element-plus-admin/compare/v0.3.2...v0.3.3) (2022-11-06)
+
+
+### Features
+
+* split vue chunks ([b53ea27](https://github.com/ntnyq/element-plus-admin/commit/b53ea27bf289944d40529502b0c79a811991c7bc))
+
+
+### Bug Fixes
+
+* remove enhancer any type ([b9c90b3](https://github.com/ntnyq/element-plus-admin/commit/b9c90b3ccbb1863742cee565cc327372eb61955b))
+
 ### [0.3.2](https://github.com/ntnyq/element-plus-admin/compare/v0.3.1...v0.3.2) (2022-07-21)
 
 
