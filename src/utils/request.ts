@@ -28,11 +28,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use(config => {
   if (storage.getToken()) {
-    (config.headers as $TODO).Authorization = storage.getToken()
+    config.headers!.Authorization = storage.getToken()
   }
-
-  (config.headers as $TODO)[`X-Requested-With`] = `XMLHttpRequest`
-
+  config.headers![`X-Requested-With`] = `XMLHttpRequest`
   return config
 }, error => {
   return Promise.reject(error)
@@ -54,9 +52,8 @@ instance.interceptors.response.use(res => {
   }
 }, error => {
   if (error.code === `ECONNABORTED` && error.message.includes(`timeout`)) {
-    console.log(1)
+    console.log(`timeout`)
   }
-
   return Promise.reject(error)
 })
 

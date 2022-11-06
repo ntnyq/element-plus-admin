@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "env": {
+    "vue/setup-compiler-macros": true
+  },
+  "extends": [
+    "@ntnyq",
+    "./.eslintrc-auto-import.json"
+  ],
+  "rules": {
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase"
+    ],
+    "vue/multi-word-component-names": "off"
+  },
+  "overrides": [
+    {
+      "files": "*.d.ts",
+      "rules": {
+        "vue/prefer-import-from-vue": "off",
+        "@typescript-eslint/consistent-type-imports": "off"
+      }
+    }
+  ]
+}

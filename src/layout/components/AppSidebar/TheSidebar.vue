@@ -22,6 +22,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { RouteRecordRaw } from 'vue-router'
 import SidebarItem from './SidebarItem.vue'
 import { useAppStore } from '@/store/app'
 import { useEnhancer } from '@/enhancers'
@@ -29,7 +30,7 @@ import { useEnhancer } from '@/enhancers'
 const { route } = useEnhancer()
 const app = useAppStore()
 
-const routes: any = []
+const routes: RouteRecordRaw[] = []
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
 const sidebar = computed(() => app.sidebar)
 </script>

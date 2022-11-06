@@ -36,6 +36,7 @@
     "readonly": true,
     "ref": true,
     "resolveComponent": true,
+    "resolveDirective": true,
     "shallowReactive": true,
     "shallowReadonly": true,
     "shallowRef": true,

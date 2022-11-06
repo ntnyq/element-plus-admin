@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.eslint.fixAll": true
   },
@@ -21,6 +21,5 @@
   },
   "[typescript]": {
     "editor.formatOnSave": false
-  },
-  "vetur.format.defaultFormatter.ts": "vscode-typescript"
+  }
 }

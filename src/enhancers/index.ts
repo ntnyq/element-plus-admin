@@ -7,7 +7,7 @@
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 
-export const useEnhancer = (): $TODO => {
+export const useEnhancer = () => {
   const route = useRoute()
   const router = useRouter()
   const i18n = useI18n()

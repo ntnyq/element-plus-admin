@@ -2,7 +2,7 @@
   <div class="sign-in-container">
     <div class="sign-in-form">
       <ElForm
-        ref="form"
+        ref="formRef"
         :model="formValues"
         :rules="formRules"
       >
@@ -37,33 +37,36 @@
 </template>
 
 <script lang="ts" setup>
-import type { FormContext } from 'element-plus'
+import './style.scss'
+import type { FormInstance, FormRules } from 'element-plus'
 import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
 
-const {
-  i18n,
-  route,
-  router,
-} = useEnhancer()
+const { i18n, route, router } = useEnhancer()
 const userStore = useUserStore()
-const form = $ref(null)
+const formRef = $ref<FormInstance>()
 const formValues = reactive({
   username: ``,
   password: ``,
 })
-const formRules = reactive({
-  username: { required: true, message: `请填写用户名`, trigger: [`blur`, `change`] },
-  password: { required: true, message: `请填写密码`, trigger: [`blur`, `change`] },
+const formRules: FormRules = reactive({
+  username: {
+    required: true,
+    message: `请填写用户名`,
+    trigger: [`blur`, `change`],
+  },
+  password: {
+    required: true,
+    message: `请填写密码`,
+    trigger: [`blur`, `change`],
+  },
 })
-const redirect = $computed(() => route.query && route.query.redirect)
+const redirect = $computed(() => route.query.redirect as string)
 let isLoading = $ref(false)
 
 const handleSignIn = async () => {
   try {
-    // @ts-expect-error ElementPlus issue
-    const isValid: boolean = await (form as unknown as FormContext).validate()
-    if (!isValid) return
+    await formRef.validate()
     isLoading = true
     userStore.setToken(`${formValues.username}_${formValues.password}`)
     router.push(redirect || `/`)
@@ -74,35 +77,3 @@ const handleSignIn = async () => {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.sign-in-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  .sign-in-form {
-    position: relative;
-    padding: 15px;
-    width: 100%;
-    max-width: 460px;
-  }
-
-  .sign-in-title {
-    position: relative;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 32px;
-  }
-
-  .sign-in-btn {
-    position: relative;
-    width: 100%;
-    margin-top: 10px;
-    letter-spacing: 10px;
-    font-size: 20px;
-  }
-}
-</style>

@@ -1,0 +1,29 @@
+.sign-in-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .sign-in-form {
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .sign-in-title {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .sign-in-btn {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    letter-spacing: 10px;
+    font-size: 20px;
+  }
+}
