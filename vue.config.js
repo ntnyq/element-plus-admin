@@ -39,6 +39,21 @@ module.exports = defineConfig({
     experiments: {
       topLevelAwait: true,
     },
+
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vue: {
+            name: `chunk-vue`,
+            test: /[\\/]node_modules[\\/](vue|vue-router|pinia|vue-i18n)[\\/]/,
+            chunks: `all`,
+            // vendor is -10
+            priority: -5,
+          },
+        },
+      },
+    },
+
     plugins: [
       Components({
         dts: resolve(`src/components.d.ts`),
