@@ -12,4 +12,7 @@ export default {
   message: {
     workInProgress: `正在开发`,
   },
+  tip: {
+    signInSuccess: `登录成功`,
+  },
 }

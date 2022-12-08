@@ -17,7 +17,7 @@ type EMessageContent = string | VNode
 type EIMessageOptions = Partial<MessageOptions>
 
 export const message = {
-  success (message: EMessageContent, options: EIMessageOptions): MessageHandler {
+  success (message: EMessageContent, options?: EIMessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.SUCCESS,
       message,

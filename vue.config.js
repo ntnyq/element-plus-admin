@@ -68,7 +68,10 @@ module.exports = defineConfig({
       }),
       AutoImport({
         dts: resolve(`src/auto-imports.d.ts`),
-        imports: [`vue`, { 'element-plus': [`ElMessage`] }],
+        imports: [
+          `vue`,
+          { 'element-plus': [`ElMessage`] },
+        ],
         eslintrc: {
           enabled: true,
         },

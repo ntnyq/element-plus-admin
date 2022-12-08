@@ -41,6 +41,7 @@ import './style.scss'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
+import { showSuccessTip } from '@/views/sign-in/utils'
 
 const { i18n, route, router } = useEnhancer()
 const userStore = useUserStore()
@@ -66,9 +67,10 @@ let isLoading = $ref(false)
 
 const handleSignIn = async () => {
   try {
-    await formRef.validate()
+    await formRef?.validate()
     isLoading = true
     userStore.setToken(`${formValues.username}_${formValues.password}`)
+    showSuccessTip()
     router.push(redirect || `/`)
   } catch (err) {
     console.log(err)
