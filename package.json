@@ -1,6 +1,6 @@
 {
   "name": "element-plus-admin",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "packageManager": "pnpm@7.18.1",
   "scripts": {
