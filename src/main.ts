@@ -21,6 +21,7 @@ app.use(store)
 app.use(router)
 app.use(i18n)
 
-await router.isReady()
-setupRouterGuard(router)
-app.mount(`#app`)
+router.isReady().then(() => {
+  setupRouterGuard(router)
+  app.mount(`#app`)
+})

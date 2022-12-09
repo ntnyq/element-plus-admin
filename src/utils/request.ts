@@ -6,9 +6,9 @@
 
 import type { AxiosInstance } from 'axios'
 import axios from 'axios'
-// import store from '@/store'
 import * as storage from '@/utils/storage'
 import { HTTP_REQUEST_TIMEOUT_MILLISECONDS } from '@/constants/request'
+import { ENV } from '@/constants/config'
 
 export enum HTTPStatus {
   SUCCESS = 1,
@@ -22,7 +22,7 @@ interface HTTPResult<T = $TODO> {
 }
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_API_HOST || `/`,
+  baseURL: ENV.BASE_URL,
   timeout: HTTP_REQUEST_TIMEOUT_MILLISECONDS,
 })
 

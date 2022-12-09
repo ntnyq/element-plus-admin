@@ -8,8 +8,7 @@ import { defineStore } from 'pinia'
 import * as storage from '@/utils/storage'
 import { Theme } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
-
-const { VUE_APP_FALLBACK_LANGUAGE = `zh` } = process.env
+import { ENV } from '@/constants/config'
 
 export interface IAppStateTree {
   language: string
@@ -24,7 +23,7 @@ export const useAppStore = defineStore({
   id: StoreModule.APP,
 
   state: () => <IAppStateTree>({
-    language: storage.getLanguage() || VUE_APP_FALLBACK_LANGUAGE,
+    language: storage.getLanguage() || ENV.APP_LOCALE,
     theme: storage.getTheme() || Theme.DEFAULT,
     sidebar: {
       isOpen: true,

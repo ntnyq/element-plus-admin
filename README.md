@@ -23,7 +23,7 @@ $ npm install pnpm -g
 
 $ pnpm install
 
-$ pnpm run serve
+$ pnpm dev
 ```
 
 ## License
