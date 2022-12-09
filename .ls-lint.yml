@@ -10,7 +10,7 @@ ls:
   .svg: kebab-case
   .vue: kebab-case | regex:^App$
   .scss: kebab-case | regex:^[_\.].*
-  .json: kebab-case | regex:^[_\.].*
+  .json: kebab-case | regex:^[_\.].* | regex:^tsconfig.*
   .config.js: point.case
 
   src/components:

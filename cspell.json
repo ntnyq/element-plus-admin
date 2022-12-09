@@ -23,6 +23,7 @@
     "vuex",
     "xlink"
   ],
+  "allowCompoundWords": true,
   "flagWords": [],
   "ignoreWords": [],
   "dictionaries": [],
@@ -36,6 +37,7 @@
     "**/package-lock.json",
     "*.spec.js.snap",
     "*.min.*",
-    "*.log*"
+    "*.log*",
+    "dist"
   ]
 }

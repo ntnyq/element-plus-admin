@@ -5,12 +5,14 @@
   "packageManager": "pnpm@7.18.1",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "run-p type-check build-only",
     "lint": "run-p lint:*",
     "lint:ls": "ls-lint",
     "lint:cspell": "cspell \"*\"*",
     "lint:script": "eslint .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
