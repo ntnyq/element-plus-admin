@@ -28,9 +28,9 @@ import { useAppStore } from '@/store/app'
 import { useEnhancer } from '@/enhancers'
 
 const { route } = useEnhancer()
-const app = useAppStore()
+const appStore = useAppStore()
 
 const routes: RouteRecordRaw[] = []
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
-const sidebar = computed(() => app.sidebar)
+const sidebar = computed(() => appStore.sidebar)
 </script>

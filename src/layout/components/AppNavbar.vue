@@ -2,12 +2,12 @@
   <div class="app-navbar">
     <div class="navbar-block">
       <button
-        @click="app.toggleSidebar"
+        @click="appStore.toggleSidebar"
         type="button"
         role="hamburger"
         class="app-hamburger"
       >
-        <IconMdiMenuOpen v-if="app.sidebar.isOpen" />
+        <IconMdiMenuOpen v-if="appStore.sidebar.isOpen" />
         <IconMdiMenu v-else />
       </button>
       <RouterLink
@@ -43,7 +43,7 @@
               alt="User Avatar"
             >
             <span class="user-name">
-              Hi, {{ user.username }}
+              Hi, {{ userStore.username }}
             </span>
             <i class="el-icon-caret-bottom" />
           </ElBadge>
@@ -73,8 +73,8 @@ import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
 
 const { i18n, router } = useEnhancer()
-const app = useAppStore()
-const user = useUserStore()
+const appStore = useAppStore()
+const userStore = useUserStore()
 
 const handleCommand = (command: string) => {
   switch (command) {
@@ -87,7 +87,7 @@ const handleCommand = (command: string) => {
       break
 
     case `signOut`:
-      user.signOut()
+      userStore.signOut()
       router.push({ name: `SignIn` })
       break
 

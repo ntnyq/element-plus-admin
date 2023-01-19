@@ -1,8 +1,8 @@
 <template>
   <div
     :class="{
-      'is-sidebar-open': app.sidebar.isOpen,
-      'is-sidebar-close': !app.sidebar.isOpen,
+      'is-sidebar-open': appStore.sidebar.isOpen,
+      'is-sidebar-close': !appStore.sidebar.isOpen,
     }"
     class="app-wrapper"
   >
@@ -20,5 +20,5 @@ import AppNavbar from './components/AppNavbar.vue'
 import AppSidebar from './components/AppSidebar/TheSidebar.vue'
 import { useAppStore } from '@/store/app'
 
-const app = useAppStore()
+const appStore = useAppStore()
 </script>
