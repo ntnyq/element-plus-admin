@@ -6,9 +6,7 @@
         :model="formValues"
         :rules="formRules"
       >
-        <h1 class="sign-in-title">
-          ElementPlus Admin
-        </h1>
+        <h1 class="sign-in-title">ElementPlus Admin</h1>
         <ElFormItem prop="username">
           <ElInput
             v-model.trim="formValues.username"
@@ -45,7 +43,7 @@ import { showSuccessTip } from '@/views/sign-in/utils'
 
 const { i18n, route, router } = useEnhancer()
 const userStore = useUserStore()
-const formRef = $ref<FormInstance>()
+const formRef = ref<FormInstance>()
 const formValues = reactive({
   username: ``,
   password: ``,
@@ -62,20 +60,20 @@ const formRules: FormRules = reactive({
     trigger: [`blur`, `change`],
   },
 })
-const redirect = $computed(() => route.query.redirect as string)
-let isLoading = $ref(false)
+const redirect = computed(() => route.query.redirect as string)
+const isLoading = ref(false)
 
 const handleSignIn = async () => {
   try {
-    await formRef?.validate()
-    isLoading = true
+    await formRef.value?.validate()
+    isLoading.value = true
     userStore.setToken(`${formValues.username}_${formValues.password}`)
     showSuccessTip()
-    router.push(redirect || `/`)
+    router.push(redirect.value || `/`)
   } catch (err) {
     console.log(err)
   } finally {
-    isLoading = false
+    isLoading.value = false
   }
 }
 </script>
