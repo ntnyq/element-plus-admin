@@ -17,12 +17,13 @@ export interface IPermissionStateTree {
 export const usePermissionStore = defineStore({
   id: StoreModule.PERMISSION,
 
-  state: () => <IPermissionStateTree>({
-    routes: [],
-  }),
+  state: () =>
+    <IPermissionStateTree>{
+      routes: [],
+    },
 
   actions: {
-    async generateRoutes (roles: string[]) {
+    async generateRoutes(roles: string[]) {
       let routes: RouteRecordRaw[] = []
 
       if (roles.includes(UserRole.ADMIN)) {
@@ -38,7 +39,7 @@ export const usePermissionStore = defineStore({
   },
 })
 
-function filterAsyncRoutes (routes: RouteRecordRaw[], roles: string[]) {
+function filterAsyncRoutes(routes: RouteRecordRaw[], roles: string[]) {
   const res: RouteRecordRaw[] = []
 
   routes.forEach(route => {
@@ -56,7 +57,7 @@ function filterAsyncRoutes (routes: RouteRecordRaw[], roles: string[]) {
   return res
 }
 
-function hasPermission (roles: string[], route: RouteRecordRaw) {
+function hasPermission(roles: string[], route: RouteRecordRaw) {
   if (route.meta && route.meta.roles && Array.isArray(route.meta.roles)) {
     return roles.some(role => (route.meta!.roles as string[]).includes(role))
   } else {

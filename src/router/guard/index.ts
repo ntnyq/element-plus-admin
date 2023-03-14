@@ -8,6 +8,6 @@ import type { Router } from 'vue-router'
 import { usePermissionGuard } from './permission'
 
 // Do not change the guard order
-export function setupRouterGuard (router: Router): void {
+export function setupRouterGuard(router: Router): void {
   usePermissionGuard(router)
 }

@@ -1,5 +1,3 @@
 <template>
-  <div class="menu-wrapper">
-    2
-  </div>
+  <div class="menu-wrapper">2</div>
 </template>

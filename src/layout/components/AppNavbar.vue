@@ -41,24 +41,16 @@
               src="~@/assets/images/avatar.png"
               class="user-avatar"
               alt="User Avatar"
-            >
-            <span class="user-name">
-              Hi, {{ userStore.username }}
-            </span>
+            />
+            <span class="user-name"> Hi, {{ userStore.username }} </span>
             <i class="el-icon-caret-bottom" />
           </ElBadge>
         </div>
         <template #dropdown>
           <ElDropdownMenu>
-            <ElDropdownItem command="dashboard">
-              首页
-            </ElDropdownItem>
-            <ElDropdownItem command="updatePassword">
-              更新密码
-            </ElDropdownItem>
-            <ElDropdownItem command="signOut">
-              退出
-            </ElDropdownItem>
+            <ElDropdownItem command="dashboard"> 首页 </ElDropdownItem>
+            <ElDropdownItem command="updatePassword"> 更新密码 </ElDropdownItem>
+            <ElDropdownItem command="signOut"> 退出 </ElDropdownItem>
           </ElDropdownMenu>
         </template>
       </ElDropdown>

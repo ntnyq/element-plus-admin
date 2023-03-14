@@ -17,28 +17,28 @@ type EMessageContent = string | VNode
 type EIMessageOptions = Partial<MessageOptions>
 
 export const message = {
-  success (message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  success(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.SUCCESS,
       message,
       ...options,
     })
   },
-  error (message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  error(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.ERROR,
       message,
       ...options,
     })
   },
-  warning (message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  warning(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.WARNING,
       message,
       ...options,
     })
   },
-  info (message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  info(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.INFO,
       message,

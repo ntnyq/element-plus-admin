@@ -10,11 +10,9 @@ import { RouteName } from '@/constants/route'
 import { useUserStore } from '@/store/user'
 import { usePermissionStore } from '@/store/permission'
 
-export const PERMISSION_WHITELIST: string[] = [
-  `/sign-in`,
-]
+export const PERMISSION_WHITELIST: string[] = [`/sign-in`]
 
-export function usePermissionGuard (router: Router) {
+export function usePermissionGuard(router: Router) {
   router.beforeEach(async (to, from, next) => {
     if (storage.getToken()) {
       if (to.name === RouteName.SIGN_IN) {

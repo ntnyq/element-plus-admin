@@ -25,12 +25,7 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: [
-      `vue`,
-      `vue-router`,
-      `@vueuse/core`,
-      `element-plus`,
-    ],
+    include: [`vue`, `vue-router`, `@vueuse/core`, `element-plus`],
   },
 
   css: {
@@ -85,10 +80,7 @@ export default defineConfig({
       eslintrc: {
         enabled: true,
       },
-      resolvers: [
-        ElementPlusResolver({ importStyle: `sass` }),
-        IconsResolver(),
-      ],
+      resolvers: [ElementPlusResolver({ importStyle: `sass` }), IconsResolver()],
     }),
 
     Icons({

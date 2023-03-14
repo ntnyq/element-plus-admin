@@ -19,14 +19,15 @@ export interface IUserStateTree {
 export const useUserStore = defineStore({
   id: StoreModule.USER,
 
-  state: () => <IUserStateTree>({
-    token: storage.getToken() || ``,
-    roles: [],
-    username: `ntnyq`,
-  }),
+  state: () =>
+    <IUserStateTree>{
+      token: storage.getToken() || ``,
+      roles: [],
+      username: `ntnyq`,
+    },
 
   actions: {
-    async getUserInfo () {
+    async getUserInfo() {
       const roles = [UserRole.USER, UserRole.ADMIN]
 
       this.$patch({ roles })
@@ -34,16 +35,16 @@ export const useUserStore = defineStore({
       return { roles }
     },
 
-    setToken (token: string) {
+    setToken(token: string) {
       storage.setToken(token)
       this.$patch({ token })
     },
 
-    setRoles (roles: string[]) {
+    setRoles(roles: string[]) {
       this.$patch({ roles })
     },
 
-    signOut () {
+    signOut() {
       console.log(`User signed out`)
       storage.removeToken()
       resetRouter()

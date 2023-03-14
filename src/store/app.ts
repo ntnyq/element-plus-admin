@@ -22,22 +22,23 @@ export interface IAppStateTree {
 export const useAppStore = defineStore({
   id: StoreModule.APP,
 
-  state: () => <IAppStateTree>({
-    language: storage.getLanguage() || ENV.APP_LOCALE,
-    theme: storage.getTheme() || Theme.DEFAULT,
-    sidebar: {
-      isOpen: true,
-      withoutAnimation: false,
+  state: () =>
+    <IAppStateTree>{
+      language: storage.getLanguage() || ENV.APP_LOCALE,
+      theme: storage.getTheme() || Theme.DEFAULT,
+      sidebar: {
+        isOpen: true,
+        withoutAnimation: false,
+      },
     },
-  }),
 
   actions: {
-    setLanguage (language: string) {
+    setLanguage(language: string) {
       storage.setLanguage(language)
       this.language = language
     },
 
-    toggleSidebar () {
+    toggleSidebar() {
       this.sidebar.isOpen = !this.sidebar.isOpen
     },
   },
