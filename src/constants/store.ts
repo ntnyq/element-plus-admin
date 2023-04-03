@@ -5,7 +5,7 @@
  */
 
 export enum StoreModule {
-  APP = `app`,
-  USER = `user`,
-  PERMISSION = `permission`,
+  APP = 'app',
+  USER = 'user',
+  PERMISSION = 'permission',
 }

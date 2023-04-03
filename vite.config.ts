@@ -14,7 +14,7 @@ const resolve = (...args: string[]) => path.resolve(__dirname, ...args)
 export default defineConfig({
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL(`./src`, import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 
@@ -25,13 +25,13 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: [`vue`, `vue-router`, `@vueuse/core`, `element-plus`],
+    include: ['vue', 'vue-router', '@vueuse/core', 'element-plus'],
   },
 
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/core/style" as *;`,
+        additionalData: '@use "@/styles/core/style" as *;',
       },
     },
   },
@@ -56,37 +56,37 @@ export default defineConfig({
     splitVendorChunkPlugin(),
 
     Components({
-      dts: resolve(`src/components.d.ts`),
-      dirs: [`src/components`],
+      dts: resolve('src/components.d.ts'),
+      dirs: ['src/components'],
       resolvers: [
-        ElementPlusResolver({ importStyle: `sass` }),
+        ElementPlusResolver({ importStyle: 'sass' }),
         IconsResolver({
-          prefix: `icon`,
-          enabledCollections: [`mdi`],
+          prefix: 'icon',
+          enabledCollections: ['mdi'],
         }),
       ],
     }),
 
     AutoImport({
-      dts: resolve(`src/auto-imports.d.ts`),
+      dts: resolve('src/auto-imports.d.ts'),
       imports: [
-        `vue`,
+        'vue',
         'pinia',
         'vue-i18n',
-        `vue-router`,
-        `@vueuse/core`,
-        { 'element-plus': [`ElMessage`] },
+        'vue-router',
+        '@vueuse/core',
+        { 'element-plus': ['ElMessage'] },
       ],
       eslintrc: {
         enabled: true,
       },
-      resolvers: [ElementPlusResolver({ importStyle: `sass` }), IconsResolver()],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver()],
     }),
 
     Icons({
-      compiler: `vue3`,
-      defaultClass: ``,
-      defaultStyle: `vertical-align: sub;`,
+      compiler: 'vue3',
+      defaultClass: '',
+      defaultStyle: 'vertical-align: sub;',
     }),
   ],
 })

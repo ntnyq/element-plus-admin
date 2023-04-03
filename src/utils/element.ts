@@ -5,40 +5,38 @@
  */
 
 import type { VNode } from 'vue'
-import type { MessageHandler, MessageOptions } from 'element-plus/lib'
+import type { MessageHandler, MessageOptions } from 'element-plus'
 
 enum ELMessageType {
-  SUCCESS = `success`,
-  ERROR = `error`,
-  INFO = `info`,
-  WARNING = `warning`,
+  SUCCESS = 'success',
+  ERROR = 'error',
+  INFO = 'info',
+  WARNING = 'warning',
 }
-type EMessageContent = string | VNode
-type EIMessageOptions = Partial<MessageOptions>
 
 export const message = {
-  success(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  success(message: string | VNode, options?: MessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.SUCCESS,
       message,
       ...options,
     })
   },
-  error(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  error(message: string | VNode, options?: MessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.ERROR,
       message,
       ...options,
     })
   },
-  warning(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  warning(message: string | VNode, options?: MessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.WARNING,
       message,
       ...options,
     })
   },
-  info(message: EMessageContent, options?: EIMessageOptions): MessageHandler {
+  info(message: string | VNode, options?: MessageOptions): MessageHandler {
     return ElMessage({
       type: ELMessageType.INFO,
       message,

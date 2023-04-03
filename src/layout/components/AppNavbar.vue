@@ -19,7 +19,7 @@
     </div>
     <div class="navbar-block">
       <ElTooltip
-        :content="i18n.t(`action.toggleFullscreen`)"
+        :content="t('action.toggleFullscreen')"
         effect="dark"
         placement="bottom"
       >
@@ -61,26 +61,26 @@
 <script lang="ts" setup>
 import { useAppStore } from '@/store/app'
 import { useUserStore } from '@/store/user'
-import { useEnhancer } from '@/enhancers'
 import { message } from '@/utils/element'
 
-const { i18n, router } = useEnhancer()
+const { t } = useI18n()
+const router = useRouter()
 const appStore = useAppStore()
 const userStore = useUserStore()
 
 const handleCommand = (command: string) => {
   switch (command) {
-    case `dashboard`:
-      router.push(`/`)
+    case 'dashboard':
+      router.push('/')
       break
 
-    case `updatePassword`:
-      message.warning(i18n.t(`message.workInProgress`))
+    case 'updatePassword':
+      message.warning(t('message.workInProgress'))
       break
 
-    case `signOut`:
+    case 'signOut':
       userStore.signOut()
-      router.push({ name: `SignIn` })
+      router.push({ name: 'SignIn' })
       break
 
     default:

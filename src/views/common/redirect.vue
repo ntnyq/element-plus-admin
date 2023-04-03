@@ -1,15 +1,14 @@
 <script lang="ts">
-import { useEnhancer } from '@/enhancers'
-
 export default {
-  name: `TheRedirect`,
+  name: 'TheRedirect',
 
   setup () {
-    const { route, router } = useEnhancer()
+    const route = useRoute()
+    const router = useRouter()
     const { params, query } = route
     const { path } = params
     router.replace({ path: `/${path}`, query })
-    return () => h(`div`)
+    return () => h('div')
   },
 }
 </script>

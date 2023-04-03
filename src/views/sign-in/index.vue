@@ -28,7 +28,7 @@
         type="primary"
         :loading="isLoading"
       >
-        {{ i18n.t(`action.signIn`) }}
+        {{ t('action.signIn') }}
       </ElButton>
     </div>
   </div>
@@ -36,28 +36,29 @@
 
 <script lang="ts" setup>
 import './style.scss'
-import type { FormInstance, FormRules } from 'element-plus'
-import { useEnhancer } from '@/enhancers'
 import { useUserStore } from '@/store/user'
 import { showSuccessTip } from '@/views/sign-in/utils'
+import type { FormInstance, FormRules } from 'element-plus'
 
-const { i18n, route, router } = useEnhancer()
+const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
 const userStore = useUserStore()
 const formRef = ref<FormInstance>()
 const formValues = reactive({
-  username: ``,
-  password: ``,
+  username: '',
+  password: '',
 })
 const formRules: FormRules = reactive({
   username: {
     required: true,
-    message: `请填写用户名`,
-    trigger: [`blur`, `change`],
+    message: '请填写用户名',
+    trigger: ['blur', 'change'],
   },
   password: {
     required: true,
-    message: `请填写密码`,
-    trigger: [`blur`, `change`],
+    message: '请填写密码',
+    trigger: ['blur', 'change'],
   },
 })
 const redirect = computed(() => route.query.redirect as string)
@@ -69,7 +70,7 @@ const handleSignIn = async () => {
     isLoading.value = true
     userStore.setToken(`${formValues.username}_${formValues.password}`)
     showSuccessTip()
-    router.push(redirect.value || `/`)
+    router.push(redirect.value || '/')
   } catch (err) {
     console.log(err)
   } finally {

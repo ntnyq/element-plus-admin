@@ -5,6 +5,6 @@
  */
 
 export enum RouteName {
-  SIGN_IN = `SignIn`,
-  DASHBOARD = `Dashboard`,
+  SIGN_IN = 'SignIn',
+  DASHBOARD = 'Dashboard',
 }

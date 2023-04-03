@@ -22,12 +22,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteRecordRaw } from 'vue-router'
-import SidebarItem from './SidebarItem.vue'
 import { useAppStore } from '@/store/app'
-import { useEnhancer } from '@/enhancers'
+import SidebarItem from './SidebarItem.vue'
+import type { RouteRecordRaw } from 'vue-router'
 
-const { route } = useEnhancer()
+const route = useRoute()
 const appStore = useAppStore()
 
 const routes: RouteRecordRaw[] = []

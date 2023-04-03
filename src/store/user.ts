@@ -21,9 +21,9 @@ export const useUserStore = defineStore({
 
   state: () =>
     <IUserStateTree>{
-      token: storage.getToken() || ``,
+      token: storage.getToken() || '',
       roles: [],
-      username: `ntnyq`,
+      username: 'ntnyq',
     },
 
   actions: {
@@ -45,10 +45,10 @@ export const useUserStore = defineStore({
     },
 
     signOut() {
-      console.log(`User signed out`)
+      console.log('User signed out')
       storage.removeToken()
       resetRouter()
-      this.$patch({ token: `` })
+      this.$patch({ token: '' })
     },
   },
 })

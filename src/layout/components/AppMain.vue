@@ -17,11 +17,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useEnhancer } from '@/enhancers'
-
 withDefaults(defineProps<{ transitionName?: string }>(), {
-  transitionName: `el-fade-in`,
+  transitionName: 'el-fade-in',
 })
 
-const { route } = useEnhancer()
+const route = useRoute()
 </script>

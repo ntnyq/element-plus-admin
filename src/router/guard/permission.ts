@@ -4,13 +4,13 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-import type { Router } from 'vue-router'
 import * as storage from '@/utils/storage'
 import { RouteName } from '@/constants/route'
 import { useUserStore } from '@/store/user'
 import { usePermissionStore } from '@/store/permission'
+import type { Router } from 'vue-router'
 
-export const PERMISSION_WHITELIST: string[] = [`/sign-in`]
+export const PERMISSION_WHITELIST: string[] = ['/sign-in']
 
 export function usePermissionGuard(router: Router) {
   router.beforeEach(async (to, from, next) => {
@@ -19,7 +19,7 @@ export function usePermissionGuard(router: Router) {
         next({ name: RouteName.DASHBOARD })
       } else {
         const userStore = useUserStore()
-        const hasRoles = userStore.roles && userStore.roles.length
+        const hasRoles = userStore.roles && userStore.roles.length > 0
         if (hasRoles) {
           next()
         } else {

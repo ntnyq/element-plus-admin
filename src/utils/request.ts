@@ -4,11 +4,11 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-import type { AxiosInstance } from 'axios'
 import axios from 'axios'
 import * as storage from '@/utils/storage'
 import { HTTP_REQUEST_TIMEOUT_MILLISECONDS } from '@/constants/request'
 import { ENV } from '@/constants/config'
+import type { AxiosInstance } from 'axios'
 
 export enum HTTPStatus {
   SUCCESS = 1,
@@ -24,6 +24,11 @@ interface HTTPResult<T = $TODO> {
 const instance = axios.create({
   baseURL: ENV.BASE_URL,
   timeout: HTTP_REQUEST_TIMEOUT_MILLISECONDS,
+  headers: {
+    common: {
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+  },
 })
 
 instance.interceptors.request.use(
@@ -31,7 +36,6 @@ instance.interceptors.request.use(
     if (storage.getToken()) {
       config.headers!.Authorization = storage.getToken()
     }
-    config.headers![`X-Requested-With`] = `XMLHttpRequest`
     return config
   },
   error => {
@@ -44,11 +48,11 @@ instance.interceptors.response.use(
     const { status, data = {} } = res.data || {}
 
     if (status === undefined) {
-      return Promise.reject(new Error(`Missed status in response`))
+      return Promise.reject(new Error('Missed status in response'))
     }
 
     switch (status) {
-      case ``:
+      case '':
         return data
 
       default:
@@ -56,8 +60,8 @@ instance.interceptors.response.use(
     }
   },
   error => {
-    if (error.code === `ECONNABORTED` && error.message.includes(`timeout`)) {
-      console.log(`timeout`)
+    if (error.code === 'ECONNABORTED' && error.message.includes('timeout')) {
+      console.log('timeout')
     }
     return Promise.reject(error)
   },

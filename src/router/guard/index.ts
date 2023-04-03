@@ -4,8 +4,8 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-import type { Router } from 'vue-router'
 import { usePermissionGuard } from './permission'
+import type { Router } from 'vue-router'
 
 // Do not change the guard order
 export function setupRouterGuard(router: Router): void {

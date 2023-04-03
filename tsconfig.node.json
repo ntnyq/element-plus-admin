@@ -2,7 +2,9 @@
   "extends": "@vue/tsconfig/tsconfig.node.json",
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "5.0"
   },
   "include": ["scripts", "vite.config.ts", "vitest.config.*"]
 }

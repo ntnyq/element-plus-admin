@@ -5,7 +5,6 @@
  */
 
 import { createI18n } from 'vue-i18n'
-
 import elementZhMessage from 'element-plus/lib/locale/lang/zh-cn'
 import nativeZhMessage from './lang/zh'
 
@@ -18,7 +17,7 @@ const messages = {
 
 const i18n = createI18n({
   legacy: false,
-  locale: `zh`,
+  locale: 'zh',
   messages,
 })
 

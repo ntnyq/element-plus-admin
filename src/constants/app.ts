@@ -5,10 +5,10 @@
  */
 
 export enum Theme {
-  DEFAULT = `theme-default`,
+  DEFAULT = 'theme-default',
 }
 
 export enum UserRole {
-  ADMIN = `admin`,
-  USER = `user`,
+  ADMIN = 'admin',
+  USER = 'user',
 }

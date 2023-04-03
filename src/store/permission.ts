@@ -5,10 +5,10 @@
  */
 
 import { defineStore } from 'pinia'
-import type { RouteRecordRaw } from 'vue-router'
 import { UserRole } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
 import asyncRoutes from '@/router/async-routes'
+import type { RouteRecordRaw } from 'vue-router'
 
 export interface IPermissionStateTree {
   routes: RouteRecordRaw[]

@@ -1,25 +1,17 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.eslint.fixAll": true
   },
   "eslint.validate": [
-    "javascript",
-    "typescript",
     "vue",
-    "vue-html",
     "json",
     "json5",
     "jsonc",
     "yaml",
-    "markdown"
-  ],
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  }
+    "markdown",
+    "javascript",
+    "typescript"
+  ]
 }
