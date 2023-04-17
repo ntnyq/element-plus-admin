@@ -24,9 +24,9 @@
       </ElForm>
       <ElButton
         @click.stop="handleSignIn"
+        :loading="isLoading"
         class="sign-in-btn"
         type="primary"
-        :loading="isLoading"
       >
         {{ t('action.signIn') }}
       </ElButton>

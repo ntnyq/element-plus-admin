@@ -2,7 +2,7 @@
 export default {
   name: 'TheRedirect',
 
-  setup () {
+  setup() {
     const route = useRoute()
     const router = useRouter()
     const { params, query } = route

@@ -11,11 +11,7 @@
 <script lang="ts" setup>
 import { useFullscreen } from '@vueuse/core'
 
-const {
-  toggle,
-  isFullscreen,
-  isSupported,
-} = useFullscreen()
+const { toggle, isFullscreen, isSupported } = useFullscreen()
 const handleClick = () => {
   if (!isSupported) return false
   toggle()
