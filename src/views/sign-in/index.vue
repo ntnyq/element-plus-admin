@@ -1,39 +1,3 @@
-<template>
-  <div class="sign-in-container">
-    <div class="sign-in-form">
-      <ElForm
-        ref="formRef"
-        :model="formValues"
-        :rules="formRules"
-      >
-        <h1 class="sign-in-title">ElementPlus Admin</h1>
-        <ElFormItem prop="username">
-          <ElInput
-            v-model.trim="formValues.username"
-            placeholder="请输入用户名"
-          />
-        </ElFormItem>
-        <ElFormItem prop="password">
-          <ElInput
-            @keyup.enter="handleSignIn"
-            v-model.trim="formValues.password"
-            type="new-password"
-            placeholder="请输入密码"
-          />
-        </ElFormItem>
-      </ElForm>
-      <ElButton
-        @click.stop="handleSignIn"
-        :loading="isLoading"
-        class="sign-in-btn"
-        type="primary"
-      >
-        {{ t('action.signIn') }}
-      </ElButton>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import './style.scss'
 import { useUserStore } from '@/store/user'
@@ -78,3 +42,39 @@ const handleSignIn = async () => {
   }
 }
 </script>
+
+<template>
+  <div class="sign-in-container">
+    <div class="sign-in-form">
+      <ElForm
+        ref="formRef"
+        :model="formValues"
+        :rules="formRules"
+      >
+        <h1 class="sign-in-title">ElementPlus Admin</h1>
+        <ElFormItem prop="username">
+          <ElInput
+            v-model.trim="formValues.username"
+            placeholder="请输入用户名"
+          />
+        </ElFormItem>
+        <ElFormItem prop="password">
+          <ElInput
+            @keyup.enter="handleSignIn"
+            v-model.trim="formValues.password"
+            type="new-password"
+            placeholder="请输入密码"
+          />
+        </ElFormItem>
+      </ElForm>
+      <ElButton
+        @click.stop="handleSignIn"
+        :loading="isLoading"
+        class="sign-in-btn"
+        type="primary"
+      >
+        {{ t('action.signIn') }}
+      </ElButton>
+    </div>
+  </div>
+</template>

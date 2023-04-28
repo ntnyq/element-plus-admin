@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+withDefaults(defineProps<{ transitionName?: string }>(), {
+  transitionName: 'el-fade-in',
+})
+
+const route = useRoute()
+</script>
+
 <template>
   <div class="app-main">
     <RouterView
@@ -15,11 +23,3 @@
     </RouterView>
   </div>
 </template>
-
-<script lang="ts" setup>
-withDefaults(defineProps<{ transitionName?: string }>(), {
-  transitionName: 'el-fade-in',
-})
-
-const route = useRoute()
-</script>

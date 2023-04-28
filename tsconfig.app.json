@@ -1,13 +1,11 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "moduleResolution": "bundler",
-    "ignoreDeprecations": "5.0",
     "types": ["unplugin-vue-define-options/macros-global"]
   },
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

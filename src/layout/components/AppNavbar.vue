@@ -1,3 +1,34 @@
+<script lang="ts" setup>
+import { useAppStore } from '@/store/app'
+import { useUserStore } from '@/store/user'
+import { message } from '@/utils/element'
+
+const { t } = useI18n()
+const router = useRouter()
+const appStore = useAppStore()
+const userStore = useUserStore()
+
+const handleCommand = (command: string) => {
+  switch (command) {
+    case 'dashboard':
+      router.push('/')
+      break
+
+    case 'updatePassword':
+      message.warning(t('message.workInProgress'))
+      break
+
+    case 'signOut':
+      userStore.signOut()
+      router.push({ name: 'SignIn' })
+      break
+
+    default:
+      break
+  }
+}
+</script>
+
 <template>
   <div class="app-navbar">
     <div class="navbar-block">
@@ -57,34 +88,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { useAppStore } from '@/store/app'
-import { useUserStore } from '@/store/user'
-import { message } from '@/utils/element'
-
-const { t } = useI18n()
-const router = useRouter()
-const appStore = useAppStore()
-const userStore = useUserStore()
-
-const handleCommand = (command: string) => {
-  switch (command) {
-    case 'dashboard':
-      router.push('/')
-      break
-
-    case 'updatePassword':
-      message.warning(t('message.workInProgress'))
-      break
-
-    case 'signOut':
-      userStore.signOut()
-      router.push({ name: 'SignIn' })
-      break
-
-    default:
-      break
-  }
-}
-</script>

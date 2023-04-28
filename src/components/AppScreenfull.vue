@@ -1,13 +1,3 @@
-<template>
-  <div
-    @click="handleClick"
-    class="screenfull-container"
-  >
-    <IconMdiFullscreenExit v-if="isFullscreen" />
-    <IconMdiFullscreen v-else />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { useFullscreen } from '@vueuse/core'
 
@@ -17,3 +7,13 @@ const handleClick = () => {
   toggle()
 }
 </script>
+
+<template>
+  <div
+    @click="handleClick"
+    class="screenfull-container"
+  >
+    <IconMdiFullscreenExit v-if="isFullscreen" />
+    <IconMdiFullscreen v-else />
+  </div>
+</template>

@@ -1,3 +1,16 @@
+<script lang="ts" setup>
+import { useAppStore } from '@/store/app'
+import SidebarItem from './SidebarItem.vue'
+import type { RouteRecordRaw } from 'vue-router'
+
+const route = useRoute()
+const appStore = useAppStore()
+
+const routes: RouteRecordRaw[] = []
+const activeMenu = computed(() => route.meta.activeMenu || route.path)
+const sidebar = computed(() => appStore.sidebar)
+</script>
+
 <template>
   <div class="app-sidebar">
     <ElScrollbar class="sidebar-scrollbar">
@@ -20,16 +33,3 @@
     </ElScrollbar>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { useAppStore } from '@/store/app'
-import SidebarItem from './SidebarItem.vue'
-import type { RouteRecordRaw } from 'vue-router'
-
-const route = useRoute()
-const appStore = useAppStore()
-
-const routes: RouteRecordRaw[] = []
-const activeMenu = computed(() => route.meta.activeMenu || route.path)
-const sidebar = computed(() => appStore.sidebar)
-</script>
