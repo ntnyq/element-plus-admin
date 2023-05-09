@@ -8,6 +8,7 @@ import Icons from 'unplugin-icons/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
 const resolve = (...args: string[]) => path.resolve(__dirname, ...args)
 
@@ -48,6 +49,8 @@ export default defineConfig({
 
   plugins: [
     Vue(),
+
+    VueDevTools(),
 
     DefineOptions(),
 
