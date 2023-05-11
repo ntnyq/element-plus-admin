@@ -1,14 +1,13 @@
 import path from 'node:path'
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Icons from 'unplugin-icons/vite'
-import DefineOptions from 'unplugin-vue-define-options/vite'
+import vue from '@vitejs/plugin-vue'
+import vueComponents from 'unplugin-vue-components/vite'
+import autoImport from 'unplugin-auto-import/vite'
+import icons from 'unplugin-icons/vite'
+import vueDevTools from 'vite-plugin-vue-devtools'
 import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import VueDevTools from 'vite-plugin-vue-devtools'
 
 const resolve = (...args: string[]) => path.resolve(__dirname, ...args)
 
@@ -48,15 +47,19 @@ export default defineConfig({
   },
 
   plugins: [
-    Vue(),
+    vue(),
 
-    VueDevTools(),
-
-    DefineOptions(),
+    vueDevTools(),
 
     splitVendorChunkPlugin(),
 
-    Components({
+    icons({
+      compiler: 'vue3',
+      defaultClass: '',
+      defaultStyle: 'vertical-align: sub;',
+    }),
+
+    vueComponents({
       dts: resolve('src/components.d.ts'),
       dirs: ['src/components'],
       resolvers: [
@@ -68,7 +71,7 @@ export default defineConfig({
       ],
     }),
 
-    AutoImport({
+    autoImport({
       dts: resolve('src/auto-imports.d.ts'),
       imports: [
         'vue',
@@ -82,12 +85,6 @@ export default defineConfig({
         enabled: true,
       },
       resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver()],
-    }),
-
-    Icons({
-      compiler: 'vue3',
-      defaultClass: '',
-      defaultStyle: 'vertical-align: sub;',
     }),
   ],
 })
