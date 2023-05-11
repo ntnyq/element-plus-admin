@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/ntnyq/element-plus-admin/compare/v0.3.4...v0.3.5) (2023-05-11)
+
+
+### Features
+
+* bump vue to 3.3 ([f30fb33](https://github.com/ntnyq/element-plus-admin/commit/f30fb33a1a6f6048f377761db86af82e8799ea2e))
+* use title from env ([1cf6a2a](https://github.com/ntnyq/element-plus-admin/commit/1cf6a2a6c9253aca6c10b5e18180e2d7d1ba7efb))
+
+
+### Bug Fixes
+
+* refine store name ([1caa116](https://github.com/ntnyq/element-plus-admin/commit/1caa116ddc8238d064cc65973eb944cf202d9e6d))
+
 ### [0.3.4](https://github.com/ntnyq/element-plus-admin/compare/v0.3.3...v0.3.4) (2022-12-09)
 
 
