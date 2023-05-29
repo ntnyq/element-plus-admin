@@ -7,7 +7,7 @@ defineOptions({
 
 const { toggle, isFullscreen, isSupported } = useFullscreen()
 const handleClick = () => {
-  if (!isSupported) return false
+  if (!isSupported.value) return false
   toggle()
 }
 </script>

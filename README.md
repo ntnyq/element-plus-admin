@@ -10,20 +10,20 @@
 
 ## :construction: Status
 
-Work In Progress
+This is a simple boilerplate for writing demos.
 
 ## :apple: Try
 
-```sh
-$ git clone https://github.com/ntnyq/element-plus-admin.git
+```bash
+git clone https://github.com/ntnyq/element-plus-admin.git
 
-$ cd element-plus-admin
+cd element-plus-admin
 
-$ npm install pnpm -g
+npm install pnpm -g
 
-$ pnpm install
+pnpm install
 
-$ pnpm dev
+pnpm dev
 ```
 
 ## License

@@ -1,5 +1,8 @@
 /* Styles - all */
 
+// Element
+@import "element-plus/theme-chalk/el-message.css";
+
 // Common
 @import "common/reset";
 @import "common/base";
@@ -9,6 +12,3 @@
 @import "layout/navbar";
 @import "layout/wrapper";
 @import "layout/sidebar";
-
-// Components
-@import "components/svg-icon";
