@@ -1,0 +1,28 @@
+diff --git a/es/index.d.ts b/es/index.d.ts
+index 6757e69f2df50fa0c7679c3b01a7a811a0ae0bc6..fbb182a98611eaa3f0d29398eed161200c444402 100644
+--- a/es/index.d.ts
++++ b/es/index.d.ts
+@@ -1,10 +1,13 @@
+-import installer from './defaults';
+-export * from 'element-plus/es/components';
+-export * from 'element-plus/es/constants';
+-export * from 'element-plus/es/directives';
+-export * from 'element-plus/es/hooks';
+-export * from './make-installer';
+-export declare const install: (app: import("vue").App<any>, options?: Partial<import("element-plus/es/components").ConfigProviderProps> | undefined) => void;
+-export declare const version: string;
+-export default installer;
+-export { default as dayjs } from 'dayjs';
++import installer from './defaults'
++export * from './components'
++export * from './constants'
++export * from './directives'
++export * from './hooks'
++export * from './make-installer'
++export declare const install: (
++  app: import('vue').App<any>,
++  options?: Partial<import('./components').ConfigProviderProps> | undefined,
++) => void
++export declare const version: string
++export default installer
++export { default as dayjs } from 'dayjs'
