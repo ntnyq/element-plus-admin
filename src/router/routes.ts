@@ -8,7 +8,7 @@ import { RouteName } from '@/constants/route'
 import Layout from '@/layout/layout.vue'
 import type { RouteRecordRaw } from 'vue-router'
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/redirect',
     meta: {

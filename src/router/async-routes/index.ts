@@ -6,6 +6,6 @@
 
 import type { RouteRecordRaw } from 'vue-router'
 
-const routes: Array<RouteRecordRaw> = []
+const routes: RouteRecordRaw[] = []
 
 export default routes
