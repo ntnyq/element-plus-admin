@@ -20,11 +20,11 @@ export const useUserStore = defineStore({
   id: StoreModule.USER,
 
   state: () =>
-    <IUserStateTree>{
+    ({
       token: storage.getToken() || '',
       roles: [],
       username: 'ntnyq',
-    },
+    }) as IUserStateTree,
 
   actions: {
     async getUserInfo() {

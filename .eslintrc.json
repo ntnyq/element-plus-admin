@@ -4,5 +4,6 @@
   "rules": {
     "vue/html-self-closing": "off",
     "vue/component-name-in-template-casing": ["error", "PascalCase"]
-  }
+  },
+  "ignorePatterns": ["*.html"]
 }

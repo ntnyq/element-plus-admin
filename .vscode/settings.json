@@ -6,12 +6,15 @@
   },
   "eslint.validate": [
     "vue",
-    "json",
-    "json5",
-    "jsonc",
     "yaml",
+    "html",
+    "json",
+    "jsonc",
+    "json5",
     "markdown",
     "javascript",
-    "typescript"
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
   ]
 }

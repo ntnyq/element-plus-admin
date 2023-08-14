@@ -18,9 +18,9 @@ export const usePermissionStore = defineStore({
   id: StoreModule.PERMISSION,
 
   state: () =>
-    <IPermissionStateTree>{
+    ({
       routes: [],
-    },
+    }) as IPermissionStateTree,
 
   actions: {
     async generateRoutes(roles: string[]) {

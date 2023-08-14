@@ -1,8 +1,9 @@
 {
   "name": "element-plus-admin",
+  "type": "module",
   "version": "0.3.5",
   "private": true,
-  "packageManager": "pnpm@8.6.3",
+  "packageManager": "pnpm@8.6.12",
   "scripts": {
     "build": "run-p type-check build-only",
     "build-only": "vite build",
@@ -15,52 +16,48 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@vueuse/core": "^10.2.0",
+    "@vueuse/core": "^10.3.0",
     "axios": "^1.4.0",
-    "dayjs": "^1.11.8",
-    "echarts": "^5.4.2",
-    "element-plus": "^2.3.7",
+    "dayjs": "^1.11.9",
+    "echarts": "^5.4.3",
+    "element-plus": "^2.3.9",
     "file-saver": "^2.0.5",
     "js-cookie": "^3.0.5",
     "path-to-regexp": "^6.2.1",
-    "pinia": "^2.1.4",
+    "pinia": "^2.1.6",
     "vue": "^3.3.4",
-    "vue-echarts": "^6.6.0",
+    "vue-echarts": "^6.6.1",
     "vue-i18n": "^9.2.2",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.52",
-    "@ls-lint/ls-lint": "^2.0.0",
-    "@ntnyq/eslint-config": "^1.9.0",
-    "@ntnyq/prettier-config": "^1.9.0",
+    "@iconify-json/mdi": "^1.1.54",
+    "@ls-lint/ls-lint": "^2.0.1",
+    "@ntnyq/eslint-config": "^1.12.3",
+    "@ntnyq/prettier-config": "^1.12.3",
     "@types/js-cookie": "^3.0.3",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.5.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/tsconfig": "^0.4.0",
-    "cspell": "^6.31.1",
-    "eslint": "^8.43.0",
+    "cspell": "^7.0.0",
+    "eslint": "^8.47.0",
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^8.6.8",
-    "prettier": "^2.8.8",
-    "sass": "^1.63.6",
+    "pnpm": "^8.6.12",
+    "prettier": "^3.0.1",
+    "sass": "^1.65.1",
     "tsx": "^3.12.7",
-    "typescript": "~5.1.3",
-    "unplugin-auto-import": "^0.16.4",
-    "unplugin-icons": "^0.16.3",
+    "typescript": "~5.1.6",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.16.5",
     "unplugin-vue-components": "^0.25.1",
-    "vite": "^4.3.9",
-    "vite-plugin-vue-devtools": "^0.3.0",
-    "vue-tsc": "^1.8.1"
+    "vite": "^4.4.9",
+    "vite-plugin-vue-devtools": "^1.0.0-rc.2",
+    "vue-tsc": "^1.8.8"
   },
-  "pnpm": {
-    "patchedDependencies": {
-      "element-plus@2.3.7": "patches/element-plus@2.3.7.patch"
-    }
-  },
+  "pnpm": {},
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
     "*.{js,ts,vue,md,yaml,yml,json}": "eslint --fix"

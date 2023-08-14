@@ -23,14 +23,14 @@ export const useAppStore = defineStore({
   id: StoreModule.APP,
 
   state: () =>
-    <IAppStateTree>{
+    ({
       language: storage.getLanguage() || ENV.APP_LOCALE,
       theme: storage.getTheme() || Theme.DEFAULT,
       sidebar: {
         isOpen: true,
         withoutAnimation: false,
       },
-    },
+    }) as IAppStateTree,
 
   actions: {
     setLanguage(language: string) {
