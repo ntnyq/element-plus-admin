@@ -38,7 +38,7 @@ const handleCommand = (command: string) => {
         role="hamburger"
         class="app-hamburger"
       >
-        <IconMdiMenuOpen v-if="appStore.sidebar.isOpen" />
+        <IconMdiMenuOpen v-if="appStore.isSidebarOpen" />
         <IconMdiMenu v-else />
       </button>
       <RouterLink

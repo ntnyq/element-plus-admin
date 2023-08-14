@@ -10,8 +10,8 @@ const appStore = useAppStore()
 <template>
   <div
     :class="{
-      'is-sidebar-open': appStore.sidebar.isOpen,
-      'is-sidebar-close': !appStore.sidebar.isOpen,
+      'is-sidebar-open': appStore.isSidebarOpen,
+      'is-sidebar-close': !appStore.isSidebarOpen,
     }"
     class="app-wrapper"
   >

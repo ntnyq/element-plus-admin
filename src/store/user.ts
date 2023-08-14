@@ -10,45 +10,38 @@ import { resetRouter } from '@/router'
 import { UserRole } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
 
-export interface IUserStateTree {
-  token: string
-  roles: string[]
-  username: string
-}
+export const useUserStore = defineStore(StoreModule.USER, () => {
+  const token = ref(storage.getToken() || '')
+  const roles = ref<string[]>([])
+  const username = ref('ntnyq')
 
-export const useUserStore = defineStore({
-  id: StoreModule.USER,
+  const getUserInfo = async () => {
+    roles.value = [UserRole.USER, UserRole.ADMIN]
+    return { roles: roles.value }
+  }
+  const setToken = (val: string) => {
+    token.value = val
+    storage.setToken(val)
+  }
+  const setRoles = (userRoles: string[]) => {
+    roles.value = userRoles
+  }
 
-  state: () =>
-    ({
-      token: storage.getToken() || '',
-      roles: [],
-      username: 'ntnyq',
-    }) as IUserStateTree,
+  const signOut = async () => {
+    console.log('User signed out')
+    storage.removeToken()
+    resetRouter()
+    token.value = ''
+  }
 
-  actions: {
-    async getUserInfo() {
-      const roles = [UserRole.USER, UserRole.ADMIN]
+  return {
+    token,
+    roles,
+    username,
 
-      this.$patch({ roles })
-
-      return { roles }
-    },
-
-    setToken(token: string) {
-      storage.setToken(token)
-      this.$patch({ token })
-    },
-
-    setRoles(roles: string[]) {
-      this.$patch({ roles })
-    },
-
-    signOut() {
-      console.log('User signed out')
-      storage.removeToken()
-      resetRouter()
-      this.$patch({ token: '' })
-    },
-  },
+    getUserInfo,
+    setToken,
+    setRoles,
+    signOut,
+  }
 })

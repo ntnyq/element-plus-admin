@@ -10,36 +10,25 @@ import { Theme } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
 import { ENV } from '@/constants/config'
 
-export interface IAppStateTree {
-  language: string
-  theme: string
-  sidebar: {
-    isOpen: boolean
-    withoutAnimation: boolean
+export const useAppStore = defineStore(StoreModule.APP, () => {
+  const language = ref(storage.getLanguage() || ENV.APP_LOCALE)
+  const theme = ref(storage.getTheme() || Theme.DEFAULT)
+  const isSidebarOpen = ref(true)
+
+  const setLanguage = (lang: string) => {
+    storage.setLanguage(lang)
+    language.value = lang
   }
-}
+  const toggleSidebar = (isOpen = !isSidebarOpen.value) => {
+    isSidebarOpen.value = isOpen
+  }
 
-export const useAppStore = defineStore({
-  id: StoreModule.APP,
+  return {
+    language,
+    theme,
+    isSidebarOpen,
 
-  state: () =>
-    ({
-      language: storage.getLanguage() || ENV.APP_LOCALE,
-      theme: storage.getTheme() || Theme.DEFAULT,
-      sidebar: {
-        isOpen: true,
-        withoutAnimation: false,
-      },
-    }) as IAppStateTree,
-
-  actions: {
-    setLanguage(language: string) {
-      storage.setLanguage(language)
-      this.language = language
-    },
-
-    toggleSidebar() {
-      this.sidebar.isOpen = !this.sidebar.isOpen
-    },
-  },
+    setLanguage,
+    toggleSidebar,
+  }
 })

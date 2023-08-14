@@ -10,35 +10,6 @@ import { StoreModule } from '@/constants/store'
 import asyncRoutes from '@/router/async-routes'
 import type { RouteRecordRaw } from 'vue-router'
 
-export interface IPermissionStateTree {
-  routes: RouteRecordRaw[]
-}
-
-export const usePermissionStore = defineStore({
-  id: StoreModule.PERMISSION,
-
-  state: () =>
-    ({
-      routes: [],
-    }) as IPermissionStateTree,
-
-  actions: {
-    async generateRoutes(roles: string[]) {
-      let routes: RouteRecordRaw[] = []
-
-      if (roles.includes(UserRole.ADMIN)) {
-        routes = asyncRoutes
-      } else {
-        routes = filterAsyncRoutes(asyncRoutes, roles)
-      }
-
-      // @ts-expect-error TODO: fix type
-      this.$patch({ routes })
-      return routes
-    },
-  },
-})
-
 function filterAsyncRoutes(routes: RouteRecordRaw[], roles: string[]) {
   const res: RouteRecordRaw[] = []
 
@@ -64,3 +35,25 @@ function hasPermission(roles: string[], route: RouteRecordRaw) {
     return true
   }
 }
+
+export const usePermissionStore = defineStore(StoreModule.PERMISSION, () => {
+  const routes = ref<RouteRecordRaw[]>([])
+
+  const generateRoutes = async (roles: string[]) => {
+    let availableRoutes: RouteRecordRaw[] = []
+    if (roles.includes(UserRole.ADMIN)) {
+      availableRoutes = asyncRoutes
+    } else {
+      availableRoutes = filterAsyncRoutes(asyncRoutes, roles)
+    }
+
+    routes.value = availableRoutes
+
+    return availableRoutes
+  }
+
+  return {
+    routes,
+    generateRoutes,
+  }
+})

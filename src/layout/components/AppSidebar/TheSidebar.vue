@@ -8,7 +8,6 @@ const appStore = useAppStore()
 
 const routes: RouteRecordRaw[] = []
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
-const sidebar = computed(() => appStore.sidebar)
 </script>
 
 <template>
@@ -16,7 +15,7 @@ const sidebar = computed(() => appStore.sidebar)
     <ElScrollbar class="sidebar-scrollbar">
       <ElMenu
         :default-active="activeMenu"
-        :collapse="!sidebar.isOpen"
+        :collapse="!appStore.isSidebarOpen"
         :collapse-transition="false"
         class="root-menu"
         mode="vertical"
