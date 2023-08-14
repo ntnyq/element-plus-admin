@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/ntnyq/element-plus-admin/compare/v0.3.5...v0.3.6) (2023-08-14)
+
+
+### Bug Fixes
+
+* import es locale ([be6890f](https://github.com/ntnyq/element-plus-admin/commit/be6890f0e95603b8764d2a02b3b259abab8aca6f))
+
 ### [0.3.5](https://github.com/ntnyq/element-plus-admin/compare/v0.3.4...v0.3.5) (2023-05-11)
 
 
