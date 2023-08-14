@@ -1,5 +1,6 @@
 import path from 'node:path'
 import { URL, fileURLToPath } from 'node:url'
+import dayjs from 'dayjs'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueComponents from 'unplugin-vue-components/vite'
@@ -86,5 +87,16 @@ export default defineConfig({
       },
       resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver()],
     }),
+
+    {
+      name: 'write-bundle-time',
+      enforce: 'post',
+      apply: 'build',
+      transformIndexHtml(html) {
+        const bundleTime = dayjs().format('YYYY-MM-DD hh:mm:ss')
+        const bundleInfo = [`\t<!--`, `\t\t\tBundledAt: ${bundleTime}`, `\t\t-->`]
+        return html.replace(/<!-- BUNDLE_INFO_INJECT -->/, bundleInfo.join(`\n`))
+      },
+    },
   ],
 })
