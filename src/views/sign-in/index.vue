@@ -7,6 +7,7 @@ import type { FormInstance, FormRules } from 'element-plus'
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
+const isLoading = ref(false)
 const userStore = useUserStore()
 const formRef = ref<FormInstance>()
 const formValues = reactive({
@@ -26,7 +27,6 @@ const formRules: FormRules = reactive({
   },
 })
 const redirect = computed(() => route.query.redirect as string)
-const isLoading = ref(false)
 
 const handleSignIn = async () => {
   try {

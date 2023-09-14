@@ -33,7 +33,7 @@ const handleCommand = (command: string) => {
   <div class="app-navbar">
     <div class="navbar-block">
       <button
-        @click="appStore.toggleSidebar"
+        @click="appStore.toggleSidebar()"
         type="button"
         role="hamburger"
         class="app-hamburger"
