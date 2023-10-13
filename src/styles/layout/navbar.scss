@@ -13,7 +13,9 @@
   line-height: $navbar-height;
   padding-right: $gutter-md;
   background-color: $bg-light-black;
-  box-shadow: 0 1px 3px rgba($black, 0.12), 0 0 3px rgba($black, 0.04);
+  box-shadow:
+    0 1px 3px rgba($black, 0.12),
+    0 0 3px rgba($black, 0.04);
   color: $white;
 
   .navbar-brand {
@@ -62,6 +64,7 @@
       text-align: center;
       font-size: 24px;
       cursor: pointer;
+      user-select: none;
       @include trs;
 
       &:hover {

@@ -24,7 +24,11 @@ declare module 'vue' {
     IconMdiFullscreenExit: typeof import('~icons/mdi/fullscreen-exit')['default']
     IconMdiMenu: typeof import('~icons/mdi/menu')['default']
     IconMdiMenuOpen: typeof import('~icons/mdi/menu-open')['default']
+    IconMdiRefresh: typeof import('~icons/mdi/refresh')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

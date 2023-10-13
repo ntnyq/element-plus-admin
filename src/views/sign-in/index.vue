@@ -14,7 +14,7 @@ const formValues = reactive({
   username: '',
   password: '',
 })
-const formRules: FormRules = reactive({
+const formRules = shallowRef<FormRules>({
   username: {
     required: true,
     message: '请填写用户名',
@@ -32,6 +32,7 @@ const handleSignIn = async () => {
   try {
     await formRef.value?.validate()
     isLoading.value = true
+
     userStore.setToken(`${formValues.username}_${formValues.password}`)
     showSuccessTip()
     router.push(redirect.value || '/')

@@ -4,10 +4,14 @@ import { useUserStore } from '@/store/user'
 import { message } from '@/utils/element'
 
 const { t } = useI18n()
+const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
 const userStore = useUserStore()
 
+const handleRefresh = () => {
+  router.push(`/redirect${unref(route).fullPath}`)
+}
 const handleCommand = (command: string) => {
   switch (command) {
     case 'dashboard':
@@ -56,6 +60,13 @@ const handleCommand = (command: string) => {
       >
         <AppScreenfull class="navbar-block-item" />
       </ElTooltip>
+
+      <div
+        @click="handleRefresh"
+        class="navbar-block-item"
+      >
+        <IconMdiRefresh />
+      </div>
 
       <ElDropdown
         @command="handleCommand"
