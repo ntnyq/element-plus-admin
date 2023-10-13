@@ -5,9 +5,9 @@
  */
 
 import axios from 'axios'
-import * as storage from '@/utils/storage'
 import { HTTP_REQUEST_TIMEOUT_MILLISECONDS } from '@/constants/request'
 import { ENV } from '@/constants/config'
+import { tokenStorage } from '@/utils/storage'
 import type { AxiosInstance } from 'axios'
 
 export enum HTTPStatus {
@@ -33,8 +33,8 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   config => {
-    if (storage.getToken()) {
-      config.headers!.Authorization = storage.getToken()
+    if (tokenStorage.get()) {
+      config.headers!.Authorization = tokenStorage.get()
     }
     return config
   },

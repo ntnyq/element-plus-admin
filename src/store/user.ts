@@ -5,13 +5,13 @@
  */
 
 import { defineStore } from 'pinia'
-import * as storage from '@/utils/storage'
 import { resetRouter } from '@/router'
 import { UserRole } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
+import { tokenStorage } from '@/utils/storage'
 
 export const useUserStore = defineStore(StoreModule.USER, () => {
-  const token = ref(storage.getToken() || '')
+  const token = ref(tokenStorage.get())
   const roles = ref<string[]>([])
   const username = ref('ntnyq')
 
@@ -21,7 +21,7 @@ export const useUserStore = defineStore(StoreModule.USER, () => {
   }
   const setToken = (val: string) => {
     token.value = val
-    storage.setToken(val)
+    tokenStorage.set(val)
   }
   const setRoles = (userRoles: string[]) => {
     roles.value = userRoles
@@ -29,9 +29,9 @@ export const useUserStore = defineStore(StoreModule.USER, () => {
 
   const signOut = async () => {
     console.log('User signed out')
-    storage.removeToken()
-    resetRouter()
     token.value = ''
+    tokenStorage.remove()
+    resetRouter()
   }
 
   return {

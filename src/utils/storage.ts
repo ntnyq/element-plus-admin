@@ -4,58 +4,48 @@
  * @author ntnyq <https://github.com/ntnyq>
  */
 
-import Cookies from 'js-cookie'
+import { Theme } from '@/constants/app'
 import { ENV } from '@/constants/config'
+
+interface CreateStorageOptions {
+  defaultValue?: string
+}
 
 const APP_TOKEN_KEY = `${ENV.APP_PREFIX}TOKEN`
 const APP_USERNAME_KEY = `${ENV.APP_PREFIX}USERNAME`
 const APP_LANGUAGE_KEY = `${ENV.APP_PREFIX}LANGUAGE`
 const APP_THEME_KEY = `${ENV.APP_PREFIX}THEME`
 
-export function getToken(): Maybe<string> {
-  return Cookies.get(APP_TOKEN_KEY)
+/**
+ * Create a storage object
+ * @param key storage key
+ * @param defaultValue default value
+ * @returns storage object
+ */
+export function createStorage(key: string, options?: CreateStorageOptions) {
+  return {
+    get() {
+      return localStorage.getItem(key) ?? options?.defaultValue
+    },
+
+    set(val: string) {
+      return localStorage.setItem(key, val)
+    },
+
+    remove() {
+      return localStorage.removeItem(key)
+    },
+  }
 }
 
-export function setToken(token: string): Maybe<string> {
-  return Cookies.set(APP_TOKEN_KEY, token)
-}
+export const tokenStorage = createStorage(APP_TOKEN_KEY, { defaultValue: '' })
 
-export function removeToken(): void {
-  return Cookies.remove(APP_TOKEN_KEY)
-}
+export const themeStorage = createStorage(APP_THEME_KEY, {
+  defaultValue: Theme.DEFAULT,
+})
 
-export function getTheme(): Maybe<string> {
-  return Cookies.get(APP_THEME_KEY)
-}
+export const usernameStorage = createStorage(APP_USERNAME_KEY)
 
-export function setTheme(theme: string): Maybe<string> {
-  return Cookies.set(APP_THEME_KEY, theme)
-}
-
-export function removeTheme(): void {
-  return Cookies.remove(APP_THEME_KEY)
-}
-
-export function getUsername(): Maybe<string> {
-  return Cookies.get(APP_USERNAME_KEY)
-}
-
-export function setUsername(username: string): Maybe<string> {
-  return Cookies.set(APP_USERNAME_KEY, username)
-}
-
-export function removeUsername(): void {
-  return Cookies.remove(APP_USERNAME_KEY)
-}
-
-export function getLanguage(): Maybe<string> {
-  return Cookies.get(APP_LANGUAGE_KEY)
-}
-
-export function setLanguage(language: string): Maybe<string> {
-  return Cookies.set(APP_LANGUAGE_KEY, language)
-}
-
-export function removeLanguage(): void {
-  return Cookies.remove(APP_LANGUAGE_KEY)
-}
+export const languageStorage = createStorage(APP_LANGUAGE_KEY, {
+  defaultValue: ENV.APP_LOCALE,
+})

@@ -5,18 +5,16 @@
  */
 
 import { defineStore } from 'pinia'
-import * as storage from '@/utils/storage'
-import { Theme } from '@/constants/app'
 import { StoreModule } from '@/constants/store'
-import { ENV } from '@/constants/config'
+import { languageStorage, themeStorage } from '@/utils/storage'
 
 export const useAppStore = defineStore(StoreModule.APP, () => {
-  const language = ref(storage.getLanguage() || ENV.APP_LOCALE)
-  const theme = ref(storage.getTheme() || Theme.DEFAULT)
+  const language = ref(languageStorage.get())
+  const theme = ref(themeStorage.get())
   const isSidebarOpen = ref(true)
 
   const setLanguage = (lang: string) => {
-    storage.setLanguage(lang)
+    languageStorage.set(lang)
     language.value = lang
   }
   const toggleSidebar = (isOpen = !isSidebarOpen.value) => {
