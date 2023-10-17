@@ -21,5 +21,8 @@ onMounted(() => {
   >
     <h1>Dashboard</h1>
     <AppScreenfull />
+    <div>
+      {{ $inject.foo }}
+    </div>
   </div>
 </template>

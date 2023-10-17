@@ -54,6 +54,7 @@ export const usePermissionStore = defineStore(StoreModule.PERMISSION, () => {
 
   return {
     routes,
+
     generateRoutes,
   }
 })
