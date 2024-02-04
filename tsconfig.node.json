@@ -2,6 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "composite": true,
+    "noEmit": false,
     "types": ["node"]
   },
   "include": ["scripts", "vite.config.ts", "vitest.config.*"]
