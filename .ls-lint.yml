@@ -1,20 +1,23 @@
 # https://ls-lint.org
 
 ls:
-  .dir: kebab-case | regex:^[_\.].*
-  .js: kebab-case | regex:^[_\.].*
-  .png: kebab-case
-  .gif: kebab-case
-  .jpg: kebab-case
-  .jpeg: kebab-case
+  .dir: camelCase | regex:^[_\.].*
+  .js: camelCase | regex:^[_\.].*
+  .ts: camelCase | regex:^[_\.].*
+  .d.ts: camelCase | regex:^[_\.].* | regex:^auto-imports
+  .png: snake_case
+  .gif: snake_case
+  .jpg: snake_case
+  .jpeg: snake_case
   .svg: kebab-case
-  .vue: kebab-case | regex:^App$
-  .scss: kebab-case | regex:^[_\.].*
-  .json: kebab-case | regex:^[_\.].* | regex:^tsconfig.*
+  .vue: camelCase | regex:^App$
+  .scss: camelCase | regex:^[_\.].*
+  .json: camelCase | regex:^[_\.].* | regex:^tsconfig.*
   .config.js: point.case
+  .config.ts: point.case
 
   src/components:
-    .dir: PascalCase | regex:^components
+    .dir: camelCase | regex:^components
     .vue: PascalCase | regex:^index
 
   src/{views,layout}/**/components:
@@ -27,4 +30,3 @@ ignore:
   - dist
   - coverage
   - public/static
-  - .eslintrc-auto-import.json

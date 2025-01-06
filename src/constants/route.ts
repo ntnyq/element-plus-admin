@@ -1,10 +1,18 @@
 /**
- * @file Constants of route
- * @module constants/route
- * @author ntnyq <https://github.com/ntnyq>
+ * @file Route constants
  */
 
-export enum RouteName {
-  SIGN_IN = 'SignIn',
-  DASHBOARD = 'Dashboard',
+/**
+ * Route path
+ */
+export const routePath = {
+  root: '/',
+}
+
+/**
+ * Route name
+ */
+export const routeName = {
+  home: 'Home',
+  root: 'Root',
 }

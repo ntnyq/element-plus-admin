@@ -1,101 +1,97 @@
-import path from 'node:path'
-import { URL, fileURLToPath } from 'node:url'
-import dayjs from 'dayjs'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueComponents from 'unplugin-vue-components/vite'
-import autoImport from 'unplugin-auto-import/vite'
-import icons from 'unplugin-icons/vite'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import IconsResolver from 'unplugin-icons/resolver'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+/**
+ * @file Vite Configuration
+ *
+ * @see {@link https://vitejs.dev/config/}
+ */
 
-const resolve = (...args: string[]) => path.resolve(__dirname, ...args)
+import { fileURLToPath, URL } from 'node:url'
+import Vue from '@vitejs/plugin-vue'
+import VueJSX from '@vitejs/plugin-vue-jsx'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueComponents from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import { version } from './package.json'
 
 export default defineConfig({
+  build: {
+    chunkSizeWarningLimit: 2 ** 10,
+    cssCodeSplit: true,
+    manifest: false,
+    reportCompressedSize: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            const groupVue = ['vue', 'vue-router', 'pinia', 'vue-i18n', '@vueuse/core']
+            if (groupVue.some(mod => id.includes(`node_modules/${mod}`))) {
+              return 'vendor'
+            } else {
+              return 'deps'
+            }
+          }
+        },
+      },
+    },
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/styles/core/styles" as *;',
+      },
+    },
+  },
+
+  define: {
+    __INTLIFY_PROD_DEVTOOLS__: false,
+    __VERSION__: JSON.stringify(version),
+    __VUE_I18N_FULL_INSTALL__: false,
+    __VUE_I18N_LEGACY_API__: true,
+  },
+
+  optimizeDeps: {
+    include: ['vue', 'vue-router', 'vue-i18n', '@vueuse/core', 'echarts', 'xgplayer'],
+  },
+
+  plugins: [
+    Vue(),
+
+    VueJSX(),
+
+    VueDevTools(),
+
+    UnoCSS(),
+
+    AutoImport({
+      dts: 'src/auto-imports.d.ts',
+      imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
+      resolvers: [],
+    }),
+
+    VueComponents({
+      dirs: ['src/components'],
+      dts: 'src/components.d.ts',
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
+      ],
+    }),
+  ],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 
-  define: {
-    __VUE_I18N_FULL_INSTALL__: false,
-    __VUE_I18N_LEGACY_API__: false,
-    __INTLIFY_PROD_DEVTOOLS__: false,
-  },
-
-  optimizeDeps: {
-    include: ['vue', 'vue-router', '@vueuse/core', 'element-plus'],
-  },
-
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@use "@/styles/core/style" as *;',
-      },
-    },
-  },
-
   server: {
     open: true,
-    host: true,
   },
-
-  build: {
-    cssCodeSplit: false,
-  },
-
-  plugins: [
-    vue(),
-
-    vueDevTools(),
-
-    splitVendorChunkPlugin(),
-
-    icons({
-      compiler: 'vue3',
-      defaultClass: '',
-      defaultStyle: 'vertical-align: sub;',
-    }),
-
-    vueComponents({
-      dts: resolve('src/components.d.ts'),
-      dirs: ['src/components'],
-      resolvers: [
-        ElementPlusResolver({ importStyle: 'sass' }),
-        IconsResolver({
-          prefix: 'icon',
-          enabledCollections: ['mdi'],
-        }),
-      ],
-    }),
-
-    autoImport({
-      dts: resolve('src/auto-imports.d.ts'),
-      imports: [
-        'vue',
-        'pinia',
-        'vue-i18n',
-        'vue-router',
-        '@vueuse/core',
-        { 'element-plus': ['ElMessage'] },
-      ],
-      eslintrc: {
-        enabled: true,
-      },
-      resolvers: [ElementPlusResolver({ importStyle: 'sass' }), IconsResolver()],
-    }),
-
-    {
-      name: 'inject-bundle-info',
-      enforce: 'post',
-      apply: 'build',
-      transformIndexHtml(html) {
-        const bundleTime = dayjs().format('YYYY-MM-DD hh:mm:ss')
-        const bundleInfo = [`\t<!--`, `\t\t\tBundledAt: ${bundleTime}`, `\t\t-->`]
-        return html.replace(/<!-- BUNDLE_INFO_INJECT -->/, bundleInfo.join(`\n`))
-      },
-    },
-  ],
 })

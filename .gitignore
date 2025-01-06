@@ -1,16 +1,21 @@
-.DS_Store
-node_modules
-/dist
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
+*.local
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+
+/cypress/videos/
+/cypress/screenshots/
 
 # Editor directories and files
 .idea
@@ -19,3 +24,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+*.tsbuildinfo

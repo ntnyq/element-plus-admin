@@ -1,10 +1,11 @@
 {
-  "eslint.enable": true,
   "prettier.enable": true,
+  "eslint.enable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.eslint.fixAll": "always"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "eslint.validate": [
     "vue",

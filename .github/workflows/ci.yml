@@ -9,13 +9,17 @@ on:
       - main
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v2
+        with:
+          node-version: lts/*
+          cache: pnpm
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
+      - run: pnpm run typecheck
       - run: pnpm run build

@@ -1,15 +1,53 @@
 /**
- * @file 环境变量
+ * @file Config constants
  */
 
-const BASE_URL = import.meta.env.BASE_URL ?? '/'
-const API_HOST = import.meta.env.VITE_API_HOST
-const APP_PREFIX = import.meta.env.VITE_APP_PREFIX ?? 'EP_ADMIN_'
-const APP_LOCALE = import.meta.env.VITE_APP_LOCALE ?? 'zh'
+import { EnumAppLayout } from '@/enums/app'
+import { EnumElSize } from '@/enums/element'
 
-export const ENV = Object.freeze({
-  API_HOST,
-  BASE_URL,
-  APP_PREFIX,
-  APP_LOCALE,
+export const DEFAULT_CONFIG = Object.freeze({
+  /**
+   * 唯一前缀
+   */
+  prefix: 'oa',
+
+  /**
+   * 固定系统头部
+   */
+  fixedHeader: true,
+
+  /**
+   * 显示页签
+   */
+  showTagsView: true,
+
+  /**
+   * 显示面包屑导航
+   */
+  showBreadcrumb: true,
+
+  /**
+   * 主题色
+   */
+  themeColor: '#409EFF',
+
+  /**
+   * 启用水印
+   */
+  watermarkEnabled: false,
+
+  /**
+   * UI 尺寸
+   */
+  size: EnumElSize.DEFAULT,
+
+  /**
+   * 水印内容
+   */
+  watermarkContent: 'ntnyq',
+
+  /**
+   * 布局方式
+   */
+  layout: EnumAppLayout.LEFT,
 })

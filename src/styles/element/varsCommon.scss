@@ -1,0 +1,8 @@
+/**
+ * @see https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+ */
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (),
+  $box-shadow: ()
+);

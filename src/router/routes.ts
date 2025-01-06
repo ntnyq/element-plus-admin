@@ -1,66 +1,20 @@
-/**
- * @file Constant routes
- * @module router/routes
- * @author ntnyq <https://github.com/ntnyq>
- */
+import { routeName, routePath } from '@/constants/route'
+import { defineRoutes } from '@/utils/define'
 
-import { RouteName } from '@/constants/route'
-import Layout from '@/layout/layout.vue'
-import type { RouteRecordRaw } from 'vue-router'
-
-const routes: RouteRecordRaw[] = [
+export const routes = defineRoutes([
   {
-    path: '/redirect',
-    meta: {
-      hidden: true,
-    },
-    component: Layout,
+    path: routePath.root,
+    name: routeName.root,
+    component: () => import('@/layout/index.vue'),
+    redirect: { name: routeName.home },
+    meta: {},
     children: [
       {
-        path: '/redirect/:path(.*)',
-        component: () => import('@/views/common/redirect.vue'),
-      },
-    ],
-  },
-
-  {
-    path: '/not-found',
-    meta: {
-      hidden: true,
-    },
-    component: () => import('@/views/common/not-found.vue'),
-  },
-
-  {
-    path: '/sign-in',
-    name: RouteName.SIGN_IN,
-    meta: {
-      hidden: true,
-    },
-    component: () => import('@/views/sign-in/index.vue'),
-  },
-
-  {
-    path: '/',
-    redirect: '/dashboard',
-    component: Layout,
-    children: [
-      {
-        path: '/dashboard',
-        name: RouteName.DASHBOARD,
+        path: '/home',
+        name: routeName.home,
+        component: () => import('@/views/home/index.vue'),
         meta: {},
-        component: () => import('@/views/dashboard/dashboard.vue'),
       },
     ],
   },
-
-  {
-    path: '/:pathMatch(.*)',
-    redirect: '/not-found',
-    meta: {
-      hidden: true,
-    },
-  },
-]
-
-export default routes
+])

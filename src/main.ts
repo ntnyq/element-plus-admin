@@ -1,25 +1,19 @@
-/**
- * @file App entry
- * @module src/main
- * @author ntnyq <https://github.com/ntnyq>
- */
-
+import '@unocss/reset/tailwind.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import 'uno.css'
+import '@/styles/app.scss'
 import App from '@/App.vue'
-import router from '@/router'
 import i18n from '@/i18n'
-import '@/styles/style.scss'
-import { setupRouterGuard } from '@/router/guard'
-import { setupApp } from './setup'
+import router from '@/router'
+import pinia from '@/stores'
+import { logger } from '@/utils/logger'
 
 const app = createApp(App)
-const store = createPinia()
 
-app.use(store)
+app.use(pinia)
 app.use(router)
 app.use(i18n)
-setupApp(app)
 
-router.isReady().then(() => {
-  setupRouterGuard(router)
-  app.mount('#app')
-})
+app.mount('#app')
+
+logger.success('App is running')
