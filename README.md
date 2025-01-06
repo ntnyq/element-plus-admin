@@ -1,14 +1,10 @@
-# oa-starter
+# element-plus-admin
 
-> Starter for admin project。
+> Admin boilerplate based on Vue 3 and ElementPlus.
 
-## Requirements
-
-- pnpm
-- Node.js 18+
-
-![CI](https://github.com/ntnyq/oa-starter/workflows/CI/badge.svg)
+[![CI](https://github.com/ntnyq/element-plus-admin/workflows/CI/badge.svg)](https://github.com/ntnyq/element-plus-admin/actions)
+[![LICENSE](https://img.shields.io/github/license/ntnyq/element-plus-admin.svg)](https://github.com/ntnyq/element-plus-admin/blob/main/LICENSE)
 
 ## License
 
-[MIT](./LICENSE) &copy; [@ntnyq](https://github.com/ntnyq)
+[MIT](./LICENSE) License © 2024 to PRESENT [ntnyq](https://github.com/ntnyq)
