@@ -26,16 +26,16 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            const groupVue = ['vue', 'vue-router', 'pinia', 'vue-i18n', '@vueuse/core']
-            if (groupVue.some(mod => id.includes(`node_modules/${mod}`))) {
-              return 'vendor'
-            } else {
-              return 'deps'
-            }
-          }
-        },
+        // manualChunks(id) {
+        //   if (id.includes('node_modules')) {
+        //     const groupVue = ['vue', 'vue-router', 'pinia', 'vue-i18n', '@vueuse/core']
+        //     if (groupVue.some(mod => id.includes(`node_modules/${mod}`))) {
+        //       return 'vendor'
+        //     } else {
+        //       return 'deps'
+        //     }
+        //   }
+        // },
       },
     },
   },
