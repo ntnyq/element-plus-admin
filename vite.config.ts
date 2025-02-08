@@ -71,7 +71,11 @@ export default defineConfig({
     AutoImport({
       dts: 'src/auto-imports.d.ts',
       imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
-      resolvers: [],
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: false,
+        }),
+      ],
     }),
 
     VueComponents({
@@ -79,7 +83,7 @@ export default defineConfig({
       dts: 'src/components.d.ts',
       resolvers: [
         ElementPlusResolver({
-          importStyle: 'sass',
+          importStyle: false,
         }),
       ],
     }),

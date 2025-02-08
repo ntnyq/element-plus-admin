@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "antfu.file-nesting",
     "editorconfig.editorconfig",
-    "mikestead.dotenv"
+    "mikestead.dotenv",
+    "antfu.unocss"
   ]
 }

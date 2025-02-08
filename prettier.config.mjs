@@ -7,7 +7,7 @@ export default defineConfig({
 
   overrides: [
     {
-      files: '*.html',
+      files: ['**/*.html'],
       options: {
         singleAttributePerLine: false,
       },
