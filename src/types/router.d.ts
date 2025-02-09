@@ -11,19 +11,9 @@ export {}
 declare module 'vue-router' {
   interface RouteMeta {
     /**
-     * 菜单标题
+     * 高亮菜单项的路径
      */
-    title?: string
-
-    /**
-     * 菜单图标
-     */
-    icon?: string
-
-    /**
-     * 是否隐藏菜单
-     */
-    hidden?: boolean
+    activeMenu?: string
 
     /**
      * 是否固定在页签
@@ -31,29 +21,24 @@ declare module 'vue-router' {
     affix?: boolean
 
     /**
-     * 是否在面包屑导航中显示
-     */
-    breadcrumb?: boolean
-
-    /**
      * 始终显示父菜单
      */
     alwaysShow?: boolean
 
     /**
-     * 页面是否已加载
+     * 是否在面包屑导航中显示
      */
-    loaded?: boolean
+    breadcrumb?: boolean
 
     /**
-     * 是否缓存页面
+     * 是否隐藏菜单
      */
-    keepAlive?: boolean
+    hidden?: boolean
 
     /**
-     * 高亮菜单项的路径
+     * 菜单图标
      */
-    activeMenu?: string
+    icon?: string
 
     /**
      * 是否忽略权限
@@ -61,8 +46,23 @@ declare module 'vue-router' {
     ignoreAuth?: boolean
 
     /**
+     * 是否缓存页面
+     */
+    keepAlive?: boolean
+
+    /**
+     * 页面是否已加载
+     */
+    loaded?: boolean
+
+    /**
      * 角色权限
      */
     roles?: string[]
+
+    /**
+     * 菜单标题
+     */
+    title?: string
   }
 }

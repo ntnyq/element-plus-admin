@@ -4,7 +4,10 @@ export interface DefineRoutesOptions {
   meta?: RouteMeta
 }
 
-export function defineRoutes(routes: RouteRecordRaw[] = [], options: DefineRoutesOptions = {}) {
+export function defineRoutes(
+  routes: RouteRecordRaw[] = [],
+  options: DefineRoutesOptions = {},
+) {
   if (options.meta) {
     return routes.map(route => ({
       ...route,

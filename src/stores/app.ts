@@ -12,29 +12,47 @@ import type { EnumElSize } from '@/enums/element'
 export const useAppStore = defineStore('app', () => {
   const size = useStorage<EnumElSize>(withPrefix('size'), DEFAULT_CONFIG.size)
 
-  const device = useStorage<EnumAppDevice>(withPrefix('device'), EnumAppDevice.DESKTOP)
+  const device = useStorage<EnumAppDevice>(
+    withPrefix('device'),
+    EnumAppDevice.DESKTOP,
+  )
 
-  const layout = useStorage<EnumAppLayout>(withPrefix('layout'), DEFAULT_CONFIG.layout)
+  const layout = useStorage<EnumAppLayout>(
+    withPrefix('layout'),
+    DEFAULT_CONFIG.layout,
+  )
 
   /**
    * 主题色
    */
-  const themeColor = useStorage(withPrefix('themeColor'), DEFAULT_CONFIG.themeColor)
+  const themeColor = useStorage(
+    withPrefix('themeColor'),
+    DEFAULT_CONFIG.themeColor,
+  )
 
   /**
    * 固定页头
    */
-  const fixedHeader = useStorage(withPrefix('fixedHeader'), DEFAULT_CONFIG.fixedHeader)
+  const fixedHeader = useStorage(
+    withPrefix('fixedHeader'),
+    DEFAULT_CONFIG.fixedHeader,
+  )
 
   /**
    * 显示页签
    */
-  const showTagsView = useStorage(withPrefix('showTagsView'), DEFAULT_CONFIG.showTagsView)
+  const showTagsView = useStorage(
+    withPrefix('showTagsView'),
+    DEFAULT_CONFIG.showTagsView,
+  )
 
   /**
    * 显示面包屑导航
    */
-  const showBreadcrumb = useStorage(withPrefix('showBreadcrumb'), DEFAULT_CONFIG.showBreadcrumb)
+  const showBreadcrumb = useStorage(
+    withPrefix('showBreadcrumb'),
+    DEFAULT_CONFIG.showBreadcrumb,
+  )
 
   /**
    * 显示设置抽屉

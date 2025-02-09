@@ -3,33 +3,13 @@
  */
 
 /**
- * 布局方式
- */
-export enum EnumAppLayout {
-  /**
-   * 菜单顶部
-   */
-  TOP = 'top',
-
-  /**
-   * 混合布局
-   */
-  MIX = 'mix',
-
-  /**
-   * 菜单左侧
-   */
-  LEFT = 'left',
-}
-
-/**
  * 设备
  */
 export enum EnumAppDevice {
   /**
-   * 平板
+   * 宽屏
    */
-  TABLET = 'tablet',
+  DESKTOP = 'desktop',
 
   /**
    * 移动端
@@ -37,7 +17,27 @@ export enum EnumAppDevice {
   MOBILE = 'mobile',
 
   /**
-   * 宽屏
+   * 平板
    */
-  DESKTOP = 'desktop',
+  TABLET = 'tablet',
+}
+
+/**
+ * 布局方式
+ */
+export enum EnumAppLayout {
+  /**
+   * 菜单左侧
+   */
+  LEFT = 'left',
+
+  /**
+   * 混合布局
+   */
+  MIX = 'mix',
+
+  /**
+   * 菜单顶部
+   */
+  TOP = 'top',
 }

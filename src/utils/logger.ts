@@ -16,5 +16,7 @@ export interface CreateLoggerOptions {
 
 export function createLogger(scope: string, options: CreateLoggerOptions = {}) {
   const { withPrefix = true } = options
-  return consola.withTag(withPrefix ? `${DEFAULT_CONFIG.prefix}:${scope}` : scope)
+  return consola.withTag(
+    withPrefix ? `${DEFAULT_CONFIG.prefix}:${scope}` : scope,
+  )
 }

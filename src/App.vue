@@ -7,7 +7,9 @@ import { logger } from '@/utils/logger'
 
 const appStore = useAppStore()
 
-const color = computed(() => (isDark.value ? 'rgba(255, 255, 255, 0.15)' : 'rgb(0 , 0, 0, 0.15)'))
+const color = computed(() =>
+  isDark.value ? 'rgba(255, 255, 255, 0.15)' : 'rgb(0 , 0, 0, 0.15)',
+)
 
 onErrorCaptured((err, instance, info) => {
   logger.warn(err, instance, info)

@@ -24,7 +24,9 @@ const showDefaultSlot = computed(() => {
     return false
   }
 
-  return requiredPermissions.every(permission => userStore.permissions.includes(permission))
+  return requiredPermissions.every(permission =>
+    userStore.permissions.includes(permission),
+  )
 })
 </script>
 

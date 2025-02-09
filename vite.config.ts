@@ -56,7 +56,14 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: ['vue', 'vue-router', 'vue-i18n', '@vueuse/core', 'echarts', 'xgplayer'],
+    include: [
+      'vue',
+      'vue-router',
+      'vue-i18n',
+      '@vueuse/core',
+      'echarts',
+      'xgplayer',
+    ],
   },
 
   plugins: [

@@ -19,8 +19,17 @@ export interface ShowErrorMessageOptions {
   console?: boolean
 }
 
-export async function showErrorMessage(error: SystemError, options: ShowErrorMessageOptions = {}) {
-  if (!error.message || NO_SHOW_ERROR_CODE.includes(error.code) || hasErrorMessage(error)) return
+export async function showErrorMessage(
+  error: SystemError,
+  options: ShowErrorMessageOptions = {},
+) {
+  if (
+    !error.message
+    || NO_SHOW_ERROR_CODE.includes(error.code)
+    || hasErrorMessage(error)
+  ) {
+    return
+  }
 
   addErrorMessage(error)
 

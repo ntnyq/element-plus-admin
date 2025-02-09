@@ -1,5 +1,3 @@
-export type SystemErrorCode = number | string
-
 /**
  * error
  */
@@ -8,16 +6,20 @@ export interface SystemAxiosError {
   message: string
   scope: 'axios'
 }
+
 export interface SystemBackendError {
   code: SystemErrorCode
   message: string
   scope: 'backend'
 }
+
+export type SystemErrorCode = number | string
 export interface SystemRequestError {
   code: SystemErrorCode
   message: string
   scope: 'request'
 }
+
 export interface SystemUnknownError {
   code: SystemErrorCode
   message: string
@@ -26,6 +28,7 @@ export interface SystemUnknownError {
 
 /**
  * system error
+ * @pg
  */
 export type SystemError =
   | SystemAxiosError

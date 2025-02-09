@@ -7,19 +7,19 @@ import { EnumElSize } from '@/enums/element'
 
 export const DEFAULT_CONFIG = Object.freeze({
   /**
-   * 唯一前缀
-   */
-  prefix: 'oa',
-
-  /**
    * 固定系统头部
    */
   fixedHeader: true,
 
   /**
-   * 显示页签
+   * 布局方式
    */
-  showTagsView: true,
+  layout: EnumAppLayout.LEFT,
+
+  /**
+   * 唯一前缀
+   */
+  prefix: 'oa',
 
   /**
    * 显示面包屑导航
@@ -27,14 +27,9 @@ export const DEFAULT_CONFIG = Object.freeze({
   showBreadcrumb: true,
 
   /**
-   * 主题色
+   * 显示页签
    */
-  themeColor: '#409EFF',
-
-  /**
-   * 启用水印
-   */
-  watermarkEnabled: false,
+  showTagsView: true,
 
   /**
    * UI 尺寸
@@ -42,12 +37,17 @@ export const DEFAULT_CONFIG = Object.freeze({
   size: EnumElSize.DEFAULT,
 
   /**
+   * 主题色
+   */
+  themeColor: '#409EFF',
+
+  /**
    * 水印内容
    */
   watermarkContent: 'ntnyq',
 
   /**
-   * 布局方式
+   * 启用水印
    */
-  layout: EnumAppLayout.LEFT,
+  watermarkEnabled: false,
 })
