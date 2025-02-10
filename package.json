@@ -28,6 +28,7 @@
     "dayjs": "^1.11.13",
     "echarts": "^5.6.0",
     "element-plus": "^2.9.4",
+    "es-toolkit": "^1.32.0",
     "path-to-regexp": "^8.2.0",
     "pinia": "^2.3.1",
     "valibot": "^1.0.0-beta.15",
@@ -38,6 +39,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@iconify-json/ri": "^1.2.5",
     "@ls-lint/ls-lint": "^2.2.3",
     "@ntnyq/eslint-config": "^4.0.0-beta.2",
     "@ntnyq/prettier-config": "^2.0.0-beta.2",

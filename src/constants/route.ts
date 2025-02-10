@@ -3,16 +3,23 @@
  */
 
 /**
+ * Route redirect prefix
+ */
+export const ROUTE_REDIRECT_PREFIX = '/redirect/'
+
+/**
  * Route path
  */
-export const routePath = {
+export const ROUTE_PATH = {
+  dashboard: '/dashboard',
   root: '/',
 }
 
 /**
  * Route name
  */
-export const routeName = {
-  home: 'Home',
+export const ROUTE_NAME = {
+  dashboard: 'Dashboard',
+  login: 'Login',
   root: 'Root',
 }

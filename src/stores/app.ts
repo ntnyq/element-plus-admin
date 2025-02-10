@@ -16,6 +16,7 @@ export const useAppStore = defineStore('app', () => {
     withPrefix('device'),
     EnumAppDevice.DESKTOP,
   )
+  const isMobile = computed(() => device.value === EnumAppDevice.MOBILE)
 
   const layout = useStorage<EnumAppLayout>(
     withPrefix('layout'),
@@ -81,6 +82,7 @@ export const useAppStore = defineStore('app', () => {
   return {
     size,
     device,
+    isMobile,
 
     layout,
 

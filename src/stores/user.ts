@@ -5,10 +5,16 @@ export const useUserStore = defineStore('user', () => {
   const permissions = ref<string[]>([])
   const isSuperAdmin = ref(true)
 
+  function clearToken() {
+    accessToken.value = ''
+  }
+
   return {
     accessToken,
     permissions,
     isSuperAdmin,
+
+    clearToken,
   }
 })
 

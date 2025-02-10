@@ -53,3 +53,11 @@ export function toArray<T>(val?: Nullable<Arrayable<T>>) {
 export function withPrefix(value: string) {
   return `${DEFAULT_CONFIG.prefix}:${value}`
 }
+
+/**
+ * 打开外部 URL
+ * @param url - 目标URL
+ */
+export function openExternalURL(url: string | URL, target = '_blank') {
+  window.open(url, target)
+}

@@ -5,7 +5,7 @@ ls:
   .js: camelCase | regex:^[_\.].*
   .ts: camelCase | regex:^[_\.].*
   .d.ts: camelCase | regex:^[_\.].* | regex:^auto-imports
-  .png: snake_case
+  .png: snake_case | kebab-case
   .gif: snake_case
   .jpg: snake_case
   .jpeg: snake_case

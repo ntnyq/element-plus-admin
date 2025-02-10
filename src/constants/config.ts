@@ -27,6 +27,11 @@ export const DEFAULT_CONFIG = Object.freeze({
   showBreadcrumb: true,
 
   /**
+   * 是否显示设置抽屉
+   */
+  showSettings: true,
+
+  /**
    * 显示页签
    */
   showTagsView: true,
