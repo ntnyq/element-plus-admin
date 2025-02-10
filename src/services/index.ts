@@ -2,12 +2,26 @@ import axios from 'axios'
 import type { AxiosInstance } from 'axios'
 import type { RequestConfig, RequestInterceptors } from './types'
 
-export class Request {
+const defaultConfig: RequestConfig = {
+  timeout: 30_000,
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
+  },
+}
+
+export class HTTPClient {
   instance: AxiosInstance
   interceptors?: RequestInterceptors
 
-  constructor(config: RequestConfig) {
-    this.instance = axios.create(config)
+  private static pendingRequests = []
+
+  private static isRefreshing = false
+
+  private static initConfig: RequestConfig = {}
+
+  constructor(config: RequestConfig = {}) {
+    this.instance = axios.create({ ...defaultConfig, ...config })
 
     this.interceptors = config.interceptors
 
@@ -88,3 +102,5 @@ export class Request {
     return this.request<T>({ ...config, method: 'PUT' })
   }
 }
+
+export const http = new HTTPClient()

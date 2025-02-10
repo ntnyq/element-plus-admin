@@ -8,13 +8,5 @@
     "types": ["node"],
     "noEmit": true
   },
-  "include": [
-    "scripts/**/*.ts",
-    "uno.config.*",
-    "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*"
-  ]
+  "include": ["./plugins/**/*.ts", "./scripts/**/*.ts", "./*.config.ts"]
 }

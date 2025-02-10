@@ -2,6 +2,7 @@
  * @file UnoCSS config
  */
 
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import { presetLegacyCompat } from '@unocss/preset-legacy-compat'
 import {
   defineConfig,
@@ -18,6 +19,10 @@ export default defineConfig({
     presetUno(),
     presetIcons({
       autoInstall: true,
+      collections: {
+        admin: FileSystemIconLoader('./src/icons'),
+      },
+      // mode: 'mask',
       prefix: 'icon-',
       scale: 1.2,
       extraProperties: {

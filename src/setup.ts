@@ -7,5 +7,6 @@ export function setupApp(app: App) {
   app.use(pinia)
   app.use(router)
   app.use(i18n)
+
   return app
 }

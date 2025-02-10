@@ -15,6 +15,8 @@ const appStore = useAppStore()
 const userStore = useUserStore()
 const viewStore = useViewStore()
 
+const notificationCount = 23
+
 const { isFullscreen, toggle: toggleFullscreen } = useFullscreen()
 
 function handleShowSettings() {
@@ -53,7 +55,27 @@ async function handleLogout() {
         />
       </div>
     </ElTooltip>
-    <ElDropdown class="navbar-action-item">
+
+    <ElPopover
+      :width="320"
+      trigger="click"
+      placement="bottom"
+    >
+      <div class="relative h-300px" />
+      <template #reference>
+        <div class="navbar-action-item">
+          <ElBadge
+            :value="notificationCount"
+            :max="99"
+            :is-dot="notificationCount >= 10"
+          >
+            <div class="icon-ri:notification-2-line" />
+          </ElBadge>
+        </div>
+      </template>
+    </ElPopover>
+
+    <ElDropdown class="navbar-action-item outline-none! [&_div]:outline-none!">
       <div class="h-full flex-center p-10px">
         <img
           src="/images/logos/logo.png"
@@ -102,6 +124,6 @@ async function handleLogout() {
 
 <style>
 .navbar-action-item {
-  --at-apply: 'inline-flex justify-center items-center min-w-40px h-$oa-navbar-height lh-$oa-navbar-height text-$el-text-color cursor-pointer hover:bg-#000/10 dark:hover:bg-#fff/20';
+  --at-apply: 'inline-flex justify-center items-center min-w-45px h-$oa-navbar-height lh-$oa-navbar-height text-$el-text-color cursor-pointer hover:bg-#000/10 dark:hover:bg-#fff/20';
 }
 </style>

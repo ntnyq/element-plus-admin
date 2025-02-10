@@ -9,6 +9,18 @@ export const routes = defineRoutes([
     meta: {},
   },
   {
+    path: '/redirect',
+    component: () => import('@/layout/index.vue'),
+    meta: {},
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        name: ROUTE_NAME.redirect,
+        component: () => import('@/views/common/redirect.vue'),
+      },
+    ],
+  },
+  {
     path: ROUTE_PATH.root,
     name: ROUTE_NAME.root,
     component: () => import('@/layout/index.vue'),

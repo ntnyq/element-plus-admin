@@ -21,5 +21,7 @@ export const ROUTE_PATH = {
 export const ROUTE_NAME = {
   dashboard: 'Dashboard',
   login: 'Login',
+  pathMatch: 'PathMatch',
+  redirect: 'Redirect',
   root: 'Root',
 }

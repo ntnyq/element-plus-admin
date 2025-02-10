@@ -26,9 +26,24 @@ declare module 'vue-router' {
     alwaysShow?: boolean
 
     /**
+     * 依据后端数据生成
+     */
+    backstage?: boolean
+
+    /**
      * 是否在面包屑导航中显示
      */
     breadcrumb?: boolean
+
+    /**
+     * 显示 Loading
+     */
+    frameLoading?: boolean
+
+    /**
+     * Iframe 地址
+     */
+    frameSrc?: string
 
     /**
      * 是否隐藏菜单
@@ -59,6 +74,11 @@ declare module 'vue-router' {
      * 角色权限
      */
     roles?: string[]
+
+    /**
+     * 保存滚动
+     */
+    saveScrollTop?: boolean
 
     /**
      * 菜单标题

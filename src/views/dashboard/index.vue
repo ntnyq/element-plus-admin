@@ -15,6 +15,8 @@ function handleShowModal() {
   <div class="relative h-screen flex-col-center gap-8">
     <h1 class="text-3xl font-500">Home</h1>
 
+    <div class="icon-admin:flag" />
+
     <div class="flex items-center gap-4">
       <ElButton
         @click="handleShowModal"
