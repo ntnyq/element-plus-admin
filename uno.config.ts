@@ -43,7 +43,14 @@ export default defineConfig({
       'flex-col-center': 'flex-center flex-col',
       'wh-full': 'w-full h-full',
 
+      // @pg
+      'border-base': 'border-#050505:6',
+
+      // @pg
+      'z-navbar': 'z-1000',
       'z-overlay': 'z-9999',
+      'z-sidebar': 'z-1001',
+      'z-sidebar-plus': 'z-1002',
     },
   ],
 

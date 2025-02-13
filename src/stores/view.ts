@@ -3,7 +3,7 @@
  */
 
 import pinia from '@/stores'
-import type { TagView } from '@/types'
+import type { TagViewItem } from '@/types'
 
 export const useViewStore = defineStore('view', () => {
   const cachedViews = ref<string[]>([])
@@ -13,7 +13,7 @@ export const useViewStore = defineStore('view', () => {
   function deleteOtherCachedViews() {}
   function clearCachedViews() {}
 
-  const visitedViews = ref<TagView[]>([])
+  const visitedViews = ref<TagViewItem[]>([])
   function addVisitedView() {}
   function deleteVisitedView() {}
   function deleteOtherVisitedViews() {}

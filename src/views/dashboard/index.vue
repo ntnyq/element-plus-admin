@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import { showModal } from '@/utils/libs/elementPlus/showModal'
+import { EpUtils } from '@/utils/libs/elementPlus'
 
 function handleShowModal() {
-  showModal({
+  EpUtils.showModal({
     dialogProps: {
       title: '系统提示',
       width: 600,
+      closeOnClickModal: true,
     },
   })
 }

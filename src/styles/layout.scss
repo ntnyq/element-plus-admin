@@ -1,5 +1,48 @@
 /// @name LayoutStyle
 
+.app-wrapper {
+  position: relative;
+
+  &.layout-left {
+    .app-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--oa-sidebar-width);
+      height: 100%;
+      background-color: var(--oa-sidebar-bg-color);
+      font-size: 0;
+      overflow: visible;
+      transition: width 0.3s ease-out;
+      --at-apply: "z-sidebar border-r border-solid border-base";
+    }
+
+    .main-container {
+      position: relative;
+      height: 100vh;
+      min-height: 100%;
+      margin-left: var(--oa-sidebar-width);
+      transition: margin-left 0.3s ease-out;
+    }
+
+    &.sidebar-closed {
+      .app-sidebar {
+        width: var(--oa-sidebar-width-collapsed);
+      }
+
+      .main-container {
+        margin-left: var(--oa-sidebar-width-collapsed);
+      }
+    }
+  }
+}
+
+.sidebar-scrollbar-wrapper {
+  height: calc(100% - var(--oa-navbar-height));
+  font-size: 16px;
+}
+
 .app-main {
   position: relative;
   background-color: var(--el-bg-color-page);

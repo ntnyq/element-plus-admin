@@ -32,7 +32,7 @@ watch(route, () => {
 <template>
   <div
     :class="wrapperClass"
-    class="relative wh-full"
+    class="app-wrapper relative wh-full"
   >
     <!-- 遮罩层 -->
     <div

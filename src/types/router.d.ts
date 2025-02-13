@@ -81,6 +81,12 @@ declare module 'vue-router' {
     saveScrollTop?: boolean
 
     /**
+     * 显示父菜单
+     * TODO: check alwaysShow
+     */
+    showParent?: boolean
+
+    /**
      * 菜单标题
      */
     title?: string

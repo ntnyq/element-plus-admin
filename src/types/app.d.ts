@@ -1,7 +1,30 @@
 /**
+ * @file 应用类型
+ */
+
+import type { RouteMeta } from 'vue-router'
+
+/**
+ * 导航项类型
+ */
+export interface NavMenuItem {
+  children?: NavMenuItem[]
+  id?: number
+  meta?: RouteMeta
+  name?: string
+  noShowingChildren?: boolean
+  parentId?: number
+  path?: string
+  pathList?: number[]
+  redirect?: string
+  showTooltip?: boolean
+  value?: unknown
+}
+
+/**
  * TagsView 类型
  */
-export interface TagView {
+export interface TagViewItem {
   fullPath: string
   name: string
   path: string

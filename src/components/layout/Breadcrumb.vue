@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 import { compile } from 'path-to-regexp'
-import {
-  ROUTE_NAME,
-  ROUTE_PATH,
-  ROUTE_REDIRECT_PREFIX,
-} from '@/constants/route'
+import { ROUTE_REDIRECT_PREFIX } from '@/constants/route'
 import { logger } from '@/utils/logger'
 import type { RouteLocationMatched } from 'vue-router'
 
@@ -13,16 +9,6 @@ const router = useRouter()
 
 const breadcrumbs = ref<RouteLocationMatched[]>([])
 
-function isDashboard(route: RouteLocationMatched) {
-  const name = route && route.name
-  if (!name) {
-    return false
-  }
-  return (
-    name.toString().trim().toLocaleLowerCase()
-    === ROUTE_NAME.dashboard.toLocaleLowerCase()
-  )
-}
 function compilePath(path: string) {
   const toPath = compile(path)
   return toPath(route.params)
@@ -41,15 +27,8 @@ function handleClickLink(item: RouteLocationMatched) {
   })
 }
 function updateBreadcrumbs() {
-  let matched = route.matched.filter(item => item.meta && item.meta.title)
-  const first = matched[0]
-  if (!isDashboard(first)) {
-    const dashboard = {
-      path: ROUTE_PATH.dashboard,
-      meta: { title: '首页' },
-    } as unknown as RouteLocationMatched
-    matched = [dashboard].concat(matched)
-  }
+  const matched = route.matched.filter(item => item.meta && item.meta.title)
+
   breadcrumbs.value = matched.filter(item => {
     return item.meta && item.meta.title && item.meta.breadcrumb !== false
   })

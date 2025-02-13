@@ -1,12 +1,26 @@
 /// @name globalVars
 
 @use "./core/vars/layout.scss";
+@use "./core/vars/color.scss";
+@use "./core/vars/colorDark.scss";
 @use "sass:meta";
 
 // convert scss module to css variables
 // https://github.com/sass/sass/issues/3091#issuecomment-870969698
 :root {
   @each $name, $value in meta.module-variables("layout") {
+    --oa-#{$name}: #{$value};
+  }
+}
+
+:root {
+  @each $name, $value in meta.module-variables("color") {
+    --oa-#{$name}: #{$value};
+  }
+}
+
+:root.dark {
+  @each $name, $value in meta.module-variables("colorDark") {
     --oa-#{$name}: #{$value};
   }
 }

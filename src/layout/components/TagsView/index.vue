@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useTagsView } from '@/layout/composables/useTagsView'
-import type { TagView } from '@/types'
+import type { TagViewItem } from '@/types'
 
 const wrapperRef = useTemplateRef('wrapperRef')
 const scrollbarRef = useTemplateRef('scrollbarRef')
@@ -9,7 +9,7 @@ const trackRef = useTemplateRef('trackRef')
 const { visitedViews, isArrowShow, onMouseEnter, onMouseLeave } = useTagsView()
 
 function handleClickTagView() {}
-function handleContextMenu(item: TagView, evt: MouseEvent) {
+function handleContextMenu(item: TagViewItem, evt: MouseEvent) {
   console.log({
     item,
     evt,
