@@ -10,14 +10,28 @@ import type { EnumAppLayout } from '@/enums/app'
 import type { EnumElSize } from '@/enums/element'
 
 export const useAppStore = defineStore('app', () => {
+  /**
+   * UI尺寸
+   */
   const size = useStorage<EnumElSize>(withPrefix('size'), DEFAULT_CONFIG.size)
 
+  /**
+   * 设备
+   */
   const device = useStorage<EnumAppDevice>(
     withPrefix('device'),
     EnumAppDevice.DESKTOP,
   )
   const isMobile = computed(() => device.value === EnumAppDevice.MOBILE)
+  const isDesktop = computed(() => device.value === EnumAppDevice.DESKTOP)
+  const isTablet = computed(() => device.value === EnumAppDevice.TABLET)
+  function setDevice(newDevice: EnumAppDevice) {
+    device.value = newDevice
+  }
 
+  /**
+   * 布局风格
+   */
   const layout = useStorage<EnumAppLayout>(
     withPrefix('layout'),
     DEFAULT_CONFIG.layout,
@@ -56,6 +70,14 @@ export const useAppStore = defineStore('app', () => {
   )
 
   /**
+   * 显示刷新按钮
+   */
+  const showRefresh = useStorage(
+    withPrefix('showRefresh'),
+    DEFAULT_CONFIG.showRefresh,
+  )
+
+  /**
    * 显示设置抽屉
    */
   const showSettingDrawer = useStorage(withPrefix('showSettingDrawer'), false)
@@ -83,12 +105,16 @@ export const useAppStore = defineStore('app', () => {
     size,
     device,
     isMobile,
+    isDesktop,
+    isTablet,
+    setDevice,
 
     layout,
 
     themeColor,
 
     fixedHeader,
+    showRefresh,
     showTagsView,
     showBreadcrumb,
     showSettingDrawer,

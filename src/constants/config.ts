@@ -27,6 +27,11 @@ export const DEFAULT_CONFIG = Object.freeze({
   showBreadcrumb: true,
 
   /**
+   * 显示页面重载
+   */
+  showRefresh: true,
+
+  /**
    * 是否显示设置抽屉
    */
   showSettings: true,

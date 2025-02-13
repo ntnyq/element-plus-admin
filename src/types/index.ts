@@ -1,3 +1,3 @@
 export * from './app'
-export * from './utils'
 export * from './error'
+export * from './utils'

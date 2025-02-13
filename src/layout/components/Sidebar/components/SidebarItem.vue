@@ -15,7 +15,9 @@ const props = withDefaults(
     basePath: '',
   },
 )
-const attrs = useAttrs()
+defineOptions({
+  inheritAttrs: false,
+})
 
 const onlyOneChild = shallowRef<NavMenuItem>()
 
@@ -65,7 +67,7 @@ function resolvePath(routePath?: string) {
       :class="{
         'submenu-title-no-dropdown': !isNest,
       }"
-      v-bind="attrs"
+      v-bind="$attrs"
     >
       <template #title>
         <SidebarItemTitle
@@ -78,7 +80,6 @@ function resolvePath(routePath?: string) {
 
   <ElSubMenu
     v-else
-    ref="subMenuRef"
     :index="resolvePath(item.path)"
     teleported
   >

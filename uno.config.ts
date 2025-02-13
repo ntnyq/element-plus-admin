@@ -19,12 +19,12 @@ export default defineConfig({
     presetUno(),
     presetIcons({
       autoInstall: true,
-      collections: {
-        admin: FileSystemIconLoader('./src/icons'),
-      },
       // mode: 'mask',
       prefix: 'icon-',
       scale: 1.2,
+      collections: {
+        admin: FileSystemIconLoader('./src/icons'),
+      },
       extraProperties: {
         color: 'inherit',
         // Avoid crushing of icons in crowded situations

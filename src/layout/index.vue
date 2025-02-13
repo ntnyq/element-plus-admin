@@ -10,11 +10,32 @@ import { useAppStore } from '@/stores/app'
 const route = useRoute()
 const appStore = useAppStore()
 
-const isMobile = computed(() => appStore.device === EnumAppDevice.MOBILE)
+const wrapperRef = useTemplateRef('wrapperRef')
+
+// const shouldAutoCloseSidebar = ref(true)
+
+useResizeObserver(wrapperRef, entries => {
+  // if (appStore.isMobile) return
+
+  const entry = entries[0]
+  const [{ inlineSize: width }] = entry.borderBoxSize
+
+  if (width > 0 && width <= 760) {
+    appStore.setDevice(EnumAppDevice.MOBILE)
+    // shouldAutoCloseSidebar.value = true
+  } else if (width > 760 && width <= 1200) {
+    appStore.setDevice(EnumAppDevice.TABLET)
+  } else if (width > 1200) {
+    appStore.setDevice(EnumAppDevice.DESKTOP)
+  }
+})
+
 const wrapperClass = computed(() => ({
   'sidebar-opened': appStore.isSidebarOpened,
   'sidebar-closed': !appStore.isSidebarOpened,
-  'is-mobile': isMobile.value,
+  'is-mobile': appStore.isMobile,
+  'is-desktop': appStore.isDesktop,
+  'is-tablet': appStore.isTablet,
   [`layout-${appStore.layout}`]: true,
 }))
 
@@ -23,7 +44,7 @@ function handleClickOverlay() {
 }
 
 watch(route, () => {
-  if (isMobile.value && appStore.isSidebarOpened) {
+  if (appStore.isMobile && appStore.isSidebarOpened) {
     appStore.setIsSidebarOpened(false)
   }
 })
@@ -31,13 +52,14 @@ watch(route, () => {
 
 <template>
   <div
+    ref="wrapperRef"
     :class="wrapperClass"
     class="app-wrapper relative wh-full"
   >
     <!-- 遮罩层 -->
     <div
       @click="handleClickOverlay"
-      v-if="isMobile"
+      v-if="appStore.isMobile"
       class="fixed left-0 top-0 z-overlay wh-full bg-black:30"
     />
 

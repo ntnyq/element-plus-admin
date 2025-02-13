@@ -6,7 +6,11 @@ const props = defineProps<{
   permissions?: string[]
 }>()
 
-const slots = useSlots()
+const slots = defineSlots<{
+  default: () => any
+  placeholder: () => any
+}>()
+
 const userStore = useUserStore()
 
 const showDefaultSlot = computed(() => {

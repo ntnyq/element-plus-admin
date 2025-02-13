@@ -13,6 +13,7 @@
     "vue",
     "xml",
     "yaml",
+    "toml",
     "json",
     "jsonc",
     "json5",
