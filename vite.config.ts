@@ -11,7 +11,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import VueDevTools from 'vite-plugin-vue-devtools'
+// import VueDevTools from 'vite-plugin-vue-devtools'
 import { version } from './package.json'
 import { resolve } from './scripts/utils'
 
@@ -70,7 +70,7 @@ export default defineConfig({
       'axios',
       'dayjs',
       'echarts',
-      'pinyin-pro',
+      // 'pinyin-pro',
       'vue-i18n',
       'vue-router',
       'vue',
@@ -83,7 +83,7 @@ export default defineConfig({
 
     VueJSX(),
 
-    VueDevTools(),
+    // VueDevTools(),
 
     UnoCSS(),
 

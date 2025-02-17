@@ -11,6 +11,9 @@ const color = computed(() =>
   isDark.value ? 'rgba(255, 255, 255, 0.15)' : 'rgb(0 , 0, 0, 0.15)',
 )
 
+/**
+ * @see {@link https://vuejs.org/api/composition-api-lifecycle#onerrorcaptured}
+ */
 onErrorCaptured((err, instance, info) => {
   logger.warn(err, instance, info)
   return false // disable error reporting

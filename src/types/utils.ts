@@ -1,5 +1,16 @@
-export type AnyFn<T = any, R = any> = (...args: T[]) => R
-export type Arrayable<T> = T | T[]
-export type Awaitable<T> = Promise<T> | T
-export type MayBe<T> = T | undefined
-export type Nullable<T> = T | null
+/**
+ * @file types utils
+ */
+
+/**
+ * Re-export common used type utils
+ */
+export type {
+  AnyFn,
+  Arrayable,
+  Awaitable,
+  MayBe,
+  Nullable,
+  Overwrite,
+  Prettify,
+} from '@ntnyq/utils'

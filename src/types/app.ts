@@ -24,8 +24,9 @@ export interface NavMenuItem {
 /**
  * TagsView 类型
  */
-export interface TagViewItem {
+export interface TagsViewItem {
   fullPath: string
+  meta: RouteMeta
   name: string
   path: string
   query: Record<string, any>

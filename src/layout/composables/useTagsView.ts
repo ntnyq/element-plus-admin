@@ -7,7 +7,7 @@ import { useViewStore } from '@/stores/view'
 export function useTagsView() {
   const { visitedViews } = useViewStore()
 
-  const isArrowShow = ref(false)
+  const isArrowShow = ref(true)
 
   function onMouseEnter(idx: number) {
     console.log({ idx })
