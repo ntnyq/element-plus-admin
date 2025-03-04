@@ -2,13 +2,15 @@ import { ERROR_SHOW_DURATION, NO_SHOW_ERROR_CODE } from '@/constants/error'
 import { waitFor } from '@/utils'
 import type { SystemError } from '@/types'
 
-const errorMessageStack = new Map<string | number, string>([])
+const errorMessageStack = new Map<string | number, string>()
 
 export function hasErrorMessage(error: SystemError) {
   return errorMessageStack.has(error.code)
 }
 export function addErrorMessage(error: SystemError) {
-  if (hasErrorMessage(error)) return
+  if (hasErrorMessage(error)) {
+    return
+  }
   errorMessageStack.set(error.code, error.message)
 }
 export function removeErrorMessage(error: SystemError) {
@@ -24,9 +26,9 @@ export async function showErrorMessage(
   options: ShowErrorMessageOptions = {},
 ) {
   if (
-    !error.message
-    || NO_SHOW_ERROR_CODE.includes(error.code)
-    || hasErrorMessage(error)
+    !error.message ||
+    NO_SHOW_ERROR_CODE.includes(error.code) ||
+    hasErrorMessage(error)
   ) {
     return
   }

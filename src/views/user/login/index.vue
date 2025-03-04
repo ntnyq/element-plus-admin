@@ -9,7 +9,7 @@ async function handleLogin() {
 </script>
 
 <template>
-  <div class="h-screen flex-center flex-col gap-6">
+  <div class="flex-center flex-col gap-6 h-screen">
     <h1>Login page</h1>
     <ElButton
       @click="handleLogin"

@@ -1,0 +1,9 @@
+overrides:
+  esbuild: ^0.27.2
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - es5-ext
+  - esbuild
+  - unrs-resolver
+  - vue-demi

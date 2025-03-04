@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative flex items-center">
+  <div class="flex items-center relative">
     <div
       v-if="icon"
       :class="icon"

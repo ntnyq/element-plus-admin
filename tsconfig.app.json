@@ -3,10 +3,10 @@
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "libReplacement": false
   },
   "include": ["./env.d.ts", "./src/**/*", "./src/**/*.vue", "./src/**/*.tsx"],
   "exclude": ["./src/**/__tests__/*"]

@@ -19,7 +19,7 @@ export function defineRoutes(
     return routes.map(route => ({
       ...route,
       meta: {
-        ...(route.meta || {}),
+        ...route.meta,
         ...options.meta,
       },
     }))

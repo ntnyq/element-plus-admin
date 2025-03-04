@@ -52,7 +52,7 @@ watch(
 
     <ElDivider>界面设置</ElDivider>
 
-    <div class="relative flex flex-col gap-3">
+    <div class="flex flex-col gap-3 relative">
       <div class="flex items-center justify-between">
         <span class="text-xs">主题颜色</span>
         <ThemeColorPicker v-model="appStore.themeColor" />

@@ -15,10 +15,15 @@ const wrapperRef = useTemplateRef('wrapperRef')
 // const shouldAutoCloseSidebar = ref(true)
 
 useResizeObserver(wrapperRef, entries => {
-  if (appStore.isMobile) return
+  if (appStore.isMobile) {
+    return
+  }
+  if (!entries.length) {
+    return
+  }
 
-  const entry = entries[0]
-  const [{ inlineSize: width }] = entry.borderBoxSize
+  const entry = entries[0]!
+  const { inlineSize: width } = entry.borderBoxSize[0]!
 
   if (width > 0 && width <= 760) {
     appStore.setDevice(EnumAppDevice.MOBILE)
@@ -54,13 +59,13 @@ watch(route, () => {
   <div
     ref="wrapperRef"
     :class="wrapperClass"
-    class="app-wrapper relative wh-full"
+    class="app-wrapper wh-full relative"
   >
     <!-- 遮罩层 -->
     <div
       @click="handleClickOverlay"
       v-if="appStore.isMobile"
-      class="fixed left-0 top-0 z-overlay wh-full bg-black:30"
+      class="bg-black:30 wh-full left-0 top-0 fixed z-overlay"
     />
 
     <!-- 公用侧边栏 -->

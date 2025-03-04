@@ -43,10 +43,12 @@ function hasOneShowingChild(parent: NavMenuItem, children: NavMenuItem[] = []) {
   return false
 }
 function resolvePath(routePath?: string) {
-  if (!routePath) return ''
+  if (!routePath) {
+    return ''
+  }
   if (
-    RE_HTTP_OR_HTTPS.test(routePath)
-    || RE_HTTP_OR_HTTPS.test(props.basePath)
+    RE_HTTP_OR_HTTPS.test(routePath) ||
+    RE_HTTP_OR_HTTPS.test(props.basePath)
   ) {
     return routePath || props.basePath
   }
@@ -57,8 +59,8 @@ function resolvePath(routePath?: string) {
 <template>
   <SidebarItemLink
     v-if="
-      hasOneShowingChild(item, item.children)
-      && (!onlyOneChild?.children || onlyOneChild.noShowingChildren)
+      hasOneShowingChild(item, item.children) &&
+      (!onlyOneChild?.children || onlyOneChild.noShowingChildren)
     "
     :to="item"
   >

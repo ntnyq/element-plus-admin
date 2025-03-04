@@ -11,7 +11,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-// import VueDevTools from 'vite-plugin-vue-devtools'
 import { version } from './package.json'
 import { resolve } from './scripts/utils'
 
@@ -23,27 +22,19 @@ export default defineConfig({
     reportCompressedSize: false,
     sourcemap: false,
     target: 'es2015',
-    rollupOptions: {
+    rolldownOptions: {
       output: {
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-        // manualChunks(id) {
-        //   if (id.includes('node_modules')) {
-        //     const groupVue = [
-        //       'vue',
-        //       'vue-router',
-        //       'pinia',
-        //       'vue-i18n',
-        //       '@vueuse/core',
-        //     ]
-        //     if (groupVue.some(mod => id.includes(`node_modules/${mod}`))) {
-        //       return 'vendor'
-        //     } else {
-        //       return 'deps'
-        //     }
-        //   }
-        // },
+        codeSplitting: {
+          groups: [
+            {
+              name: 'vendor',
+              test: /[\\/]node_modules[\\/](vue|vue-router|pinia|vue-i18n|@vueuse[\\/]core)[\\/]/,
+            },
+          ],
+        },
       },
     },
   },
@@ -83,9 +74,9 @@ export default defineConfig({
 
     VueJSX(),
 
-    // VueDevTools(),
-
-    UnoCSS(),
+    UnoCSS({
+      inspector: false,
+    }),
 
     AutoImport({
       dts: resolve('src/auto-imports.d.ts'),

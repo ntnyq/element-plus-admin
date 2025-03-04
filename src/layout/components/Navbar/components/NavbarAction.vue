@@ -61,7 +61,7 @@ async function handleLogout() {
       trigger="click"
       placement="bottom"
     >
-      <div class="relative h-300px" />
+      <div class="h-300px relative" />
       <template #reference>
         <div class="navbar-action-item">
           <ElBadge
@@ -76,11 +76,11 @@ async function handleLogout() {
     </ElPopover>
 
     <ElDropdown class="navbar-action-item outline-none! [&_div]:outline-none!">
-      <div class="h-full flex-center p-10px">
+      <div class="p-10px flex-center h-full">
         <img
           src="/images/logos/logo.png"
           alt="User avatar"
-          class="block max-h-30px max-w-30px"
+          class="max-h-30px max-w-30px block"
         />
         <span class="text-md ml-2">Admin</span>
       </div>

@@ -1,11 +1,12 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "types": ["node"],
+    "libReplacement": false,
     "noEmit": true
   },
   "include": ["./plugins/**/*.ts", "./scripts/**/*.ts", "./*.config.ts"]

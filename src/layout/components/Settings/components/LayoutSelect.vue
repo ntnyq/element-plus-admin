@@ -9,7 +9,7 @@ function handleUpdateLayoutMode(layout: EnumAppLayout) {
 </script>
 
 <template>
-  <div class="h-12 w-full flex flex-wrap justify-around">
+  <div class="flex flex-wrap h-12 w-full justify-around">
     <ElTooltip
       content="左侧模式"
       placement="bottom"

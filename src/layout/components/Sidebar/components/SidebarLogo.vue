@@ -11,22 +11,22 @@ defineProps<{
     :class="{
       'is-collapse': collapse,
     }"
-    class="app-sidebar-logo relative h-$oa-navbar-height w-full of-hidden"
+    class="app-sidebar-logo h-$oa-navbar-height w-full relative of-hidden"
   >
     <Transition name="sidebar-logo-fade">
       <RouterLink
         :title="ENV.appTitle"
         to="/"
-        class="h-full flex flex-nowrap items-center pl-10px"
+        class="pl-10px flex flex-nowrap h-full items-center"
       >
         <img
-          class="block max-h-32px max-w-32px object-contain"
+          class="max-h-32px max-w-32px block object-contain"
           src="/images/logos/logo.png"
           alt="LOGO"
         />
         <span
           v-if="!collapse"
-          class="ml-12px mt-2px inline-block h-32px truncate text-lg font-semibold lh-32px"
+          class="text-lg lh-32px font-semibold ml-12px mt-2px h-32px inline-block truncate"
         >
           {{ ENV.appTitle }}
         </span>

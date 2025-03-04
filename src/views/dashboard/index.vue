@@ -13,12 +13,12 @@ function handleShowModal() {
 </script>
 
 <template>
-  <div class="relative h-screen flex-col-center gap-8">
+  <div class="flex-col-center gap-8 h-screen relative">
     <h1 class="text-3xl font-500">Home</h1>
 
     <div class="icon-admin:flag" />
 
-    <div class="flex items-center gap-4">
+    <div class="flex gap-4 items-center">
       <ElButton
         @click="handleShowModal"
         type="primary"

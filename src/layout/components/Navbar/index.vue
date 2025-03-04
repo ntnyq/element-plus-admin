@@ -7,9 +7,9 @@ import NavbarAction from './components/NavbarAction.vue'
 
 <template>
   <div
-    class="app-navbar h-$oa-navbar-height flex items-center justify-between bg-$el-bg-color shadow-sm"
+    class="app-navbar bg-$el-bg-color flex h-$oa-navbar-height shadow-sm items-center justify-between"
   >
-    <div class="flex pl-4">
+    <div class="pl-4 flex">
       <Breadcrumb />
     </div>
     <NavbarAction />

@@ -18,7 +18,7 @@ function handleToggle() {
   >
     <ElButton
       @click="handleToggle"
-      class="sidebar-center-toggler absolute top-1/2 z-sidebar-plus flex-center -right-10px -translate-y-1/2"
+      class="sidebar-center-toggler flex-center top-1/2 absolute z-sidebar-plus -translate-y-1/2 -right-10px"
       circle
     >
       <div

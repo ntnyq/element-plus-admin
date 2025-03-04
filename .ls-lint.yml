@@ -13,8 +13,8 @@ ls:
   .vue: camelCase | regex:^App$
   .scss: camelCase | regex:^[_\.].*
   .json: camelCase | regex:^[_\.].* | regex:^tsconfig.*
-  .config.js: point.case
-  .config.ts: point.case
+  .config.mjs: camelCase
+  .config.ts: camelCase
 
   src/components:
     .dir: camelCase | regex:^components

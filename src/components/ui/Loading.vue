@@ -1,7 +1,7 @@
 <template>
-  <div class="wh-full flex-center flex-col">
+  <div class="flex-center flex-col wh-full">
     <div class="p-8">
-      <div class="i-ri:loading animate-spin text-40px text-blue" />
+      <div class="i-ri:loading text-40px text-blue animate-spin" />
     </div>
   </div>
 </template>

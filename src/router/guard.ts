@@ -3,7 +3,7 @@ import { waitFor } from '@/utils'
 import NProgress from '@/utils/libs/nprogress'
 import type { Router } from 'vue-router'
 
-const ROUTE_PATH_WHITE_LIST = new Set<string>([])
+const ROUTE_PATH_WHITE_LIST = new Set<string>()
 
 export function setupRouterGuards(router: Router) {
   const permissionStore = usePermissionStoreWithOut()

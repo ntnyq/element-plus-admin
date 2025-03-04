@@ -17,7 +17,9 @@ const COLOR_PRESETS = [
 ]
 
 function handleThemeColorChange(color: string | null) {
-  if (!color) return
+  if (!color) {
+    return
+  }
 
   logger.success(`Theme color changed to: ${color}`)
   themeColor.value = color

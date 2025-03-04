@@ -21,7 +21,9 @@ async function init() {
   await nextTick()
   const iframeEl = unref(frameRef)
 
-  if (!iframeEl) return
+  if (!iframeEl) {
+    return
+  }
 
   const _frame = iframeEl as any
 
@@ -47,8 +49,8 @@ watch(
   () => route.fullPath,
   path => {
     if (
-      route.name === ROUTE_NAME.redirect
-      && path.includes(props.frameInfo?.fullPath ?? '')
+      route.name === ROUTE_NAME.redirect &&
+      path.includes(props.frameInfo?.fullPath ?? '')
     ) {
       frameSrc.value = path
       isLoading.value = true

@@ -2,10 +2,10 @@
   "recommendations": [
     "streetsidesoftware.code-spell-checker",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "antfu.file-nesting",
     "editorconfig.editorconfig",
     "mikestead.dotenv",
-    "antfu.unocss"
+    "antfu.unocss",
+    "oxc.oxc-vscode"
   ]
 }

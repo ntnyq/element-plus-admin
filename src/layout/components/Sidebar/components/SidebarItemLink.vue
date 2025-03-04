@@ -7,7 +7,9 @@ const props = defineProps<{
 }>()
 
 const isExternalUrl = computed(() => {
-  if (!props.to?.path) return false
+  if (!props.to?.path) {
+    return false
+  }
   return RE_HTTP_OR_HTTPS.test(props.to?.path)
 })
 const attrs = computed(() =>

@@ -146,7 +146,7 @@ watch(
 <template>
   <div
     ref="wrapperRef"
-    class="app-tags-view tags-view-container relative w-full flex items-center text-14px text-$el-text-color-primary shadow"
+    class="app-tags-view tags-view-container text-14px text-$el-text-color-primary flex w-full shadow items-center relative"
   >
     <div
       v-show="isArrowShow"
@@ -158,11 +158,11 @@ watch(
     <div
       @wheel.prevent="handleScrollbarWheel"
       ref="scrollbarRef"
-      class="scroll-container relative flex-1 of-hidden whitespace-nowrap"
+      class="scroll-container flex-1 whitespace-nowrap relative of-hidden"
     >
       <div
         ref="trackRef"
-        class="tags-view-track relative select-none of-visible whitespace-nowrap"
+        class="tags-view-track select-none whitespace-nowrap relative of-visible"
       >
         <div
           @click="handleClickTagItem"
@@ -175,7 +175,7 @@ watch(
           :class="{
             'is-active': !!item,
           }"
-          class="tags-view-item relative inline-flex cursor-pointer items-center pl-6px lh-$oa-tags-view-height transition-all"
+          class="tags-view-item lh-$oa-tags-view-height pl-6px inline-flex cursor-pointer transition-all items-center relative"
         >
           <span class="tags-view-item-title"> {{ item.title }} </span>
           <!-- <div class="tags-view-item-icon"></div> -->
@@ -199,7 +199,7 @@ watch(
         <li
           v-for="item in contextmenuActions"
           :key="item.key"
-          class="relative flex items-center"
+          class="flex items-center relative"
         >
           <div
             @click="handleContextmenuItemClick(item)"
