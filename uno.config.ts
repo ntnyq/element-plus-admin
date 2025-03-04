@@ -7,7 +7,7 @@ import { presetLegacyCompat } from '@unocss/preset-legacy-compat'
 import {
   defineConfig,
   presetIcons,
-  presetUno,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -16,7 +16,7 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   presets: [
-    presetUno(),
+    presetWind3(),
     presetIcons({
       autoInstall: true,
       // mode: 'mask',
