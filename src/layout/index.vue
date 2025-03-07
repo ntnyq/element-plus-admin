@@ -15,10 +15,15 @@ const wrapperRef = useTemplateRef('wrapperRef')
 // const shouldAutoCloseSidebar = ref(true)
 
 useResizeObserver(wrapperRef, entries => {
-  if (appStore.isMobile) return
+  if (appStore.isMobile) {
+    return
+  }
+  if (!entries.length) {
+    return
+  }
 
-  const entry = entries[0]
-  const [{ inlineSize: width }] = entry.borderBoxSize
+  const entry = entries[0]!
+  const { inlineSize: width } = entry.borderBoxSize[0]!
 
   if (width > 0 && width <= 760) {
     appStore.setDevice(EnumAppDevice.MOBILE)

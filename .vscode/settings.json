@@ -22,5 +22,31 @@
     "typescript",
     "javascriptreact",
     "typescriptreact"
+  ],
+  "cSpell.useGitignore": true,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.words": [
+    "bumpp",
+    "changelogithub",
+    "demi",
+    "destructurable",
+    "echarts",
+    "esbuild",
+    "iconify",
+    "INTLIFY",
+    "nocheck",
+    "ntnyq",
+    "oxlint",
+    "pathe",
+    "pinia",
+    "tsbuildinfo",
+    "unocss",
+    "unplugin",
+    "unref",
+    "unrs",
+    "valibot",
+    "vite",
+    "vueuse",
+    "xgplayer"
   ]
 }

@@ -51,7 +51,7 @@ onMounted(() => {
       <ElMenu
         :collapse-transition="false"
         :collapse="isSidebarCollapse"
-        :default-active="defaultActive"
+        :default-active
         mode="vertical"
         class="select-none"
         unique-open
@@ -59,7 +59,7 @@ onMounted(() => {
         <SidebarItem
           v-for="item in routes"
           :key="item.path"
-          :item="item"
+          :item
           :base-path="item.path"
           class="select-none"
         />

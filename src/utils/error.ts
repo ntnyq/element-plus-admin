@@ -8,7 +8,9 @@ export function hasErrorMessage(error: SystemError) {
   return errorMessageStack.has(error.code)
 }
 export function addErrorMessage(error: SystemError) {
-  if (hasErrorMessage(error)) return
+  if (hasErrorMessage(error)) {
+    return
+  }
   errorMessageStack.set(error.code, error.message)
 }
 export function removeErrorMessage(error: SystemError) {

@@ -11,7 +11,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-// import VueDevTools from 'vite-plugin-vue-devtools'
 import { version } from './package.json'
 import { resolve } from './scripts/utils'
 
@@ -83,9 +82,9 @@ export default defineConfig({
 
     VueJSX(),
 
-    // VueDevTools(),
-
-    UnoCSS(),
+    UnoCSS({
+      inspector: false,
+    }),
 
     AutoImport({
       dts: resolve('src/auto-imports.d.ts'),
