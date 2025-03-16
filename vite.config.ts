@@ -85,7 +85,9 @@ export default defineConfig({
 
     // VueDevTools(),
 
-    UnoCSS(),
+    UnoCSS({
+      inspector: false,
+    }),
 
     AutoImport({
       dts: resolve('src/auto-imports.d.ts'),

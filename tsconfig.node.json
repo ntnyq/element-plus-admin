@@ -6,6 +6,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "types": ["node"],
+    "libReplacement": false,
     "noEmit": true
   },
   "include": ["./plugins/**/*.ts", "./scripts/**/*.ts", "./*.config.ts"]
