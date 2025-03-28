@@ -1,7 +1,7 @@
 packages:
   - .
 overrides:
-  esbuild: ^0.25.1
+  esbuild: ^0.25.2
   eslint: ^9.23.0
 onlyBuiltDependencies:
   - core-js
