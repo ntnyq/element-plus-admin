@@ -12,7 +12,9 @@ import type { Router, RouteRecordRaw } from 'vue-router'
  * @param router - vue-router
  */
 export function addPathMatch(router: Router) {
-  if (router.hasRoute(ROUTE_NAME.pathMatch)) return
+  if (router.hasRoute(ROUTE_NAME.pathMatch)) {
+    return
+  }
   router.addRoute({
     path: '/:pathMatch(.*)',
     name: ROUTE_NAME.pathMatch,

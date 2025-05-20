@@ -7,6 +7,5 @@ export default defineESLintConfig(
   {
     svgo: true,
   },
-  // @ts-expect-error types
   ...pluginOxLint.configs['flat/recommended'],
 )

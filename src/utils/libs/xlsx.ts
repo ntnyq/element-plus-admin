@@ -28,7 +28,9 @@ function transformWorksheet(worksheet: WorkSheet, range: Range) {
     h: str,
     w: str,
   }
-  if (!worksheet || !worksheet['!ref']) return []
+  if (!worksheet || !worksheet['!ref']) {
+    return []
+  }
 
   let c = 0
   let r = 1

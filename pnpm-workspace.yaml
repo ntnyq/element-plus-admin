@@ -1,10 +1,13 @@
 packages:
   - .
+
 overrides:
-  esbuild: ^0.25.2
-  eslint: ^9.23.0
+  esbuild: ^0.25.5
+  eslint: ^9.29.0
+
 onlyBuiltDependencies:
   - core-js
   - es5-ext
   - esbuild
+  - unrs-resolver
   - vue-demi

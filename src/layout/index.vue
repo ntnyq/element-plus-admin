@@ -15,7 +15,9 @@ const wrapperRef = useTemplateRef('wrapperRef')
 // const shouldAutoCloseSidebar = ref(true)
 
 useResizeObserver(wrapperRef, entries => {
-  if (appStore.isMobile) return
+  if (appStore.isMobile) {
+    return
+  }
 
   const entry = entries[0]
   const [{ inlineSize: width }] = entry.borderBoxSize

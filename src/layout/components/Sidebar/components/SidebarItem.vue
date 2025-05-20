@@ -43,7 +43,9 @@ function hasOneShowingChild(parent: NavMenuItem, children: NavMenuItem[] = []) {
   return false
 }
 function resolvePath(routePath?: string) {
-  if (!routePath) return ''
+  if (!routePath) {
+    return ''
+  }
   if (
     RE_HTTP_OR_HTTPS.test(routePath)
     || RE_HTTP_OR_HTTPS.test(props.basePath)

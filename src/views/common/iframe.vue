@@ -21,7 +21,9 @@ async function init() {
   await nextTick()
   const iframeEl = unref(frameRef)
 
-  if (!iframeEl) return
+  if (!iframeEl) {
+    return
+  }
 
   const _frame = iframeEl as any
 
