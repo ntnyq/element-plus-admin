@@ -6,7 +6,9 @@ import pluginOxLint from 'eslint-plugin-oxlint'
 export default defineESLintConfig(
   {
     svgo: true,
+    depend: {
+      allowed: ['axios'],
+    },
   },
-  // @ts-expect-error types not matching
   ...pluginOxLint.configs['flat/recommended'],
 )
