@@ -1,6 +1,6 @@
 overrides:
   esbuild: ^0.25.9
-  eslint: ^9.33.0
+  eslint: ^9.34.0
 
 onlyBuiltDependencies:
   - core-js
