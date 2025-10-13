@@ -50,7 +50,7 @@
     "@ntnyq/eslint-config": "^5.6.0",
     "@ntnyq/prettier-config": "^3.0.1",
     "@tsconfig/node20": "^20.1.6",
-    "@types/jsdom": "^21.1.7",
+    "@types/jsdom": "^27.0.0",
     "@types/node": "^24.5.2",
     "@types/nprogress": "^0.2.3",
     "@unocss/preset-legacy-compat": "^66.5.2",
