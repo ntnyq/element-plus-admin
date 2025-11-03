@@ -23,7 +23,7 @@
     "@ntnyq/utils": "^0.9.2",
     "@types/color": "^4.2.0",
     "@unocss/reset": "^66.5.4",
-    "@vueuse/core": "^13.9.0",
+    "@vueuse/core": "^14.0.0",
     "axios": "^1.12.2",
     "color": "^5.0.2",
     "consola": "^3.4.2",
