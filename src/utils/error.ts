@@ -2,7 +2,7 @@ import { ERROR_SHOW_DURATION, NO_SHOW_ERROR_CODE } from '@/constants/error'
 import { waitFor } from '@/utils'
 import type { SystemError } from '@/types'
 
-const errorMessageStack = new Map<string | number, string>([])
+const errorMessageStack = new Map<string | number, string>()
 
 export function hasErrorMessage(error: SystemError) {
   return errorMessageStack.has(error.code)
