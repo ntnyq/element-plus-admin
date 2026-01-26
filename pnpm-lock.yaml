@@ -163,8 +163,8 @@ importers:
         specifier: ^21.0.0
         version: 21.0.0(@vueuse/core@14.0.0(vue@3.5.24(typescript@5.9.3)))
       unplugin-vue-components:
-        specifier: ^30.0.0
-        version: 30.0.0(@babel/parser@7.28.5)(vue@3.5.24(typescript@5.9.3))
+        specifier: ^31.0.0
+        version: 31.0.0(vue@3.5.24(typescript@5.9.3))
       vite:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)(sass-embedded@1.93.3)(sass@1.93.3)(tsx@4.20.6)(yaml@2.8.1)
@@ -1774,6 +1774,10 @@ packages:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
     engines: {node: '>= 14.16.0'}
 
+  chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
+
   ci-info@4.3.0:
     resolution: {integrity: sha512-l+2bNRMiQgcfILUi33labAZYIWlH1kWDp+ecNo5iisRKrbm0xcRyCww71/YU0Fkw0mAFpz9bJayXPjey6vkmaQ==}
     engines: {node: '>=8'}
@@ -3044,6 +3048,9 @@ packages:
   object-deep-merge@2.0.0:
     resolution: {integrity: sha512-3DC3UMpeffLTHiuXSy/UG4NOIYTLlY9u3V82+djSCLYClWobZiS4ivYzpIUWrRY/nfsJ8cWsKyG3QfyLePmhvg==}
 
+  obug@2.1.1:
+    resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
+
   ofetch@1.5.1:
     resolution: {integrity: sha512-2W4oUZlVaqAPAil6FUg/difl6YhqhUR7x2eZY4bQCko22UXg3hptq9KLQdqFClV+Wu85UX7hNtdGTngi/1BxcA==}
 
@@ -3207,6 +3214,10 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
+
+  readdirp@5.0.0:
+    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+    engines: {node: '>= 20.19.0'}
 
   refa@0.12.1:
     resolution: {integrity: sha512-J8rn6v4DBb2nnFqkqwy6/NnTYMcgLA+sLr0iIO41qpv0n+ngb7ksag2tMRl0inb1bbO/esUwzW1vbJi7K0sI0g==}
@@ -3670,22 +3681,15 @@ packages:
     resolution: {integrity: sha512-5lWVjgi6vuHhJ526bI4nlCOmkCIF3nnfXkCMDeMJrtdvxTs6ZFCM8oNufGTsDbKv/tJ/xj8RpvXjRuPBZJuJog==}
     engines: {node: '>=20.19.0'}
 
-  unplugin-vue-components@30.0.0:
-    resolution: {integrity: sha512-4qVE/lwCgmdPTp6h0qsRN2u642tt4boBQtcpn4wQcWZAsr8TQwq+SPT3NDu/6kBFxzo/sSEK4ioXhOOBrXc3iw==}
-    engines: {node: '>=14'}
+  unplugin-vue-components@31.0.0:
+    resolution: {integrity: sha512-4ULwfTZTLuWJ7+S9P7TrcStYLsSRkk6vy2jt/WTfgUEUb0nW9//xxmrfhyHUEVpZ2UKRRwfRb8Yy15PDbVZf+Q==}
+    engines: {node: '>=20.19.0'}
     peerDependencies:
-      '@babel/parser': ^7.15.8
       '@nuxt/kit': ^3.2.2 || ^4.0.0
-      vue: 2 || 3
+      vue: ^3.0.0
     peerDependenciesMeta:
-      '@babel/parser':
-        optional: true
       '@nuxt/kit':
         optional: true
-
-  unplugin@2.3.10:
-    resolution: {integrity: sha512-6NCPkv1ClwH+/BGE9QeoTIl09nuiAt0gS28nn1PvYXsGKRwM2TCbFA2QiilmehPDTXIe684k4rZI1yl3A1PCUw==}
-    engines: {node: '>=18.12.0'}
 
   unplugin@2.3.11:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
@@ -5667,6 +5671,10 @@ snapshots:
     dependencies:
       readdirp: 4.1.2
 
+  chokidar@5.0.0:
+    dependencies:
+      readdirp: 5.0.0
+
   ci-info@4.3.0: {}
 
   citty@0.1.6:
@@ -7160,6 +7168,8 @@ snapshots:
 
   object-deep-merge@2.0.0: {}
 
+  obug@2.1.1: {}
+
   ofetch@1.5.1:
     dependencies:
       destr: 2.0.5
@@ -7310,6 +7320,8 @@ snapshots:
       picomatch: 2.3.1
 
   readdirp@4.1.2: {}
+
+  readdirp@5.0.0: {}
 
   refa@0.12.1:
     dependencies:
@@ -7786,28 +7798,18 @@ snapshots:
       pathe: 2.0.3
       picomatch: 4.0.3
 
-  unplugin-vue-components@30.0.0(@babel/parser@7.28.5)(vue@3.5.24(typescript@5.9.3)):
+  unplugin-vue-components@31.0.0(vue@3.5.24(typescript@5.9.3)):
     dependencies:
-      chokidar: 4.0.3
-      debug: 4.4.3
+      chokidar: 5.0.0
       local-pkg: 1.1.2
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       mlly: 1.8.0
+      obug: 2.1.1
+      picomatch: 4.0.3
       tinyglobby: 0.2.15
-      unplugin: 2.3.10
+      unplugin: 2.3.11
       unplugin-utils: 0.3.1
       vue: 3.5.24(typescript@5.9.3)
-    optionalDependencies:
-      '@babel/parser': 7.28.5
-    transitivePeerDependencies:
-      - supports-color
-
-  unplugin@2.3.10:
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      acorn: 8.15.0
-      picomatch: 4.0.3
-      webpack-virtual-modules: 0.6.2
 
   unplugin@2.3.11:
     dependencies:
