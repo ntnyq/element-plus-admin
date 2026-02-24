@@ -1,6 +1,6 @@
 import { ERROR_SHOW_DURATION, NO_SHOW_ERROR_CODE } from '@/constants/error'
-import { waitFor } from '@/utils'
 import type { SystemError } from '@/types'
+import { waitFor } from '@/utils'
 
 const errorMessageStack = new Map<string | number, string>()
 

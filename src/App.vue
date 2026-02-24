@@ -16,7 +16,7 @@ const color = computed(() =>
  */
 onErrorCaptured((err, instance, info) => {
   logger.warn(err, instance, info)
-  return false // disable error reporting
+  return false // Disable error reporting
 })
 </script>
 

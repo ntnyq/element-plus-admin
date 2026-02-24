@@ -3,8 +3,8 @@
  */
 
 import { cloneDeep } from 'es-toolkit'
-import { ROUTE_NAME } from '@/constants/route'
 import type { Router, RouteRecordRaw } from 'vue-router'
+import { ROUTE_NAME } from '@/constants/route'
 
 /**
  * 增加路由捕获重定向

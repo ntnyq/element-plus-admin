@@ -8,9 +8,8 @@ const viewStore = useViewStore()
 const minHeight = computed(() => {
   if (appStore.showTagsView) {
     return `calc(100vh - var(--height-navbar) - var(--height-tags-view))`
-  } else {
-    return `calc(100vh - var(--height-navbar))`
   }
+  return `calc(100vh - var(--height-navbar))`
 })
 </script>
 

@@ -5,7 +5,7 @@ export interface DefineRoutesOptions {
 }
 
 /**
- * define routes
+ * Define routes
  *
  * @param routes - routes
  * @param options - define routes options

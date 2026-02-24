@@ -1,7 +1,7 @@
+import type { Router } from 'vue-router'
 import { usePermissionStoreWithOut } from '@/stores/permission'
 import { waitFor } from '@/utils'
 import NProgress from '@/utils/libs/nprogress'
-import type { Router } from 'vue-router'
 
 const ROUTE_PATH_WHITE_LIST = new Set<string>()
 
@@ -14,7 +14,7 @@ export function setupRouterGuards(router: Router) {
     }
     NProgress.start()
 
-    // TODO: remove this
+    // oxlint-disable-next-line no-magic-numbers
     await waitFor(100)
 
     if (permissionStore.isAsyncRoutesLoaded) {

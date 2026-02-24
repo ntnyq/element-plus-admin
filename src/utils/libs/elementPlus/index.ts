@@ -5,7 +5,7 @@
 import { showModal } from './showModal'
 
 /**
- * elementPlus utils
+ * ElementPlus utils
  */
 export class EpUtils {
   /**

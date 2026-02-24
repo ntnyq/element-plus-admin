@@ -1,11 +1,11 @@
 <script lang="ts" setup>
+import type { RouteLocationGeneric } from 'vue-router'
 import { useTagsView } from '@/layout/composables/useTagsView'
 import { useViewStore } from '@/stores/view'
-import { isEmptyString, waitFor } from '@/utils'
-import type { RouteLocationGeneric } from 'vue-router'
 import type { TagsViewItem } from '@/types'
+import { isEmptyString, waitFor } from '@/utils'
 
-// const TAGS_VIEW_PADDING = 10
+// Const TAGS_VIEW_PADDING = 10
 
 interface TagsViewContextmenuAction {
   key: string
@@ -100,13 +100,13 @@ async function moveToCurrentViewItem() {
 /**
  * 将路由转化为 TagsViewItem
  */
-function toTagsViewItem(route: RouteLocationGeneric) {
+function toTagsViewItem(target: RouteLocationGeneric) {
   const viewItem: TagsViewItem = {
-    ...route,
-    title: route.meta.title!,
-    affix: route.meta.affix,
-    keepAlive: route.meta.keepAlive,
-    name: route.name as string,
+    ...target,
+    title: target.meta.title!,
+    affix: target.meta.affix,
+    keepAlive: target.meta.keepAlive,
+    name: target.name as string,
   }
   return viewItem
 }

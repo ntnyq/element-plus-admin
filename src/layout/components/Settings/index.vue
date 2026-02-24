@@ -5,7 +5,7 @@ import { useAppStore } from '@/stores/app'
 import LayoutSelect from './components/LayoutSelect.vue'
 import ThemeColorPicker from './components/ThemeColorPicker.vue'
 
-// const route = useRoute()
+// Const route = useRoute()
 const appStore = useAppStore()
 
 function handleToggleTheme() {
@@ -24,6 +24,7 @@ watch(
       for (let i = 1; i < 10; i++) {
         rootElStyle.setProperty(
           `--el-color-primary-light-${i}`,
+          // oxlint-disable-next-line new-cap
           `${Color(newThemeColor).alpha(1 - i * 0.1)}`,
         )
       }

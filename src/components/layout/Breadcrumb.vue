@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { compile } from 'path-to-regexp'
+import type { RouteLocationMatched } from 'vue-router'
 import { ROUTE_REDIRECT_PREFIX } from '@/constants/route'
 import { logger } from '@/utils/logger'
-import type { RouteLocationMatched } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
@@ -29,9 +29,9 @@ function handleClickLink(item: RouteLocationMatched) {
 function updateBreadcrumbs() {
   const matched = route.matched.filter(item => item.meta && item.meta.title)
 
-  breadcrumbs.value = matched.filter(item => {
-    return item.meta && item.meta.title && item.meta.breadcrumb !== false
-  })
+  breadcrumbs.value = matched.filter(
+    item => item.meta && item.meta.title && item.meta.breadcrumb !== false,
+  )
 }
 
 watch(

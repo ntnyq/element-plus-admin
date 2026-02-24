@@ -12,7 +12,7 @@ const appStore = useAppStore()
 
 const wrapperRef = useTemplateRef('wrapperRef')
 
-// const shouldAutoCloseSidebar = ref(true)
+// Const shouldAutoCloseSidebar = ref(true)
 
 useResizeObserver(wrapperRef, entries => {
   if (appStore.isMobile) {
@@ -27,7 +27,7 @@ useResizeObserver(wrapperRef, entries => {
 
   if (width > 0 && width <= 760) {
     appStore.setDevice(EnumAppDevice.MOBILE)
-    // shouldAutoCloseSidebar.value = true
+    // ShouldAutoCloseSidebar.value = true
   } else if (width > 760 && width <= 1200) {
     appStore.setDevice(EnumAppDevice.TABLET)
   } else if (width > 1200) {

@@ -1,11 +1,16 @@
 {
-  "$schema": "https://unpkg.com/oxfmt/configuration_schema.json",
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "arrowParens": "avoid",
   "bracketSameLine": false,
   "bracketSpacing": true,
   "embeddedLanguageFormatting": "auto",
   "endOfLine": "lf",
-  "experimentalSortPackageJson": false,
+  "sortPackageJson": {
+    "sortScripts": true,
+  },
+  "sortImports": {
+    "newlinesBetween": false,
+  },
   "htmlWhitespaceSensitivity": "css",
   "ignorePatterns": [
     "**/node_modules/**",
@@ -14,7 +19,7 @@
     "**/*.min.*",
     "**/tests/fixtures/**",
     "src/auto-imports.d.ts",
-    "src/components.d.ts"
+    "src/components.d.ts",
   ],
   "insertFinalNewline": true,
   "jsxSingleQuote": true,
@@ -23,15 +28,15 @@
     {
       "files": ["**/*.{css,scss}"],
       "options": {
-        "singleQuote": false
-      }
+        "singleQuote": false,
+      },
     },
     {
       "files": ["**/*.html"],
       "options": {
-        "singleAttributePerLine": false
-      }
-    }
+        "singleAttributePerLine": false,
+      },
+    },
   ],
   "printWidth": 80,
   "proseWrap": "preserve",
@@ -42,5 +47,5 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "vueIndentScriptAndStyle": false
+  "vueIndentScriptAndStyle": false,
 }

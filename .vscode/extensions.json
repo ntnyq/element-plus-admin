@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "streetsidesoftware.code-spell-checker",
-    "dbaeumer.vscode-eslint",
     "antfu.file-nesting",
     "editorconfig.editorconfig",
     "mikestead.dotenv",

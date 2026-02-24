@@ -9,11 +9,11 @@ export const useViewStore = defineStore('view', () => {
   const cachedViews = ref<string[]>([])
 
   function addCachedView(view: TagsViewItem) {
-    // already in cache
+    // Already in cache
     if (cachedViews.value.includes(view.name)) {
       return
     }
-    // should cache
+    // Should cache
     if (view.keepAlive) {
       cachedViews.value.push(view.name)
     }
@@ -26,7 +26,7 @@ export const useViewStore = defineStore('view', () => {
   const visitedViews = ref<TagsViewItem[]>([])
 
   function addVisitedView(view: TagsViewItem) {
-    // already in visited view list
+    // Already in visited view list
     if (visitedViews.value.some(v => v.path === view.path)) {
       return
     }

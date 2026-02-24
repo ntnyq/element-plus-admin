@@ -1,5 +1,5 @@
 overrides:
-  esbuild: ^0.27.2
+  esbuild: ^0.27.3
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - core-js

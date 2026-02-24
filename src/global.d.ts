@@ -3,6 +3,6 @@
  */
 
 declare global {
-  // extend window types
+  // Extend window types
   interface Window {}
 }

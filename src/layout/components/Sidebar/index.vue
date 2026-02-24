@@ -2,10 +2,10 @@
 import { ROUTE_REDIRECT_PREFIX } from '@/constants/route'
 import { useNav } from '@/layout/composables/useNav'
 import { usePermissionStore } from '@/stores/permission'
+import type { NavMenuItem } from '@/types'
 import SidebarCenterToggler from './components/SidebarCenterToggler.vue'
 import SidebarItem from './components/SidebarItem.vue'
 import SidebarLogo from './components/SidebarLogo.vue'
-import type { NavMenuItem } from '@/types'
 
 const route = useRoute()
 const permissionStore = usePermissionStore()

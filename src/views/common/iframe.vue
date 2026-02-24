@@ -69,12 +69,12 @@ onMounted(() => {
 <template>
   <div
     v-loading="isLoading"
-    class="absolute bottom-0 left-0 right-0 top-0"
+    class="bottom-0 left-0 right-0 top-0 absolute"
   >
     <iframe
       ref="frameRef"
       :src="frameSrc"
-      class="box-border wh-full of-hidden border-none"
+      class="border-none wh-full box-border of-hidden"
       frameborder="0"
     />
   </div>

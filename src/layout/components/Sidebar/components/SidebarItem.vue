@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { resolve } from 'pathe'
 import { RE_HTTP_OR_HTTPS } from '@/constants/regexp'
+import type { NavMenuItem } from '@/types'
 import SidebarItemLink from './SidebarItemLink.vue'
 import SidebarItemTitle from './SidebarItemTitle.vue'
-import type { NavMenuItem } from '@/types'
 
 const props = withDefaults(
   defineProps<{

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-// import { useAppStore } from '@/stores/app'
+// Import { useAppStore } from '@/stores/app'
 import NavbarAction from './components/NavbarAction.vue'
 
-// const appStore = useAppStore()
+// Const appStore = useAppStore()
 </script>
 
 <template>

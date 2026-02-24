@@ -4,10 +4,10 @@
 
 import { DEFAULT_CONFIG } from '@/constants/config'
 import { EnumAppDevice } from '@/enums/app'
-import pinia from '@/stores'
-import { withPrefix } from '@/utils'
 import type { EnumAppLayout } from '@/enums/app'
 import type { EnumElSize } from '@/enums/element'
+import pinia from '@/stores'
+import { withPrefix } from '@/utils'
 
 export const useAppStore = defineStore('app', () => {
   /**

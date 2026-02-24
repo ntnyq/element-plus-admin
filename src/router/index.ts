@@ -9,13 +9,12 @@ const router = createRouter({
     return new Promise(resolve => {
       if (savedPosition) {
         return savedPosition
-      } else {
-        if (from.meta.saveScrollTop) {
-          const top =
-            document.documentElement.scrollTop || document.body.scrollTop
+      }
+      if (from.meta.saveScrollTop) {
+        const top =
+          document.documentElement.scrollTop || document.body.scrollTop
 
-          resolve({ left: 0, top })
-        }
+        resolve({ left: 0, top })
       }
     })
   },
@@ -28,7 +27,7 @@ export function resetRouter() {
     if (name && router.hasRoute(name) && meta?.backstage) {
       router.removeRoute(name)
       // TODO: create routes
-      // router.options.routes =
+      // Router.options.routes =
     }
   })
 }

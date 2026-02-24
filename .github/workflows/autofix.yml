@@ -21,9 +21,9 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run lint:oxlint
+      - run: pnpm run format
       - run: pnpm run lint:script --fix
 
-      - uses: autofix-ci/action@v1.3.2
+      - uses: autofix-ci/action@v1.3.3
         with:
           commit-message: 'chore: autofix by ci'

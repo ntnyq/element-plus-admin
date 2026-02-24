@@ -1,5 +1,5 @@
 /**
- * error
+ * Error
  */
 export interface SystemAxiosError {
   code: SystemErrorCode
@@ -27,7 +27,7 @@ export interface SystemUnknownError {
 }
 
 /**
- * system error
+ * System error
  * @pg
  */
 export type SystemError =

@@ -19,7 +19,7 @@ export default defineConfig({
     presetWind4(),
     presetIcons({
       autoInstall: true,
-      // mode: 'mask',
+      // Mode: 'mask',
       prefix: 'icon-',
       scale: 1.2,
       collections: {
@@ -44,7 +44,7 @@ export default defineConfig({
       'wh-full': 'w-full h-full',
 
       // @pg
-      'border-base': 'border-#050505:6',
+      'border-base': 'border-gray-100 dark:border-gray-600',
 
       // @pg
       'z-navbar': 'z-1000',

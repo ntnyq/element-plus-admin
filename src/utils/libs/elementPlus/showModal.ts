@@ -2,11 +2,11 @@
  * @file elementPlus utils
  */
 
+import type { AnyFn } from '@ntnyq/utils'
 import { ElButton, ElDialog } from 'element-plus'
+import type { ButtonType, DialogProps } from 'element-plus'
 import { setupApp } from '@/setup'
 import { waitFor } from '@/utils'
-import type { AnyFn } from '@ntnyq/utils'
-import type { ButtonType, DialogProps } from 'element-plus'
 
 export interface ShowModalOptions {
   dialogProps?: Partial<DialogProps>

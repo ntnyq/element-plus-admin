@@ -43,21 +43,13 @@ export class HTTPClient {
 
   useSharedInterceptors() {
     this.instance.interceptors.request.use(
-      config => {
-        return config
-      },
-      err => {
-        return err
-      },
+      config => config,
+      err => err,
     )
 
     this.instance.interceptors.response.use(
-      res => {
-        return res.data
-      },
-      err => {
-        return err
-      },
+      res => res.data,
+      err => err,
     )
   }
 

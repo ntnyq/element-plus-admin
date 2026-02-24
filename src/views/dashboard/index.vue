@@ -7,6 +7,7 @@ function handleShowModal() {
       title: '系统提示',
       width: 600,
       closeOnClickModal: true,
+      alignCenter: true,
     },
   })
 }
@@ -14,7 +15,7 @@ function handleShowModal() {
 
 <template>
   <div class="flex-col-center gap-8 h-screen relative">
-    <h1 class="text-3xl font-500">Home</h1>
+    <h1 class="text-3xl font-medium">Home</h1>
 
     <div class="icon-admin:flag" />
 

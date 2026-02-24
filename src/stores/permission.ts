@@ -2,10 +2,10 @@
  * @file Permission store
  */
 
+import type { RouteRecordRaw } from 'vue-router'
 import { routes as constantRoutes } from '@/router/routes'
 import { generateRoutes } from '@/router/utils'
 import pinia from '@/stores'
-import type { RouteRecordRaw } from 'vue-router'
 import type { NavMenuItem } from '@/types'
 
 export const usePermissionStore = defineStore('permission', () => {

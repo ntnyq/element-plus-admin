@@ -1,7 +1,7 @@
 import type { SystemErrorCode } from '@/types'
 
 /**
- * errors invisible to users
+ * Errors invisible to users
  */
 export const NO_SHOW_ERROR_CODE: SystemErrorCode[] = []
 
