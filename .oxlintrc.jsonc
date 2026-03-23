@@ -6,7 +6,7 @@
     // "jsdoc",
     // "node",
     // "promise",
-    "oxc"
+    "oxc",
     // "typescript",
     // "unicorn",
     // "vue"
@@ -18,13 +18,9 @@
     "perf": "warn",
     "style": "warn",
     "restriction": "warn",
-    "nursery": "warn"
+    "nursery": "warn",
   },
-  "ignorePatterns": [
-    "**/dist/**",
-    "**/node_modules/**",
-    "**/tests/fixtures/**"
-  ],
+  "ignorePatterns": ["**/dist/**", "**/node_modules/**", "**/fixtures/**"],
   "rules": {
     "no-undef": "off",
     "no-console": "off",
@@ -47,17 +43,17 @@
       {
         "min": 2,
         "max": 50,
-        "exceptions": ["a", "b", "i", "j", "v", "x", "y", "T", "_", "$"]
-      }
+        "exceptions": ["a", "b", "i", "j", "v", "x", "y", "T", "_", "$"],
+      },
     ],
     "max-statements": ["warn", 30],
     "max-lines-per-function": [
       "warn",
-      { "max": 200, "skipComments": true, "skipBlankLines": true }
+      { "max": 200, "skipComments": true, "skipBlankLines": true },
     ],
     "no-duplicate-imports": [
       "warn",
-      { "allowSeparateTypeImports": true, "includeExports": false }
+      { "allowSeparateTypeImports": true, "includeExports": false },
     ],
     "no-magic-numbers": [
       "warn",
@@ -66,35 +62,37 @@
         "ignoreArrayIndexes": true,
         "ignoreDefaultValues": true,
         "enforceConst": true,
-        "detectObjects": false
-      }
+        "detectObjects": false,
+      },
     ],
     "no-use-before-define": [
       "warn",
-      { "functions": false, "classes": true, "variables": true }
-    ]
+      { "functions": false, "classes": true, "variables": true },
+    ],
   },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
-        "oxc/no-throw-literal": "off"
-      }
+        "oxc/no-throw-literal": "off",
+      },
     },
     // Pinia stores
     {
       "files": ["src/stores/*.ts"],
       "rules": {
-        "max-lines-per-function": "off"
-      }
+        "max-lines-per-function": "off",
+      },
     },
     {
       "files": ["*.config.{ts,mjs}"],
       "rules": {
         "new-cap": "off",
+        "sort-keys": "warn",
         "no-magic-numbers": "off",
-        "import/no-nodejs-modules": "off"
-      }
-    }
-  ]
+        "import/no-nodejs-modules": "off",
+        "import/no-default-export": "off",
+      },
+    },
+  ],
 }
