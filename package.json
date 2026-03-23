@@ -59,7 +59,7 @@
     "@vitejs/plugin-vue-jsx": "^5.1.5",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.9.0",
-    "bumpp": "^10.4.1",
+    "bumpp": "^11.0.1",
     "husky": "^9.1.7",
     "jsdom": "^28.1.0",
     "nano-staged": "^0.9.0",
