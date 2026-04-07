@@ -13,9 +13,13 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+
   presets: [
     presetIcons({
       autoInstall: true,
+      prefix: 'icon-',
+      scale: 1.2,
       collections: {
         admin: FileSystemIconLoader('./src/icons'),
       },
@@ -24,8 +28,6 @@ export default defineConfig({
         // Avoid crushing of icons in crowded situations
         'min-width': '1.2em',
       },
-      prefix: 'icon-',
-      scale: 1.2,
     }),
     presetWind4(),
     presetLegacyCompat({
@@ -53,6 +55,4 @@ export default defineConfig({
       primary_dark: 'var(--el-color-primary-light-5)',
     },
   },
-
-  transformers: [transformerDirectives(), transformerVariantGroup()],
 })

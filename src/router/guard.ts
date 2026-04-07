@@ -1,7 +1,7 @@
-import type { Router } from 'vue-router'
 import { usePermissionStoreWithOut } from '@/stores/permission'
 import { waitFor } from '@/utils'
 import NProgress from '@/utils/libs/nprogress'
+import type { Router } from 'vue-router'
 
 const ROUTE_PATH_WHITE_LIST = new Set<string>()
 

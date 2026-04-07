@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { compile } from 'path-to-regexp'
-import type { RouteLocationMatched } from 'vue-router'
 import { ROUTE_REDIRECT_PREFIX } from '@/constants/route'
 import { logger } from '@/utils/logger'
+import type { RouteLocationMatched } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()

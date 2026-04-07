@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { RouteLocationGeneric } from 'vue-router'
 import { useTagsView } from '@/layout/composables/useTagsView'
 import { useViewStore } from '@/stores/view'
-import type { TagsViewItem } from '@/types'
 import { isEmptyString, waitFor } from '@/utils'
+import type { RouteLocationGeneric } from 'vue-router'
+import type { TagsViewItem } from '@/types'
 
 // Const TAGS_VIEW_PADDING = 10
 

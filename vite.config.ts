@@ -20,6 +20,8 @@ export default defineConfig({
     cssCodeSplit: true,
     manifest: false,
     reportCompressedSize: false,
+    sourcemap: false,
+    target: 'es2015',
     rolldownOptions: {
       checks: {
         pluginTimings: false,
@@ -28,6 +30,7 @@ export default defineConfig({
       output: {
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
         chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
         codeSplitting: {
           groups: [
             {
@@ -36,11 +39,8 @@ export default defineConfig({
             },
           ],
         },
-        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
-    sourcemap: false,
-    target: 'es2015',
   },
 
   css: {
