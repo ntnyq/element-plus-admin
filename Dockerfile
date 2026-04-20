@@ -1,4 +1,4 @@
-FROM node:20-alpine as node-builder
+FROM node:24-alpine as node-builder
 
 WORKDIR /app
 RUN corepack enable

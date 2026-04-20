@@ -5,5 +5,3 @@ onlyBuiltDependencies:
   - esbuild
   - unrs-resolver
   - vue-demi
-overrides:
-  esbuild: ^0.28.0
