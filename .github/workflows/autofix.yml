@@ -24,6 +24,6 @@ jobs:
       - run: pnpm run format
       - run: pnpm run lint:script --fix
 
-      - uses: autofix-ci/action@v1.3.3
+      - uses: autofix-ci/action@v1.3.4
         with:
           commit-message: 'chore: autofix by ci'
