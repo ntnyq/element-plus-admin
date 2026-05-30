@@ -23,6 +23,7 @@ export default defineConfig({
     sourcemap: false,
     target: 'es2015',
     rolldownOptions: {
+      logLevel: 'silent',
       checks: {
         pluginTimings: false,
         toleratedTransform: false,

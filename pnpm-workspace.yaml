@@ -1,7 +1,8 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - core-js
-  - es5-ext
-  - esbuild
-  - unrs-resolver
-  - vue-demi
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  es5-ext: true
+  esbuild: true
+  unrs-resolver: true
+
+minimumReleaseAge: 0
