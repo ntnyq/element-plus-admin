@@ -52,7 +52,7 @@
     "@ls-lint/ls-lint": "^2.3.1",
     "@ntnyq/eslint-config": "^6.1.5",
     "@tsconfig/node24": "^24.0.4",
-    "@types/jsdom": "^28.0.3",
+    "@types/jsdom": "^30.0.0",
     "@types/node": "^25.9.1",
     "@types/nprogress": "^0.2.3",
     "@unocss/preset-legacy-compat": "^66.7.0",
