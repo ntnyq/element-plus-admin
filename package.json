@@ -69,7 +69,7 @@
     "oxfmt": "^0.52.0",
     "sass-embedded": "^1.100.0",
     "tsx": "^4.22.3",
-    "typescript": "~6.0.3",
+    "typescript": "~7.0.2",
     "unocss": "^66.7.0",
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^32.1.0",
