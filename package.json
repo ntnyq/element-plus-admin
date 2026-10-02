@@ -20,7 +20,9 @@
     "release:check": "run-s format:check lint typecheck test:unit",
     "release:version": "bumpp",
     "test:unit": "vitest",
-    "typecheck": "vue-tsc --build"
+    "typecheck": "run-s typecheck:vue typecheck:native",
+    "typecheck:native": "node node_modules/@typescript/native/bin/tsc --noEmit -p tsconfig.node.json",
+    "typecheck:vue": "vue-tsc --build"
   },
   "dependencies": {
     "@ntnyq/utils": "^0.13.3",
@@ -55,6 +57,7 @@
     "@types/jsdom": "^30.0.0",
     "@types/node": "^25.9.1",
     "@types/nprogress": "^0.2.3",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "@unocss/preset-legacy-compat": "^66.7.0",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
@@ -69,13 +72,13 @@
     "oxfmt": "^0.52.0",
     "sass-embedded": "^1.100.0",
     "tsx": "^4.22.3",
-    "typescript": "~7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "unocss": "^66.7.0",
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^32.1.0",
     "vite": "^8.0.14",
     "vitest": "^5.0.0",
-    "vue-tsc": "^3.3.2"
+    "vue-tsc": "^3.3.11"
   },
   "nano-staged": {
     "*.{js,ts,mjs,jsx,tsx,vue,md,svg,json,yml,yaml}": "eslint --fix",
