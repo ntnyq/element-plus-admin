@@ -55,7 +55,7 @@
     "@ntnyq/eslint-config": "^6.1.5",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^30.0.0",
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.6.5",
     "@types/nprogress": "^0.2.3",
     "@typescript/native": "npm:typescript@^7.0.2",
     "@unocss/preset-legacy-compat": "^66.7.0",
